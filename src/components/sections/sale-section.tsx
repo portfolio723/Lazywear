@@ -54,11 +54,11 @@ export function SaleSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex flex-col items-center text-center">
             <Image
-              src="https://placehold.co/500x700"
+              src="https://placehold.co/400x500"
               alt="End of Season Sale"
-              width={500}
-              height={700}
-              className="rounded-lg"
+              width={400}
+              height={500}
+              className="rounded-lg object-cover"
               data-ai-hint="sale ticket"
             />
             <div className="mt-4 bg-black/50 p-4 rounded-lg">

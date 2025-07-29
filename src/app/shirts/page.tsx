@@ -1,7 +1,31 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ProductCard } from "@/components/product-card";
+import { FaqSection } from "@/components/sections/faq-section";
 import { shirts } from "@/lib/data";
+
+const shirtFaqs = [
+  {
+    question: "What materials are your shirts made from?",
+    answer:
+      "Our shirts are crafted from premium, breathable fabrics like Pima cotton, bamboo blends, and modal. We prioritize softness and durability for all-day comfort.",
+  },
+  {
+    question: "How do I find the right size?",
+    answer:
+      "Please refer to our sizing chart on each product page. We recommend measuring a shirt you already own and comparing it to our measurements for the best fit.",
+  },
+  {
+    question: "What is the best way to care for my Lazywear shirts?",
+    answer:
+      "To keep your shirts looking their best, we recommend machine washing in cold water with like colors and tumbling dry on low. Avoid using bleach or fabric softeners.",
+  },
+  {
+    question: "Do your shirts shrink after washing?",
+    answer:
+      "Our shirts are pre-shrunk to minimize any potential shrinkage. You may experience minimal shrinkage, but following the care instructions will help maintain the original fit.",
+  },
+];
 
 export default function ShirtsPage() {
   return (
@@ -16,6 +40,7 @@ export default function ShirtsPage() {
             ))}
           </div>
         </div>
+        <FaqSection title="Frequently Asked Questions" faqs={shirtFaqs} />
       </main>
       <Footer />
     </div>

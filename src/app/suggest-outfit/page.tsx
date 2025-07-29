@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState, useState } from "react";
+import { useFormStatus } from "react-dom";
 import Image from "next/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -35,7 +36,7 @@ export default function SuggestOutfitPage() {
     error: undefined,
     suggestions: undefined,
   };
-  const [state, formAction] = useFormState(getOutfitSuggestions, initialState);
+  const [state, formAction] = useActionState(getOutfitSuggestions, initialState);
 
   return (
     <div className="flex flex-col min-h-screen bg-background">

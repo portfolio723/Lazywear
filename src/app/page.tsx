@@ -54,13 +54,13 @@ const stepIntoTheSpotlight = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-background text-[#111]">
       <Header />
       <main className="flex-grow pt-16">
         <HeroSection />
         <FeaturedCollectionsSection />
         <CategoryShowcaseSection title="Icons, Reinvented" subtitle="New styles, classic feel." items={iconsReinvented} />
-        <section className="py-12">
+        <section className="py-[60px]">
             <div className="container mx-auto px-6">
                 <div className="relative group overflow-hidden rounded-lg">
                 <img src="https://placehold.co/1200x400" alt="The Ultimate Comfort Zone" className="w-full h-full object-cover" data-ai-hint="woman relaxing on sofa"/>

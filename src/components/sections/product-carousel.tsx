@@ -18,7 +18,7 @@ interface ProductCarouselProps {
 
 export function ProductCarousel({ title, products }: ProductCarouselProps) {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-[60px] bg-background">
       <div className="container mx-auto px-6">
          <h2 className="text-3xl font-bold font-headline text-black text-center mb-8">
           {title}
@@ -30,12 +30,10 @@ export function ProductCarousel({ title, products }: ProductCarouselProps) {
           }}
           className="w-full"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-5">
             {products.map((product) => (
-              <CarouselItem key={product.id} className="md:basis-1/2 lg:basis-1/5">
-                <div className="p-1">
-                  <ProductCard product={product} />
-                </div>
+              <CarouselItem key={product.id} className="pl-5 md:basis-1/2 lg:basis-1/5">
+                <ProductCard product={product} />
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -44,5 +42,5 @@ export function ProductCarousel({ title, products }: ProductCarouselProps) {
         </Carousel>
       </div>
     </section>
-  )
+  );
 }

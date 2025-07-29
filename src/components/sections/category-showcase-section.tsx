@@ -18,15 +18,15 @@ export function CategoryShowcaseSection({
   items,
 }: CategoryShowcaseSectionProps) {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-[60px] bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-8">
             <h2 className="text-3xl font-bold font-headline text-black">
                 {title}
             </h2>
-            <p className="text-gray-500">{subtitle}</p>
+            <p className="text-muted-foreground">{subtitle}</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {items.map((item) => (
             <div key={item.title} className="relative group overflow-hidden rounded-lg">
               <Image

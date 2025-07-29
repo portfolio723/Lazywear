@@ -25,8 +25,8 @@ function CountdownTimer() {
 
 export function HeroSection() {
   return (
-    <section className="bg-[#A82B1E] text-white">
-      <div className="container mx-auto px-6 py-12">
+    <section className="bg-[#B71C1C] text-white">
+      <div className="container mx-auto px-6 py-[60px]">
         <div className="text-center mb-6">
             <h2 className="text-lg font-semibold">END OF SEASON DEALS</h2>
             <div className="flex justify-center gap-4 mt-2">

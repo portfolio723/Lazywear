@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -7,7 +8,7 @@ import { Button } from '@/components/ui/button';
 export function SaleSection() {
   const calculateTimeLeft = () => {
     const difference = +new Date('2024-07-31') - +new Date();
-    let timeLeft = {};
+    let timeLeft: { [key: string]: number } = {};
 
     if (difference > 0) {
       timeLeft = {
@@ -55,7 +56,7 @@ export function SaleSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex flex-col items-center text-center">
             <Image
-              src="https://placehold.co/200x250"
+              src="https://media.istockphoto.com/id/504004818/photo/sale-sign.webp?a=1&b=1&s=612x612&w=0&k=20&c=0Ojuuuvae0Muk1EYuDal6aLyH0SxMrjVbGnG5KLqsrY="
               alt="End of Season Sale"
               width={200}
               height={250}

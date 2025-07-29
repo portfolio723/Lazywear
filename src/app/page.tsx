@@ -5,6 +5,7 @@ import { FeaturedCollectionsSection } from "@/components/sections/featured-colle
 import { CategoryShowcaseSection } from "@/components/sections/category-showcase-section";
 import { ProductCarousel } from "@/components/sections/product-carousel";
 import { allProducts, shirts, pants, shoes, caps } from "@/lib/data";
+import { Button } from "@/components/ui/button";
 
 const iconsReinvented = [
   {
@@ -68,7 +69,7 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col items-start justify-center p-8 text-white">
                     <h3 className="text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>
                     <p className="text-lg">The Softest Loungewear Ever</p>
-                    <button className="mt-4 bg-white text-black font-semibold py-2 px-4 rounded-md">Shop Now</button>
+                    <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors rounded-md">Shop Now</Button>
                 </div>
                 </div>
             </div>

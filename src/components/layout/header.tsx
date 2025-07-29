@@ -12,26 +12,26 @@ export function Header() {
         </Link>
       </div>
       <nav className="hidden md:flex items-center gap-8">
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Shirts</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Pants</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Shoes</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Caps</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Sale</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Shirts</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Pants</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Shoes</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Caps</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Sale</Link>
       </nav>
       <div className="flex items-center gap-4">
-        <Button variant="ghost" size="icon" className="hover:bg-gray-100">
+        <Button variant="ghost" size="icon">
           <Search className="h-5 w-5" />
           <span className="sr-only">Search</span>
         </Button>
-        <Button variant="ghost" size="icon" className="hover:bg-gray-100">
+        <Button variant="ghost" size="icon">
           <Heart className="h-5 w-5" />
           <span className="sr-only">Wishlist</span>
         </Button>
-        <Button variant="ghost" size="icon" className="hover:bg-gray-100">
+        <Button variant="ghost" size="icon">
           <User className="h-5 w-5" />
           <span className="sr-only">Account</span>
         </Button>
-        <Button variant="ghost" size="icon" className="hover:bg-gray-100">
+        <Button variant="ghost" size="icon">
           <ShoppingCart className="h-5 w-5" />
           <span className="sr-only">Cart</span>
         </Button>

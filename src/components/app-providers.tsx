@@ -1,7 +1,7 @@
 
 "use client";
 
-import { WishlistProvider } from "@/hooks/use-wishlist.tsx";
+import { WishlistProvider } from "@/hooks/use-wishlist";
 import { CartProvider } from "@/hooks/use-cart";
 
 export function AppProviders({ children }: { children: React.ReactNode }) {

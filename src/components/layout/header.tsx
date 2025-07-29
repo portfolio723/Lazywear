@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Search, Heart, User, ShoppingCart, Menu, X, ArrowLeft } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { MiniCart } from "@/components/mini-cart";
-import { useWishlist } from "@/hooks/use-wishlist.tsx";
+import { useWishlist } from "@/hooks/use-wishlist";
 import { useCart } from "@/hooks/use-cart";
 import { SearchOverlay } from "@/components/search-overlay";
 

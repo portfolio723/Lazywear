@@ -33,6 +33,7 @@ const productImages = [
 ];
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
+  const { id } = params;
   const [product, setProduct] = useState<Product | null>(null);
   const [quantity, setQuantity] = useState(1);
 
@@ -41,13 +42,13 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const { toast } = useToast();
 
   useEffect(() => {
-    const foundProduct = allProducts.find((p) => p.id === params.id);
+    const foundProduct = allProducts.find((p) => p.id === id);
     if (foundProduct) {
         setProduct(foundProduct);
     } else {
         notFound();
     }
-  }, [params.id]);
+  }, [id]);
 
   if (!product) {
     return <div>Loading...</div>; // Or a proper skeleton loader
@@ -174,5 +175,3 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     </div>
   );
 }
-
-    

@@ -5,6 +5,8 @@ export type Product = {
   price: number;
   image: string;
   category: "shirts" | "pants" | "shoes" | "caps";
+  description: string;
+  details: string[];
 };
 
 export type CartItem = Product & {

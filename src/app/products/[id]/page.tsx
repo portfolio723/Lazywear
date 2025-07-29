@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { allProducts, type Product } from '@/lib/data';
-import { useCart } from '@/hooks/use-cart';
+import { useCart } from '@/hooks/use-cart.tsx';
 import { useWishlist } from '@/hooks/use-wishlist';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
@@ -138,11 +138,11 @@ function ProductDetailClient({ id }: { id: string }) {
               </div>
 
               {/* Product Info Accordion */}
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion type="single" collapsible className="w-full" defaultValue="item-1">
                 <AccordionItem value="item-1">
                   <AccordionTrigger>Product Description</AccordionTrigger>
                   <AccordionContent>
-                  Comfortable and stylish, this piece is a must-have for any wardrobe. Made with the softest materials for all-day wear.
+                    {product.description}
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
@@ -154,9 +154,11 @@ function ProductDetailClient({ id }: { id: string }) {
                 <AccordionItem value="item-3">
                   <AccordionTrigger>Details</AccordionTrigger>
                   <AccordionContent>
-                    - Premium cotton blend <br />
-                    - Relaxed fit <br />
-                    - Machine washable
+                    <ul className="list-disc pl-5">
+                      {product.details.map((detail, index) => (
+                        <li key={index}>{detail}</li>
+                      ))}
+                    </ul>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Search, Heart, User, ShoppingCart, Sparkles } from "lucide-react";
+import { Search, Heart, User, ShoppingCart } from "lucide-react";
 
 export function Header() {
   return (
@@ -15,10 +15,6 @@ export function Header() {
         <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-300 transition-colors">Pants</Link>
         <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-300 transition-colors">Shoes</Link>
         <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-300 transition-colors">Caps</Link>
-        <Link href="/suggest-outfit" className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase text-primary-foreground hover:text-gray-300 transition-colors bg-accent/20 hover:bg-accent/30 px-3 py-1 rounded-full">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span>AI Stylist</span>
-        </Link>
       </nav>
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" className="hover:bg-gray-800">

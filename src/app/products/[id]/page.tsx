@@ -176,6 +176,8 @@ function ProductDetailClient({ id }: { id: string }) {
   );
 }
 
+// This is the Server Component that can safely access params
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
+  // It passes the id as a simple string prop to the Client Component
   return <ProductDetailClient id={params.id} />;
 }

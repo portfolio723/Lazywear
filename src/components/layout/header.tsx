@@ -1,35 +1,38 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Search, Heart, User, ShoppingCart } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-16 px-6 bg-black text-white shadow-md">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-16 px-6 bg-white text-black shadow-md">
       <div className="flex items-center">
         <Link href="/" className="text-2xl font-bold font-headline">
-          LAZYWEAR
+          <Image src="/logo.svg" alt="Lazywear" width={40} height={40} />
         </Link>
       </div>
       <nav className="hidden md:flex items-center gap-8">
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-300 transition-colors">Shirts</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-300 transition-colors">Pants</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-300 transition-colors">Shoes</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-300 transition-colors">Caps</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">New</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Men</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Women</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Kids</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Collaborations</Link>
+        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-gray-500 transition-colors">Sale</Link>
       </nav>
       <div className="flex items-center gap-4">
-        <Button variant="ghost" size="icon" className="hover:bg-gray-800">
+        <Button variant="ghost" size="icon" className="hover:bg-gray-100">
           <Search className="h-5 w-5" />
           <span className="sr-only">Search</span>
         </Button>
-        <Button variant="ghost" size="icon" className="hover:bg-gray-800">
+        <Button variant="ghost" size="icon" className="hover:bg-gray-100">
           <Heart className="h-5 w-5" />
           <span className="sr-only">Wishlist</span>
         </Button>
-        <Button variant="ghost" size="icon" className="hover:bg-gray-800">
+        <Button variant="ghost" size="icon" className="hover:bg-gray-100">
           <User className="h-5 w-5" />
           <span className="sr-only">Account</span>
         </Button>
-        <Button variant="ghost" size="icon" className="hover:bg-gray-800">
+        <Button variant="ghost" size="icon" className="hover:bg-gray-100">
           <ShoppingCart className="h-5 w-5" />
           <span className="sr-only">Cart</span>
         </Button>

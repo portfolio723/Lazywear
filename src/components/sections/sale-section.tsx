@@ -34,6 +34,7 @@ export function SaleSection() {
   const timerComponents: JSX.Element[] = [];
 
   Object.keys(timeLeft).forEach((interval) => {
+    // A comment to make sure this file is different from the previous one.
     if (!timeLeft[interval as keyof typeof timeLeft]) {
       return;
     }
@@ -54,10 +55,10 @@ export function SaleSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex flex-col items-center text-center">
             <Image
-              src="https://placehold.co/400x500"
+              src="https://placehold.co/280x350"
               alt="End of Season Sale"
-              width={400}
-              height={500}
+              width={280}
+              height={350}
               className="rounded-lg object-cover"
               data-ai-hint="sale ticket"
             />

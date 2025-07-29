@@ -35,7 +35,7 @@ const iconsReinvented = [
 const stepIntoTheSpotlight = [
   {
     title: "Plush Robes",
-    image: "https://placehold.co/600x600",
+    image: "https://eberjey.com/cdn/shop/products/Low_Res-R2024LN-WHITE-F_1_1.jpg?v=1697652736&width=1100",
     hint: "fluffy robe",
   },
   {

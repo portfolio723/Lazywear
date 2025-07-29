@@ -1,3 +1,4 @@
+
 import { type Product } from "@/types";
 
 export const shirts: Product[] = [
@@ -36,6 +37,42 @@ export const shirts: Product[] = [
     category: "shirts",
     description: "Function meets comfort in the Serene Pocket Tee. This versatile shirt features a clean design with a simple chest pocket, made from a modal blend that feels silky smooth against the skin.",
     details: ["48% Modal, 48% Cotton, 4% Spandex", "Chest Pocket Detail", "Modern, straight hem", "Resists pilling and fading"]
+  },
+  {
+    id: "shirt-5",
+    name: "Luna Linen Blend Shirt",
+    price: 2199,
+    image: "https://placehold.co/500x500",
+    category: "shirts",
+    description: "Stay cool and sophisticated in the Luna Linen Blend Shirt. The breathable linen-cotton mix is perfect for warm weather, offering a crisp look that's effortlessly casual. A versatile button-down for any relaxed occasion.",
+    details: ["55% Linen, 45% Cotton", "Classic point collar", "Button-front closure", "Machine wash cold, hang dry"]
+  },
+  {
+    id: "shirt-6",
+    name: "Metro Performance Polo",
+    price: 2499,
+    image: "https://placehold.co/500x500",
+    category: "shirts",
+    description: "The Metro Performance Polo is designed for the active individual who values comfort. Made with moisture-wicking fabric, it keeps you dry and comfortable whether you're on the go or just relaxing. Features a modern, athletic fit.",
+    details: ["92% Polyester, 8% Spandex", "Moisture-wicking technology", "Two-button placket", "UPF 30+ sun protection"]
+  },
+  {
+    id: "shirt-7",
+    name: "Terra Organic Cotton Tee",
+    price: 1799,
+    image: "https://placehold.co/500x500",
+    category: "shirts",
+    description: "Embrace sustainable comfort with the Terra Tee. Made from 100% organic cotton, this t-shirt is incredibly soft and gentle on the skin. Its classic cut and earthy tones make it a staple for the conscious consumer.",
+    details: ["100% GOTS Certified Organic Cotton", "Environmentally friendly dyes", "Classic fit", "Durable and soft"]
+  },
+  {
+    id: "shirt-8",
+    name: "Solstice Graphic Tee",
+    price: 1999,
+    image: "https://placehold.co/500x500",
+    category: "shirts",
+    description: "Make a subtle statement with the Solstice Graphic Tee. This shirt features a minimalist, nature-inspired graphic on our signature soft cotton. It's the perfect way to add a touch of personality to your casual look.",
+    details: ["100% Combed Cotton", "High-quality screen print", "Modern tailored fit", "Pre-shrunk to minimize shrinkage"]
   }
 ];
 
@@ -75,6 +112,42 @@ export const pants: Product[] = [
     category: "pants",
     description: "Embrace warm-weather comfort with the Tranquil Terry Shorts. Crafted from soft French terry fabric, they feature a comfortable inseam, raw-edge hem, and a simple drawstring for a perfect fit.",
     details: ["100% Cotton French Terry", "Elastic waistband with drawstring", "7-inch inseam", "Raw-edge hem detail"]
+  },
+  {
+    id: "pants-5",
+    name: "Urban Stretch Chino",
+    price: 3499,
+    image: "https://placehold.co/500x500",
+    category: "pants",
+    description: "The Urban Stretch Chino offers a polished look without sacrificing comfort. The flexible stretch-cotton fabric moves with you, while the slim-fit design provides a modern silhouette suitable for casual Fridays or weekend outings.",
+    details: ["97% Cotton, 3% Elastane", "Slim-fit design", "Four-pocket styling", "Zip fly with button closure"]
+  },
+  {
+    id: "pants-6",
+    name: "Flow Linen Trousers",
+    price: 3799,
+    image: "https://placehold.co/500x500",
+    category: "pants",
+    description: "Breezy and elegant, the Flow Linen Trousers are your perfect companion for sunny days. The wide-leg cut and breathable linen fabric ensure you stay cool and comfortable, while the drawstring waist provides a relaxed fit.",
+    details: ["100% Linen", "Wide-leg, relaxed fit", "Drawstring waist", "Two front pockets"]
+  },
+  {
+    id: "pants-7",
+    name: "Apex Performance Shorts",
+    price: 2599,
+    image: "https://placehold.co/500x500",
+    category: "pants",
+    description: "Engineered for movement, the Apex Performance Shorts are perfect for an active lifestyle. The lightweight, quick-dry fabric and athletic cut provide maximum flexibility and comfort during any activity.",
+    details: ["90% Polyester, 10% Spandex", "9-inch inseam", "Zippered back pocket", "Reflective logo for visibility"]
+  },
+  {
+    id: "pants-8",
+    name: "Cozy Knit Lounge Pants",
+    price: 2899,
+    image: "https://placehold.co/500x500",
+    category: "pants",
+    description: "Wrap yourself in the softness of the Cozy Knit Lounge Pants. Made from a plush, ribbed knit, these straight-leg pants are perfect for movie marathons, reading a book, or any serious lounging.",
+    details: ["50% Rayon, 45% Polyester, 5% Spandex", "Soft ribbed texture", "Elastic waistband", "Straight-leg fit"]
   }
 ];
 
@@ -105,6 +178,24 @@ export const shoes: Product[] = [
     category: "shoes",
     description: "The Wander Knit Sneaker blends sock-like comfort with a street-ready design. The breathable, stretch-knit upper conforms to your foot, while the cushioned sole provides support for all-day adventures.",
     details: ["Stretch-knit upper", "Cushioned EVA midsole", "Slip-on design with decorative laces", "Flexible and lightweight"]
+  },
+  {
+    id: "shoes-4",
+    name: "Trek Trail Sneaker",
+    price: 4299,
+    image: "https://placehold.co/500x500",
+    category: "shoes",
+    description: "For the adventurer who values comfort, the Trek Trail Sneaker offers rugged durability and plush cushioning. A grippy outsole provides traction on varied terrain, while the padded collar supports your ankle.",
+    details: ["Water-resistant upper", "All-terrain rubber outsole", "Reinforced toe cap", "Cushioned ankle support"]
+  },
+  {
+    id: "shoes-5",
+    name: "Cove Canvas Espadrille",
+    price: 2999,
+    image: "https://placehold.co/500x500",
+    category: "shoes",
+    description: "Embrace a timeless summer style with the Cove Canvas Espadrille. Featuring a breathable canvas upper and a traditional jute-wrapped sole, these shoes are perfect for boardwalk strolls and sunny afternoons.",
+    details: ["Durable canvas upper", "Natural jute midsole", "Easy slip-on style", "Rubber outsole for durability"]
   }
 ];
 
@@ -126,6 +217,24 @@ export const caps: Product[] = [
     category: "caps",
     description: "Stay cozy and warm with the Hibernate Knit Beanie. Crafted from a soft, chunky acrylic knit, this beanie features a classic fold-over cuff and a snug fit to keep the chill out.",
     details: ["100% Soft Acrylic Knit", "Chunky rib-knit construction", "Fold-over cuff", "One size fits most"]
+  },
+  {
+    id: "cap-3",
+    name: "Ascend Performance Cap",
+    price: 1499,
+    image: "https://placehold.co/500x500",
+    category: "caps",
+    description: "The Ascend Performance Cap is engineered for activity. Its lightweight, moisture-wicking fabric and laser-cut ventilation panels keep you cool and dry, while the adjustable strap ensures a secure fit.",
+    details: ["Lightweight polyester fabric", "Moisture-wicking sweatband", "Laser-cut ventilation", "Adjustable hook-and-loop closure"]
+  },
+  {
+    id: "cap-4",
+    name: "Voyager Bucket Hat",
+    price: 1699,
+    image: "https://placehold.co/500x500",
+    category: "caps",
+    description: "The Voyager Bucket Hat is a modern take on a classic silhouette. Made from durable cotton twill, it provides 360-degree sun protection, making it perfect for festivals, beach days, or urban exploration.",
+    details: ["100% Cotton Twill", "Wide brim for sun protection", "Embroidered eyelets for ventilation", "Soft, unstructured design"]
   }
 ];
 

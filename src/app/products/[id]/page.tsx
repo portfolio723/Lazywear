@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { allProducts, type Product } from '@/lib/data';
-import { useCart } from '@/hooks/use-cart.tsx';
+import { useCart } from '@/hooks/use-cart';
 import { useWishlist } from '@/hooks/use-wishlist';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
@@ -75,7 +75,7 @@ function ProductDetailClient({ id }: { id: string }) {
   };
 
   const recommendedProducts = allProducts.filter(p => p.category === product.category && p.id !== product.id).slice(0, 8);
-  const recentlyViewedProducts = allProducts.slice(4,12);
+  const recentlyViewedProducts = allProducts.filter(p => p.id !== product.id).slice(5, 13);
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-[#111]">

@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { HeroSection } from "@/components/sections/hero-section";
+import { SaleSection } from "@/components/sections/sale-section";
 import { FeaturedCollectionsSection } from "@/components/sections/featured-collections-section";
 import { CategoryShowcaseSection } from "@/components/sections/category-showcase-section";
 import { ProductCarousel } from "@/components/sections/product-carousel";
@@ -59,6 +60,7 @@ export default function Home() {
       <Header />
       <main className="flex-grow pt-16">
         <HeroSection />
+        <SaleSection />
         <FeaturedCollectionsSection />
         <CategoryShowcaseSection title="Icons, Reinvented" subtitle="New styles, classic feel." items={iconsReinvented} />
         <section className="py-[60px]">

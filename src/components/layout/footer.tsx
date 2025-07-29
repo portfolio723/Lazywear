@@ -37,13 +37,13 @@ export function Footer() {
           <div>
             <h3 className="font-headline text-base font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <Link href="#" aria-label="Facebook">
+              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <Facebook className="text-gray-400 hover:text-white transition-colors" />
               </Link>
-              <Link href="#" aria-label="Twitter">
+              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <Twitter className="text-gray-400 hover:text-white transition-colors" />
               </Link>
-              <Link href="#" aria-label="Instagram">
+              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Instagram className="text-gray-400 hover:text-white transition-colors" />
               </Link>
             </div>

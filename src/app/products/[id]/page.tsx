@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { allProducts, type Product } from '@/lib/data';
-import { useCart } from '@/hooks/use-cart.tsx';
+import { useCart } from '@/hooks/use-cart';
 import { useWishlist } from '@/hooks/use-wishlist';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';

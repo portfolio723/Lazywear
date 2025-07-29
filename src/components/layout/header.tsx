@@ -12,11 +12,11 @@ export function Header() {
         </Link>
       </div>
       <nav className="hidden md:flex items-center gap-8">
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Shirts</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Pants</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Shoes</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Caps</Link>
-        <Link href="#" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Sale</Link>
+        <Link href="/shirts" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Shirts</Link>
+        <Link href="/pants" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Pants</Link>
+        <Link href="/shoes" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Shoes</Link>
+        <Link href="/caps" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Caps</Link>
+        <Link href="/sale" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Sale</Link>
       </nav>
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon">

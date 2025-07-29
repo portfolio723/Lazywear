@@ -6,7 +6,7 @@ export const shirts: Product[] = [
     id: "shirt-1",
     name: "Zenith Crew-Neck Tee",
     price: 1499,
-    image: "https://placehold.co/500x500",
+    image: "https://www.selectedhomme.in/cdn/shop/files/250135204_1.jpg?v=1745266569&width=1920",
     category: "shirts",
     description: "The Zenith Crew-Neck is the foundational piece for any laid-back wardrobe. Crafted from ultra-soft Pima cotton, it offers a relaxed fit that drapes perfectly. Ideal for layering or wearing solo, it's the ultimate everyday essential.",
     details: ["100% Pima Cotton", "Relaxed Fit", "Crew Neckline", "Machine Washable"]

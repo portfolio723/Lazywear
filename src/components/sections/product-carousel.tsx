@@ -18,9 +18,9 @@ interface ProductCarouselProps {
 
 export function ProductCarousel({ title, products }: ProductCarouselProps) {
   return (
-    <section className="py-[60px] bg-background">
+    <section className="py-8 md:py-[60px] bg-background">
       <div className="container mx-auto px-6">
-         <h2 className="text-3xl font-bold font-headline text-black text-center mb-8">
+         <h2 className="text-2xl md:text-3xl font-bold font-headline text-black text-center mb-8">
           {title}
         </h2>
         <Carousel
@@ -30,15 +30,15 @@ export function ProductCarousel({ title, products }: ProductCarouselProps) {
           }}
           className="w-full"
         >
-          <CarouselContent className="-ml-5">
+          <CarouselContent className="-ml-4">
             {products.map((product) => (
-              <CarouselItem key={product.id} className="pl-5 md:basis-1/2 lg:basis-1/5">
+              <CarouselItem key={product.id} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
                 <ProductCard product={product} />
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="text-black bg-white"/>
-          <CarouselNext className="text-black bg-white"/>
+          <CarouselPrevious className="text-black bg-white hidden md:flex"/>
+          <CarouselNext className="text-black bg-white hidden md:flex"/>
         </Carousel>
       </div>
     </section>

@@ -26,7 +26,7 @@ export function Footer() {
               <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
             </ul>
           </div>
-          <div className="col-span-2">
+          <div className="col-span-1 lg:col-span-2">
             <h3 className="font-headline text-base font-semibold mb-4">Stay up to date</h3>
             <div className="flex space-x-4">
               <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -45,10 +45,10 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 text-center md:text-left">
             <p>&copy; {new Date().getFullYear()} Lazywear. All Rights Reserved.</p>
           </div>
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
+          <div className="flex flex-col md:flex-row items-center gap-4 mt-4 md:mt-0">
              <span>INDIA</span>
              <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
              <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

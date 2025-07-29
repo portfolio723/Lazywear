@@ -11,18 +11,18 @@ const deals = [
 
 export function HeroSection() {
   return (
-    <section className="bg-background text-foreground py-[60px]">
+    <section className="bg-background text-foreground py-8 md:py-[60px]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold font-headline">
             END OF SEASON DEALS
           </h2>
         </div>
-        <div className="flex justify-center gap-5 flex-wrap">
+        <div className="flex justify-center gap-4 md:gap-5 flex-wrap">
           {deals.map((deal, index) => (
             <Link key={index} href={deal.href}>
-              <div className="w-40 h-40 rounded-full bg-[#F5EADF] border-2 border-[#E5CDB3] flex items-center justify-center text-center p-4 cursor-pointer hover:bg-[#EADBC8] hover:border-[#D6B89C] transition-colors">
-                <span className="text-sm font-semibold text-[#B71C1C] uppercase">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#F5EADF] border-2 border-[#E5CDB3] flex items-center justify-center text-center p-4 cursor-pointer hover:bg-[#EADBC8] hover:border-[#D6B89C] transition-colors">
+                <span className="text-xs md:text-sm font-semibold text-[#B71C1C] uppercase">
                   {deal.text}
                 </span>
               </div>

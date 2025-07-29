@@ -63,14 +63,14 @@ export default function Home() {
         <SaleSection />
         <FeaturedCollectionsSection />
         <CategoryShowcaseSection title="Icons, Reinvented" subtitle="New styles, classic feel." items={iconsReinvented} />
-        <section className="py-[60px]">
+        <section className="py-8 md:py-[60px]">
             <div className="container mx-auto px-6">
                 <div className="relative group overflow-hidden rounded-lg">
-                <img src="https://placehold.co/1200x400" alt="The Ultimate Comfort Zone" className="w-full h-full object-cover" data-ai-hint="woman relaxing on sofa"/>
+                <img src="https://placehold.co/1200x400" alt="The Ultimate Comfort Zone" className="w-full h-auto md:h-full object-cover" data-ai-hint="woman relaxing on sofa"/>
                 <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 flex flex-col items-start justify-center p-8 text-white">
-                    <h3 className="text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>
-                    <p className="text-lg">The Softest Loungewear Ever</p>
+                <div className="absolute inset-0 flex flex-col items-start justify-center p-6 md:p-8 text-white">
+                    <h3 className="text-xl md:text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>
+                    <p className="text-base md:text-lg">The Softest Loungewear Ever</p>
                     <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors rounded-md">Shop Now</Button>
                 </div>
                 </div>

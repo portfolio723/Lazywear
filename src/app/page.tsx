@@ -45,7 +45,7 @@ const stepIntoTheSpotlight = [
   },
   {
     title: "Lazywear x Home",
-    image: "https://placehold.co/600x600",
+    image: "https://i.pinimg.com/474x/64/9e/60/649e600da9c840d65bf9697c18c054fd.jpg",
     hint: "person relaxing home",
   },
   {

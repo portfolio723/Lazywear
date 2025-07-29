@@ -176,6 +176,5 @@ function ProductDetailClient({ id }: { id: string }) {
 }
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const { id } = params;
-  return <ProductDetailClient id={id} />;
+  return <ProductDetailClient id={params.id} />;
 }

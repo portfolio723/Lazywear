@@ -10,7 +10,7 @@ import { Search, Heart, User, ShoppingCart, Menu, X, ArrowLeft } from "lucide-re
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { MiniCart } from "@/components/mini-cart";
 import { useWishlist } from "@/hooks/use-wishlist.tsx";
-import { useCart } from "@/hooks/use-cart.tsx";
+import { useCart } from "@/hooks/use-cart";
 import { SearchOverlay } from "@/components/search-overlay";
 
 export function Header() {

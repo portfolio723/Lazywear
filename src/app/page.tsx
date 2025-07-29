@@ -40,7 +40,7 @@ const stepIntoTheSpotlight = [
   },
   {
     title: "Knit Sweaters",
-    image: "https://placehold.co/600x600",
+    image: "https://cdn17.nnnow.com/web-images/large/styles/WIX8LA3BFTY/1731493281791/1.jpg",
     hint: "chunky knit sweater",
   },
   {

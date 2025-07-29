@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { HeroSection } from "@/components/sections/hero-section";
@@ -26,7 +27,7 @@ const iconsReinvented = [
   },
   {
     title: "Sleepwear",
-    image: "https://placehold.co/600x600",
+    image: "https://s.alicdn.com/@sc04/kf/H86c0111a274742d0bd21fca840a5d573I/Luxury-Unisex-Custom-Pyjamas-for-Couple-Men-Women-s-Sleepwear-Sets-Bamboo-Clothes-Viscose-Cotton-Pajamas-Women-Lounge-Wear-Set.jpg",
     hint: "silk pajamas",
   },
 ];

@@ -22,7 +22,7 @@ const iconsReinvented = [
   },
   {
     title: "Joggers",
-    image: "https://placehold.co/600x600",
+    image: "https://images.meesho.com/images/products/492478595/7ssc2_512.jpg",
     hint: "comfortable joggers",
   },
   {

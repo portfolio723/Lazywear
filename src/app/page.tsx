@@ -8,47 +8,47 @@ import { allProducts, shirts, pants, shoes, caps } from "@/lib/data";
 
 const iconsReinvented = [
   {
-    title: "Puma",
+    title: "Lounge Sets",
     image: "https://placehold.co/600x600",
-    hint: "blue shoes",
+    hint: "matching loungewear",
   },
   {
-    title: "Nitro",
+    title: "Hoodies",
     image: "https://placehold.co/600x600",
-    hint: "white shoe",
+    hint: "cozy hoodie",
   },
   {
-    title: "Man City",
+    title: "Joggers",
     image: "https://placehold.co/600x600",
-    hint: "black jersey",
+    hint: "comfortable joggers",
   },
   {
-    title: "Puma x Ferrari",
+    title: "Sleepwear",
     image: "https://placehold.co/600x600",
-    hint: "red jacket",
+    hint: "silk pajamas",
   },
 ];
 
 const stepIntoTheSpotlight = [
   {
-    title: "Puma Suede",
+    title: "Plush Robes",
     image: "https://placehold.co/600x600",
-    hint: "dark green sneakers",
+    hint: "fluffy robe",
   },
   {
-    title: "Future",
+    title: "Knit Sweaters",
     image: "https://placehold.co/600x600",
-    hint: "sports shoes",
+    hint: "chunky knit sweater",
   },
   {
-    title: "Puma x Palomo",
+    title: "Lazywear x Home",
     image: "https://placehold.co/600x600",
-    hint: "fashion model",
+    hint: "person relaxing home",
   },
   {
-    title: "Puma x F1",
+    title: "Weekend Collection",
     image: "https://placehold.co/600x600",
-    hint: "racing apparel",
+    hint: "person reading book",
   },
 ]
 
@@ -63,11 +63,11 @@ export default function Home() {
         <section className="py-12">
             <div className="container mx-auto px-6">
                 <div className="relative group overflow-hidden rounded-lg">
-                <img src="https://placehold.co/1200x400" alt="The Devil is in the Details" className="w-full h-full object-cover" data-ai-hint="football players celebration"/>
+                <img src="https://placehold.co/1200x400" alt="The Ultimate Comfort Zone" className="w-full h-full object-cover" data-ai-hint="woman relaxing on sofa"/>
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex flex-col items-start justify-center p-8 text-white">
-                    <h3 className="text-3xl font-bold font-headline">The Devil is in the Details</h3>
-                    <p className="text-lg">23/24 AC Milan Third Jersey</p>
+                    <h3 className="text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>
+                    <p className="text-lg">The Softest Loungewear Ever</p>
                     <button className="mt-4 bg-white text-black font-semibold py-2 px-4 rounded-md">Shop Now</button>
                 </div>
                 </div>

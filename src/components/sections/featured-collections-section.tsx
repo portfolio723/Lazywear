@@ -3,24 +3,24 @@ import { Button } from "@/components/ui/button";
 
 const collections = [
   {
-    title: "Mostro",
+    title: "Dreamy Knits",
     image: "https://placehold.co/800x600",
-    hint: "fashion model",
+    hint: "soft knitwear",
   },
   {
-    title: "PUMA & F1®",
+    title: "Cloud-Soft Hoodies",
     image: "https://placehold.co/800x600",
-    hint: "race car",
+    hint: "person wearing hoodie",
   },
   {
     title: "Trending Now",
     image: "https://placehold.co/800x600",
-    hint: "street style",
+    hint: "street style loungewear",
   },
   {
-    title: "Devil Details",
+    title: "All-Day Comfort",
     image: "https://placehold.co/800x600",
-    hint: "close up apparel",
+    hint: "woman drinking coffee",
   },
 ];
 

@@ -46,7 +46,7 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <div className="flex items-center gap-4">
-            <p>&copy; {new Date().getFullYear()} Lazywear Lookbook. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Lazywear. All Rights Reserved.</p>
           </div>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
              <span>INDIA</span>

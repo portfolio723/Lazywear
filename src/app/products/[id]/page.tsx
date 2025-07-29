@@ -32,7 +32,7 @@ const productImages = [
     { src: 'https://placehold.co/600x800', alt: 'Fabric texture detail' },
 ];
 
-export default function ProductDetailPage({ params: { id } }: { params: { id: string } }) {
+function ProductDetailClient({ id }: { id: string }) {
   const [product, setProduct] = useState<Product | null>(null);
   const [quantity, setQuantity] = useState(1);
 
@@ -173,4 +173,8 @@ export default function ProductDetailPage({ params: { id } }: { params: { id: st
       <Footer />
     </div>
   );
+}
+
+export default function ProductDetailPage({ params }: { params: { id: string } }) {
+  return <ProductDetailClient id={params.id} />;
 }

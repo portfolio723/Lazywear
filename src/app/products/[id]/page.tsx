@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -22,7 +21,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 
 const productImages = [
     { src: 'https://placehold.co/600x800', alt: 'Model wearing product front' },
@@ -51,7 +49,7 @@ function ProductDetailClient({ id }: { id: string }) {
   }, [id]);
 
   if (!product) {
-    return <div>Loading...</div>; // Or a proper skeleton loader
+    return <div>Loading...</div>;
   }
 
   const isFavorited = wishlist.some((item) => item.id === product.id);
@@ -179,7 +177,8 @@ function ProductDetailClient({ id }: { id: string }) {
 }
 
 // This is the Server Component that can safely access params
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
+export default async function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   // It passes the id as a simple string prop to the Client Component
-  return <ProductDetailClient id={params.id} />;
+  return <ProductDetailClient id={id} />;
 }

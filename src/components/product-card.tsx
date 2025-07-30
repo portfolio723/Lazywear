@@ -1,7 +1,6 @@
 
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Heart } from "lucide-react";
 import { type Product } from "@/types";
@@ -43,11 +42,10 @@ export function ProductCard({ product }: ProductCardProps) {
       <CardContent className="p-0">
         <div className="relative aspect-[3/4]">
           <Link href={`/products/${product.id}`}>
-            <Image
+            <img
               src={product.image}
               alt={product.name}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
               data-ai-hint={`${product.category} product`}
             />
           </Link>
@@ -78,5 +76,3 @@ export function ProductCard({ product }: ProductCardProps) {
     </Card>
   );
 }
-
-    

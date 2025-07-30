@@ -2,7 +2,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/layout/header';
@@ -83,13 +82,19 @@ export default function ProductDetailClient({ id }: { id: string }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Image Gallery */}
             <div className="grid grid-cols-2 gap-4">
-              {productImages.map((image, index) => (
+              <div className="col-span-2 bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                    data-ai-hint={`${product.category} lifestyle`}
+                  />
+              </div>
+              {productImages.slice(0,4).map((image, index) => (
                 <div key={index} className="bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
-                  <Image
+                  <img
                     src={image.src}
                     alt={image.alt}
-                    width={600}
-                    height={800}
                     className="w-full h-full object-cover"
                     data-ai-hint={`${product.category} lifestyle`}
                   />

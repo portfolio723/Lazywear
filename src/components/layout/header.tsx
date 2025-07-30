@@ -90,12 +90,18 @@ export function Header() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full bg-white p-0">
+              <SheetContent side="right" className="w-full bg-white p-0" showClose={false}>
                 <SheetHeader className="flex flex-row justify-between items-center p-4 border-b">
                    <Link href="/" className="text-2xl font-bold font-headline" onClick={() => setMenuOpen(false)}>
                       Lazywear
                   </Link>
                   <SheetTitle className="sr-only">Menu</SheetTitle>
+                  <SheetClose asChild>
+                    <Button variant="ghost" size="icon">
+                      <X className="h-6 w-6" />
+                      <span className="sr-only">Close menu</span>
+                    </Button>
+                  </SheetClose>
                 </SheetHeader>
                 <nav className="flex flex-col items-start gap-6 p-4">
                   <Link href="/shirts" className="text-lg font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors" onClick={() => setMenuOpen(false)}>Shirts</Link>

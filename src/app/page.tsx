@@ -69,7 +69,7 @@ export default function Home() {
                 <div className="relative group overflow-hidden rounded-lg">
                 <img src="https://img.freepik.com/free-photo/shopping-concept-close-up-portrait-young-beautiful-attractive-redhair-girl-smiling-looking-camera_1258-118763.jpg?semt=ais_hybrid&w=740" alt="The Ultimate Comfort Zone" className="w-full h-auto md:h-full object-cover" data-ai-hint="shopping woman"/>
                 <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 flex flex-col items-start justify-center p-6 md:p-8 text-white">
+                <div className="absolute inset-0 flex flex-col items-start justify-center p-8 md:p-12 text-white">
                     <h3 className="text-xl md:text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>
                     <p className="text-base md:text-lg">The Softest Loungewear Ever</p>
                     <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors rounded-md">Shop Now</Button>

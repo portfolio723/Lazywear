@@ -4,9 +4,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader } from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
-import { Search, Heart, User, ShoppingCart, Menu, X, ArrowLeft } from "lucide-react";
+import { Search, Heart, User, ShoppingCart, Menu, X } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { MiniCart } from "@/components/mini-cart";
 import { useWishlist } from "@/hooks/use-wishlist";
@@ -27,13 +27,6 @@ export function Header() {
             Lazywear
           </Link>
         </div>
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="/shirts" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Shirts</Link>
-          <Link href="/pants" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Pants</Link>
-          <Link href="/shoes" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Shoes</Link>
-          <Link href="/caps" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors">Caps</Link>
-          <Link href="/sale" className="text-sm font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors text-red-600">Sale</Link>
-        </nav>
         <div className="flex items-center gap-2 md:gap-4">
           <Button variant="ghost" size="icon" onClick={() => setSearchOpen(true)} aria-label="Search products">
             <Search className="h-5 w-5" />
@@ -98,11 +91,17 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-full bg-white p-0">
-                <div className="flex justify-between items-center p-4 border-b">
+                <SheetHeader className="flex flex-row justify-between items-center p-4 border-b">
                    <Link href="/" className="text-2xl font-bold font-headline" onClick={() => setMenuOpen(false)}>
                       Lazywear
                   </Link>
-                </div>
+                  <SheetClose asChild>
+                    <Button variant="ghost" size="icon">
+                      <X className="h-6 w-6" />
+                      <span className="sr-only">Close menu</span>
+                    </Button>
+                  </SheetClose>
+                </SheetHeader>
                 <nav className="flex flex-col items-start gap-6 p-4">
                   <Link href="/shirts" className="text-lg font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors" onClick={() => setMenuOpen(false)}>Shirts</Link>
                   <Link href="/pants" className="text-lg font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors" onClick={() => setMenuOpen(false)}>Pants</Link>

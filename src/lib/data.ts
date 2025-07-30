@@ -81,7 +81,7 @@ export const pants: Product[] = [
     id: "pants-1",
     name: "Haven Lounge Joggers",
     price: 2999,
-    image: "https://snitch.co.in/cdn/shop/files/4MST2131-01-M321.jpg?v=1717234676&width=1800",
+    image: "https://www.jiomart.com/images/product/original/rvi1rzw5v0/buynewtrend-black-lycra-blend-women-relaxed-fit-jogger-pant-with-pockets-casual-cargo-pants-product-images-rvi1rzw5v0-0-202404160641.jpg?im=Resize=(1000,1000)",
     category: "pants",
     description: "Discover your personal sanctuary with the Haven Lounge Joggers. Made from a premium fleece-back knit, they feature a tapered fit, ribbed cuffs, and a flexible drawstring waistband for ultimate, all-day comfort.",
     details: ["Cotton/Poly Fleece Blend", "Adjustable Drawstring Waist", "Tapered Leg with Ribbed Cuffs", "Two side pockets"]
@@ -90,7 +90,7 @@ export const pants: Product[] = [
     id: "pants-2",
     name: "Drift Wide-Leg Pants",
     price: 3299,
-    image: "https://img.fruugo.com/product/1/40/1005273401_max.jpg",
+    image: "https://i.etsystatic.com/13830341/r/il/aacef1/6126414164/il_570xN.6126414164_btkl.jpg",
     category: "pants",
     description: "Float through your day in the Drift Wide-Leg Pants. Their flowing silhouette and lightweight, breathable fabric create an unrestricted feel, perfect for yoga, meditation, or simply relaxing in style.",
     details: ["95% Viscose, 5% Elastane", "High-rise elastic waistband", "Flowy, wide-leg cut", "Side-slit detail on hem"]
@@ -99,7 +99,7 @@ export const pants: Product[] = [
     id: "pants-3",
     name: "Nomad Cargo Pant",
     price: 3599,
-    image: "https://www.jiomart.com/images/product/original/rvz1awezpp/eyebogler-men-s-regular-fit-solid-cargo-pant-grey-product-images-rvz1awezpp-0-202309161405.jpg?im=Resize=(1000,1000)",
+    image: "https://hiswardrobe.in/public/post/1722144636_cd75747630182f8baecf.jpg",
     category: "pants",
     description: "The Nomad Cargo Pant is built for comfort on the move. With a relaxed fit and multiple pockets, these pants are as practical as they are comfortable, made from a durable stretch-twill fabric.",
     details: ["98% Cotton, 2% Spandex Twill", "Relaxed, straight-leg fit", "Six-pocket cargo styling", "Button-fly closure"]
@@ -108,7 +108,7 @@ export const pants: Product[] = [
     id: "pants-4",
     name: "Tranquil Terry Shorts",
     price: 2299,
-    image: "https://twotags.com.au/cdn/shop/products/LoungeShorts-Black-3.jpg?v=1680511679",
+    image: "https://cdn-image.blitzshopdeck.in/ShopdeckCatalogue/tr:f-webp,w-600,fo-auto/65c2182902d8dc3ec1f95ae4/media/LHHORTS_412_415_GREEN_BLACK_1708050922356_d7lgv5gdokn4aav.jpg",
     category: "pants",
     description: "Embrace warm-weather comfort with the Tranquil Terry Shorts. Crafted from soft French terry fabric, they feature a comfortable inseam, raw-edge hem, and a simple drawstring for a perfect fit.",
     details: ["100% Cotton French Terry", "Elastic waistband with drawstring", "7-inch inseam", "Raw-edge hem detail"]
@@ -117,7 +117,7 @@ export const pants: Product[] = [
     id: "pants-5",
     name: "Urban Stretch Chino",
     price: 3499,
-    image: "https://www.gap.co.in/cdn/shop/files/489115001_GPN_IN_Desktop_01.jpg?v=1719574516",
+    image: "https://images.lululemon.com/is/image/lululemon/LM5AQZS_045739_1?size=800,800",
     category: "pants",
     description: "The Urban Stretch Chino offers a polished look without sacrificing comfort. The flexible stretch-cotton fabric moves with you, while the slim-fit design provides a modern silhouette suitable for casual Fridays or weekend outings.",
     details: ["97% Cotton, 3% Elastane", "Slim-fit design", "Four-pocket styling", "Zip fly with button closure"]
@@ -126,7 +126,7 @@ export const pants: Product[] = [
     id: "pants-6",
     name: "Flow Linen Trousers",
     price: 3799,
-    image: "https://assets.ajio.com/medias/sys_master/root/20230628/sWf1/649bc52ed55b7d0c6395b21d/-473Wx593H-466314052-sand-MODEL.jpg",
+    image: "https://kingdomofwhite.com/cdn/shop/files/pdp-Coast-1_78ef6863-fc70-43c9-8163-424e404cef8c-866274.jpg?v=1752650483",
     category: "pants",
     description: "Breezy and elegant, the Flow Linen Trousers are your perfect companion for sunny days. The wide-leg cut and breathable linen fabric ensure you stay cool and comfortable, while the drawstring waist provides a relaxed fit.",
     details: ["100% Linen", "Wide-leg, relaxed fit", "Drawstring waist", "Two front pockets"]
@@ -135,7 +135,7 @@ export const pants: Product[] = [
     id: "pants-7",
     name: "Apex Performance Shorts",
     price: 2599,
-    image: "https://contents.mediadecathlon.com/p2480036/43924610196881b229864234032d1872/p2480036.jpg",
+    image: "https://palagi.in/wp-content/uploads/2021/07/7-1.jpg",
     category: "pants",
     description: "Engineered for movement, the Apex Performance Shorts are perfect for an active lifestyle. The lightweight, quick-dry fabric and athletic cut provide maximum flexibility and comfort during any activity.",
     details: ["90% Polyester, 10% Spandex", "9-inch inseam", "Zippered back pocket", "Reflective logo for visibility"]
@@ -144,7 +144,7 @@ export const pants: Product[] = [
     id: "pants-8",
     name: "Cozy Knit Lounge Pants",
     price: 2899,
-    image: "https://www.marksandspencer.in/media/catalog/product/t/3/t37_5002_y0_c_x_ecommerce.jpg",
+    image: "https://cottonique.co.uk/cdn/shop/products/IMG_6212.jpg?v=1687875760&width=1352",
     category: "pants",
     description: "Wrap yourself in the softness of the Cozy Knit Lounge Pants. Made from a plush, ribbed knit, these straight-leg pants are perfect for movie marathons, reading a book, or any serious lounging.",
     details: ["50% Rayon, 45% Polyester, 5% Spandex", "Soft ribbed texture", "Elastic waistband", "Straight-leg fit"]
@@ -156,7 +156,7 @@ export const shoes: Product[] = [
     id: "shoes-1",
     name: "Retreat Plush Slippers",
     price: 1999,
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4wOq0wN1n3y-4K1iQ2D_m_iUjQ9RjQJ_ZQ&s",
+    image: "https://assets.ajio.com/medias/sys_master/root/20241113/hRMU/6733b205f9b8ef490b19f4f8/-473Wx593H-700728560-blue-MODEL.jpg",
     category: "shoes",
     description: "Step into pure bliss with the Retreat Plush Slippers. A faux-shearling lining provides cloud-like softness, while a durable rubber sole makes them suitable for quick trips outside. The perfect end to a long day.",
     details: ["Faux-shearling lining", "Memory foam insole", "Durable indoor/outdoor rubber sole", "Easy slip-on design"]
@@ -165,7 +165,7 @@ export const shoes: Product[] = [
     id: "shoes-2",
     name: "Siesta Soft Slides",
     price: 1799,
-    image: "https://www.birkenstock.in/cdn/shop/products/1026938_800x.jpg?v=1700662235",
+    image: "https://neemans.com/cdn/shop/files/ND_-_FBW_-_Ivory_Brown_Web_Optimized_5_937a1f8e-d9be-4ed9-b6b3-64e0158b5056.jpg?v=1724988013&width=800",
     category: "shoes",
     description: "The Siesta Soft Slides are your go-to for effortless comfort. Featuring a single, padded strap and a contoured footbed, these slides offer support and style for poolside lounging or everyday wear.",
     details: ["Padded faux-leather strap", "Molded EVA footbed", "Lightweight and waterproof", "Traction pattern on outsole"]
@@ -174,7 +174,7 @@ export const shoes: Product[] = [
     id: "shoes-3",
     name: "Wander Knit Sneaker",
     price: 3499,
-    image: "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/f/f/tr:w-270,/ffa29fb1972594697960_2.jpg?rnd=20200526195200",
+    image: "https://rukminim2.flixcart.com/image/704/844/xif0q/shoe/a/9/v/8-19042024b-corstyle-black-original-imahy42ykcgekfgf.jpeg?q=90&crop=false",
     category: "shoes",
     description: "The Wander Knit Sneaker blends sock-like comfort with a street-ready design. The breathable, stretch-knit upper conforms to your foot, while the cushioned sole provides support for all-day adventures.",
     details: ["Stretch-knit upper", "Cushioned EVA midsole", "Slip-on design with decorative laces", "Flexible and lightweight"]
@@ -183,20 +183,11 @@ export const shoes: Product[] = [
     id: "shoes-4",
     name: "Trek Trail Sneaker",
     price: 4299,
-    image: "https://images.unsplash.com/photo-1595950653106-6090ee36954b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c25lYWtlcnxlbnwwfHwwfHx8MA%3D%3D",
+    image: "https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/23685154/2023/6/20/0f1c66c5-e916-46a3-953d-ce88775457931687236274860RoadsterMenLightweightCasualSneakers1.jpg",
     category: "shoes",
     description: "For the adventurer who values comfort, the Trek Trail Sneaker offers rugged durability and plush cushioning. A grippy outsole provides traction on varied terrain, while the padded collar supports your ankle.",
     details: ["Water-resistant upper", "All-terrain rubber outsole", "Reinforced toe cap", "Cushioned ankle support"]
   },
-  {
-    id: "shoes-5",
-    name: "Cove Canvas Espadrille",
-    price: 2999,
-    image: "https://assets.tatacliq.com/medias/sys_master/images/47413642723358.jpg",
-    category: "shoes",
-    description: "Embrace a timeless summer style with the Cove Canvas Espadrille. Featuring a breathable canvas upper and a traditional jute-wrapped sole, these shoes are perfect for boardwalk strolls and sunny afternoons.",
-    details: ["Durable canvas upper", "Natural jute midsole", "Easy slip-on style", "Rubber outsole for durability"]
-  }
 ];
 
 export const caps: Product[] = [
@@ -204,7 +195,7 @@ export const caps: Product[] = [
     id: "cap-1",
     name: "Unwind Dad Cap",
     price: 999,
-    image: "https://www.neweracap.in/cdn/shop/products/60348731_BROWN_2-1.jpg?v=1690903348",
+    image: "https://assets.ajio.com/medias/sys_master/root/20211013/NiBc/6166262baeb26901108e7692/-473Wx593H-460807243-black-MODEL.jpg",
     category: "caps",
     description: "Top off your lazy-day look with the Unwind Dad Cap. Made from soft, washed cotton twill, this unstructured cap has a classic, relaxed fit and an adjustable strap for all-day comfort.",
     details: ["100% Washed Cotton Twill", "Unstructured 6-panel design", "Adjustable strap with metal buckle", "Embroidered logo"]
@@ -213,7 +204,7 @@ export const caps: Product[] = [
     id: "cap-2",
     name: "Hibernate Knit Beanie",
     price: 1299,
-    image: "https://images.bewakoof.com/t640/men-s-black-solid-beanie-589506-1685443224-1.jpg",
+    image: "https://m.media-amazon.com/images/I/31jNRwlK8+L._SY1000_.jpg",
     category: "caps",
     description: "Stay cozy and warm with the Hibernate Knit Beanie. Crafted from a soft, chunky acrylic knit, this beanie features a classic fold-over cuff and a snug fit to keep the chill out.",
     details: ["100% Soft Acrylic Knit", "Chunky rib-knit construction", "Fold-over cuff", "One size fits most"]
@@ -222,7 +213,7 @@ export const caps: Product[] = [
     id: "cap-3",
     name: "Ascend Performance Cap",
     price: 1499,
-    image: "https://www.adidas.co.in/glass/hardcode/yes/product-character-images/IC6522_01_scare_frontal_center/IC6522.jpg?sh=460&strip=false&sw=460",
+    image: "https://cdn.hatshopping.com/tf/629/10/59Fifty-Cotton-Ripstop-Yankees-Cap-by-New-Era.60108a.jpg",
     category: "caps",
     description: "The Ascend Performance Cap is engineered for activity. Its lightweight, moisture-wicking fabric and laser-cut ventilation panels keep you cool and dry, while the adjustable strap ensures a secure fit.",
     details: ["Lightweight polyester fabric", "Moisture-wicking sweatband", "Laser-cut ventilation", "Adjustable hook-and-loop closure"]
@@ -231,7 +222,7 @@ export const caps: Product[] = [
     id: "cap-4",
     name: "Voyager Bucket Hat",
     price: 1699,
-    image: "https://images.unsplash.com/photo-1629230283726-857c7935a882?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJ1Y2tldCUyMGhhdHxlbnwwfHwwfHx8MA%3D%3D",
+    image: "https://gokyo.in/cdn/shop/files/KazaBeanieReversibleWinterCap-2.jpg?v=1735298385&width=1500",
     category: "caps",
     description: "The Voyager Bucket Hat is a modern take on a classic silhouette. Made from durable cotton twill, it provides 360-degree sun protection, making it perfect for festivals, beach days, or urban exploration.",
     details: ["100% Cotton Twill", "Wide brim for sun protection", "Embroidered eyelets for ventilation", "Soft, unstructured design"]

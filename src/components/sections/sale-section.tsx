@@ -73,10 +73,11 @@ export function SaleSection() {
               FLAT 40% + EXTRA 10% OFF
             </h2>
             <p className="mt-2 text-base md:text-lg">Discount auto-applied at checkout</p>
-            <p className="mt-6 md:mt-8 mb-4 text-base md:text-lg">Ends in</p>
-            <div className="flex justify-center md:justify-start gap-4 md:gap-8">
-              {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-            </div>
+            {timerComponents.length > 0 && (
+                <div className="flex justify-center md:justify-start gap-4 md:gap-8 mt-6 md:mt-8">
+                    {timerComponents}
+                </div>
+            )}
             <div className="mt-8 flex justify-center md:justify-start gap-4 flex-wrap">
               <Button variant="outline" className="bg-white border-white text-black hover:bg-gray-200 hover:border-gray-200 transition-colors rounded-md">For Him</Button>
               <Button variant="outline" className="bg-white border-white text-black hover:bg-gray-200 hover:border-gray-200 transition-colors rounded-md">For Her</Button>

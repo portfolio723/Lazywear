@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import { Search, Heart, User, ShoppingCart, Menu, X } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -95,6 +95,7 @@ export function Header() {
                    <Link href="/" className="text-2xl font-bold font-headline" onClick={() => setMenuOpen(false)}>
                       Lazywear
                   </Link>
+                  <SheetTitle className="sr-only">Menu</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col items-start gap-6 p-4">
                   <Link href="/shirts" className="text-lg font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors" onClick={() => setMenuOpen(false)}>Shirts</Link>

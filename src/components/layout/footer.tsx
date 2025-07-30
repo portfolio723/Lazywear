@@ -10,10 +10,10 @@ export function Footer() {
           <div>
             <h3 className="font-headline text-base font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Track Order</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Returns</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/track-order" className="text-gray-400 hover:text-white transition-colors">Track Order</Link></li>
+              <li><Link href="/returns" className="text-gray-400 hover:text-white transition-colors">Returns</Link></li>
             </ul>
           </div>
           <div>

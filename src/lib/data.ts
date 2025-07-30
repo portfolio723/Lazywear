@@ -15,7 +15,7 @@ export const shirts: Product[] = [
     id: "shirt-2",
     name: "Aura V-Neck",
     price: 1599,
-    image: "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/v/p/z/m-auk0164-ausk-original-imagzbpryancf64y.jpeg?q=70&crop=false",
+    image: "https://static.wixstatic.com/media/82d787_91c945d5699c4669bc2cae8570132cab~mv2_d_3000_4000_s_4_2.jpg/v1/fill/w_980,h_1307,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/82d787_91c945d5699c4669bc2cae8570132cab~mv2_d_3000_4000_s_4_2.jpg",
     category: "shirts",
     description: "Effortlessly stylish, the Aura V-Neck tee combines a flattering neckline with our signature bamboo-blend fabric. It's breathable, lightweight, and incredibly soft, making it perfect for a calm day in or a casual day out.",
     details: ["70% Bamboo, 30% Cotton Blend", "Classic V-Neck", "Tag-free for comfort", "Pre-shrunk"]
@@ -24,7 +24,7 @@ export const shirts: Product[] = [
     id: "shirt-3",
     name: "Oasis Henley Shirt",
     price: 1899,
-    image: "https://www.beyoung.in/api/cache/catalog/products/new_shirt_upload_22_10_2022/olive_green_solid_full_sleeves_henley_neck_t-shirt_for_men_base_11_11_2023_700x933.jpg",
+    image: "https://www.westside.com/cdn/shop/files/300951895BLACK_3.jpg?v=1700645635",
     category: "shirts",
     description: "The Oasis Henley adds a touch of classic style to your comfort collection. Featuring a three-button placket, this long-sleeve shirt is made from a durable yet soft waffle-knit cotton, perfect for cooler evenings.",
     details: ["100% Waffle-Knit Cotton", "Three-button placket", "Long sleeves with ribbed cuffs", "Garment-dyed for a vintage look"]
@@ -33,7 +33,7 @@ export const shirts: Product[] = [
     id: "shirt-4",
     name: "Serene Pocket Tee",
     price: 1699,
-    image: "https://cdn.pixels.com/spark/organisations/57722/collections/193079/product_image_2x.jpg?v=1708422495",
+    image: "https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/superdry/M1011723A1KK/0/aiCF5rZm1d-410393592007_1.jpg",
     category: "shirts",
     description: "Function meets comfort in the Serene Pocket Tee. This versatile shirt features a clean design with a simple chest pocket, made from a modal blend that feels silky smooth against the skin.",
     details: ["48% Modal, 48% Cotton, 4% Spandex", "Chest Pocket Detail", "Modern, straight hem", "Resists pilling and fading"]
@@ -42,7 +42,7 @@ export const shirts: Product[] = [
     id: "shirt-5",
     name: "Luna Linen Blend Shirt",
     price: 2199,
-    image: "https://www.jiomart.com/images/product/original/rv5jwdtzsk/dennislingo-premium-attire-men-s-solid-slim-fit-cotton-casual-shirt-with-spread-collar-long-sleeves-beige-product-images-rv5jwdtzsk-0-202305221235.jpg?im=Resize=(1000,1000)",
+    image: "https://johnwatson.in/cdn/shop/products/october1247.jpg?v=1665783926",
     category: "shirts",
     description: "Stay cool and sophisticated in the Luna Linen Blend Shirt. The breathable linen-cotton mix is perfect for warm weather, offering a crisp look that's effortlessly casual. A versatile button-down for any relaxed occasion.",
     details: ["55% Linen, 45% Cotton", "Classic point collar", "Button-front closure", "Machine wash cold, hang dry"]
@@ -51,7 +51,7 @@ export const shirts: Product[] = [
     id: "shirt-6",
     name: "Metro Performance Polo",
     price: 2499,
-    image: "https://www.lacoste.in/dw/image/v2/BGSW_PRD/on/demandware.static/-/Sites-master/default/dw18835848/PH5057_Y8E_20.jpg?sw=1440&sh=1440",
+    image: "https://www.legacyoriginals.in/cdn/shop/files/Vertical_2.png?v=1752660115",
     category: "shirts",
     description: "The Metro Performance Polo is designed for the active individual who values comfort. Made with moisture-wicking fabric, it keeps you dry and comfortable whether you're on the go or just relaxing. Features a modern, athletic fit.",
     details: ["92% Polyester, 8% Spandex", "Moisture-wicking technology", "Two-button placket", "UPF 30+ sun protection"]
@@ -60,7 +60,7 @@ export const shirts: Product[] = [
     id: "shirt-7",
     name: "Terra Organic Cotton Tee",
     price: 1799,
-    image: "https://thehouseofrare.com/cdn/shop/files/PAISLEY-PRINT-STRETCHABLE-KNITTED-SHIRT-GREEN-2_220420d2-97b7-4c07-b352-0bd126b84931_1024x1024.jpg?v=1719223393",
+    image: "https://cdn.ssactivewear.com/Images/Style/16_fm.jpg",
     category: "shirts",
     description: "Embrace sustainable comfort with the Terra Tee. Made from 100% organic cotton, this t-shirt is incredibly soft and gentle on the skin. Its classic cut and earthy tones make it a staple for the conscious consumer.",
     details: ["100% GOTS Certified Organic Cotton", "Environmentally friendly dyes", "Classic fit", "Durable and soft"]
@@ -69,7 +69,7 @@ export const shirts: Product[] = [
     id: "shirt-8",
     name: "Solstice Graphic Tee",
     price: 1999,
-    image: "https://images.bestsellerclothing.in/data/selected/23-oct-2023/164741301_g0.jpg?width=1080&height=1355&mode=fill&fill=blur&format=auto",
+    image: "https://veirdo.in/cdn/shop/files/ai_creative_0000_Layer_6.jpg?v=1753523582",
     category: "shirts",
     description: "Make a subtle statement with the Solstice Graphic Tee. This shirt features a minimalist, nature-inspired graphic on our signature soft cotton. It's the perfect way to add a touch of personality to your casual look.",
     details: ["100% Combed Cotton", "High-quality screen print", "Modern tailored fit", "Pre-shrunk to minimize shrinkage"]

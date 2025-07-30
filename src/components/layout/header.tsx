@@ -102,12 +102,6 @@ export function Header() {
                    <Link href="/" className="text-2xl font-bold font-headline" onClick={() => setMenuOpen(false)}>
                       Lazywear
                   </Link>
-                  <SheetTrigger asChild>
-                      <Button variant="ghost" size="icon">
-                          <X className="h-6 w-6" />
-                          <span className="sr-only">Close menu</span>
-                      </Button>
-                  </SheetTrigger>
                 </div>
                 <nav className="flex flex-col items-start gap-6 p-4">
                   <Link href="/shirts" className="text-lg font-semibold tracking-wider uppercase hover:text-primary/70 transition-colors" onClick={() => setMenuOpen(false)}>Shirts</Link>

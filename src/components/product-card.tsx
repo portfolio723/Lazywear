@@ -50,7 +50,7 @@ export function ProductCard({ product }: ProductCardProps) {
             />
           </Link>
           {product.price < 2000 && (
-            <Badge variant="destructive" className="absolute top-2 left-2 bg-[#EF4444] text-white">SALE</Badge>
+            <Badge variant="destructive" className="absolute top-2 left-2">SALE</Badge>
           )}
           <Button
             size="icon"

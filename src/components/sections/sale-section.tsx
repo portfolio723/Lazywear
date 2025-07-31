@@ -27,7 +27,7 @@ export function SaleSection() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeleFtoft());
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearTimeout(timer);

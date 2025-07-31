@@ -27,7 +27,7 @@ const iconsReinvented = [
   },
   {
     title: "Caps",
-    image: "https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/6683e921028a4f002bffa527/5_04e69bc9-e21c-4ef8-afc1-21e90be4e019.jpg",
+    image: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1rOeJb.img?w=500&h=500&m=6&x=214&y=68&s=79&d=79",
     hint: "stylish caps",
   },
 ];

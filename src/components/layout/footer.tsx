@@ -22,8 +22,6 @@ export function Footer() {
               <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Company</Link></li>
               <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Corporate News</Link></li>
               <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Press Center</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Investors</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
             </ul>
           </div>
           <div className="col-span-1 lg:col-span-2">

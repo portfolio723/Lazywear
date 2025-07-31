@@ -11,9 +11,9 @@ import { Button } from "@/components/ui/button";
 
 const iconsReinvented = [
   {
-    title: "Lounge Sets",
+    title: "Shirts",
     image: "https://images.unsplash.com/photo-1724456285504-a023ac479ff8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bmlnaHQlMjB3ZWFyfGVufDB8fDB8fHww",
-    hint: "matching loungewear",
+    hint: "comfortable shirt",
   },
   {
     title: "Hoodies",

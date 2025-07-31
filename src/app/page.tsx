@@ -39,9 +39,9 @@ const stepIntoTheSpotlight = [
     hint: "fluffy robe",
   },
   {
-    title: "Knit Sweaters",
+    title: "best buys",
     image: "https://cdn17.nnnow.com/web-images/large/styles/WIX8LA3BFTY/1731493281791/1.jpg",
-    hint: "chunky knit sweater",
+    hint: "best selling items",
   },
   {
     title: "Lazywear x Home",

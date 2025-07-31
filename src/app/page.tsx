@@ -16,19 +16,19 @@ const iconsReinvented = [
     hint: "comfortable shirt",
   },
   {
-    title: "Hoodies",
+    title: "Shoes",
     image: "https://images.unsplash.com/photo-1618333262686-d0bdf1e9089f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aG9vZGllc3xlbnwwfHwwfHx8MA%3D%3D",
-    hint: "cozy hoodie",
+    hint: "comfortable shoes",
   },
   {
-    title: "Joggers",
+    title: "Pants",
     image: "https://images.meesho.com/images/products/492478595/7ssc2_512.jpg",
-    hint: "comfortable joggers",
+    hint: "comfortable pants",
   },
   {
-    title: "Sleepwear",
+    title: "Caps",
     image: "https://s.alicdn.com/@sc04/kf/H86c0111a274742d0bd21fca840a5d573I/Luxury-Unisex-Custom-Pyjamas-for-Couple-Men-Women-s-Sleepwear-Sets-Bamboo-Clothes-Viscose-Cotton-Pajamas-Women-Lounge-Wear-Set.jpg",
-    hint: "silk pajamas",
+    hint: "stylish caps",
   },
 ];
 

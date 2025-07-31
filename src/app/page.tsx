@@ -22,7 +22,7 @@ const iconsReinvented = [
   },
   {
     title: "Pants",
-    image: "https://images.meesho.com/images/products/492478595/7ssc2_512.jpg",
+    image: "https://freakins.com/cdn/shop/files/Freakins15NOV0080.jpg?v=1750057158",
     hint: "comfortable pants",
   },
   {

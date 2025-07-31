@@ -51,7 +51,7 @@ export function SaleSection() {
   });
 
   return (
-    <section className="bg-[#B71C1C] text-white py-8 md:py-12">
+    <section className="bg-sale-background text-black py-8 md:py-12">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex flex-col items-center text-center">
@@ -63,7 +63,7 @@ export function SaleSection() {
               className="rounded-lg object-cover"
               data-ai-hint="sale ticket"
             />
-            <div className="mt-4 bg-black/50 p-4 rounded-lg">
+            <div className="mt-4 bg-black/50 text-white p-4 rounded-lg">
                 <p className="text-lg md:text-xl font-bold tracking-widest">SWIPE IT. BAG IT. FLEX IT.</p>
                 <p className="font-semibold text-sm md:text-base">ENDS 31ST JULY</p>
             </div>

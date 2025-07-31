@@ -34,9 +34,9 @@ const iconsReinvented = [
 
 const stepIntoTheSpotlight = [
   {
-    title: "Plush Robes",
+    title: "Trending Wears",
     image: "https://eberjey.com/cdn/shop/products/Low_Res-R2024LN-WHITE-F_1_1.jpg?v=1697652736&width=1100",
-    hint: "fluffy robe",
+    hint: "trending clothes",
   },
   {
     title: "Best Buys",

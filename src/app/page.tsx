@@ -27,7 +27,7 @@ const iconsReinvented = [
   },
   {
     title: "Caps",
-    image: "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1rOeJb.img?w=500&h=500&m=6&x=214&y=68&s=79&d=79",
+    image: "https://harpersbazaaruk.cdnds.net/17/22/2560x1706/gallery-1496159024-riberta-benteler.jpg",
     hint: "stylish caps",
   },
 ];

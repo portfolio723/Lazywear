@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export function SaleSection() {
   const calculateTimeLeft = () => {
@@ -26,7 +27,7 @@ export function SaleSection() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeleFtoft());
     }, 1000);
 
     return () => clearTimeout(timer);
@@ -79,9 +80,15 @@ export function SaleSection() {
                 </div>
             )}
             <div className="mt-8 flex justify-center md:justify-start gap-4 flex-wrap">
-              <Button variant="outline" className="bg-white border-white text-black hover:bg-gray-200 hover:border-gray-200 transition-colors rounded-md">For Him</Button>
-              <Button variant="outline" className="bg-white border-white text-black hover:bg-gray-200 hover:border-gray-200 transition-colors rounded-md">For Her</Button>
-              <Button variant="outline" className="bg-white border-white text-black hover:bg-gray-200 hover:border-gray-200 transition-colors rounded-md">For Kids</Button>
+              <Button asChild variant="outline" className="bg-white border-white text-black hover:bg-gray-200 hover:border-gray-200 transition-colors rounded-md">
+                <Link href="/shoes">Shoes</Link>
+              </Button>
+              <Button asChild variant="outline" className="bg-white border-white text-black hover:bg-gray-200 hover:border-gray-200 transition-colors rounded-md">
+                <Link href="/caps">Caps</Link>
+              </Button>
+              <Button asChild variant="outline" className="bg-white border-white text-black hover:bg-gray-200 hover:border-gray-200 transition-colors rounded-md">
+                <Link href="/pants">Pants</Link>
+              </Button>
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 const iconsReinvented = [
   {
     title: "Shirts",
-    image: "https://images.unsplash.com/photo-1724456285504-a023ac479ff8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bmlnaHQlMjB3ZWFyfGVufDB8fDB8fHww",
+    image: "https://image.hm.com/assets/hm/01/8f/018f03c889a87ec106527cc5bc77ff5154e14aa0.jpg",
     hint: "comfortable shirt",
   },
   {

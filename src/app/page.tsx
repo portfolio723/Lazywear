@@ -39,7 +39,7 @@ const stepIntoTheSpotlight = [
     hint: "fluffy robe",
   },
   {
-    title: "best buys",
+    title: "Best Buys",
     image: "https://cdn17.nnnow.com/web-images/large/styles/WIX8LA3BFTY/1731493281791/1.jpg",
     hint: "best selling items",
   },

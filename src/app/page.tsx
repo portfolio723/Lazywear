@@ -63,7 +63,7 @@ export default function Home() {
         <HeroSection />
         <SaleSection />
         <FeaturedCollectionsSection />
-        <CategoryShowcaseSection title="Icons, Reinvented" subtitle="New styles, classic feel." items={iconsReinvented} />
+        <CategoryShowcaseSection title="Trending Now" subtitle="New styles, classic feel." items={iconsReinvented} />
         <section className="py-8 md:py-[60px]">
             <div className="container mx-auto px-6">
                 <div className="relative group overflow-hidden rounded-lg">

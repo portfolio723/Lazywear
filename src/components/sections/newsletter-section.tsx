@@ -12,14 +12,14 @@ export function NewsletterSection() {
         <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
           Sign up for our newsletter to get exclusive deals, drop alerts, and style inspiration delivered to your inbox.
         </p>
-        <form className="max-w-md mx-auto flex gap-2">
+        <form className="max-w-md mx-auto flex gap-2 items-center">
           <Input
             type="email"
             placeholder="Enter your email"
-            className="flex-grow bg-white rounded-md"
+            className="flex-grow bg-white rounded-md h-11"
             aria-label="Email for newsletter"
           />
-          <Button type="submit" variant="outline" className="bg-primary text-primary-foreground border-primary hover:bg-primary/90 rounded-md">
+          <Button type="submit" variant="outline" size="lg" className="bg-primary text-primary-foreground border-primary hover:bg-primary/90 rounded-md">
             Subscribe
           </Button>
         </form>

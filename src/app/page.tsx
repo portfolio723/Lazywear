@@ -37,7 +37,7 @@ const iconsReinvented = [
 const stepIntoTheSpotlight = [
   {
     title: "Trending Wears",
-    image: "https://eberjey.com/cdn/shop/products/Low_Res-R2024LN-WHITE-F_1_1.jpg?v=1697652736&width=1100",
+    image: "https://cdn0.weddingwire.in/article/9378/original/1280/jpg/128739-gaurav-gupta.jpeg",
     hint: "trending clothes",
   },
   {

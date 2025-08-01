@@ -65,23 +65,12 @@ export function Header() {
             </Link>
           </Button>
           
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <User className="h-5 w-5" />
-                <span className="sr-only">Account</span>
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-48">
-              <div className="p-2">
-                <h3 className="font-semibold">Welcome, Guest!</h3>
-                <div className="mt-4 space-y-2">
-                  <Button variant="default" className="w-full">Log In</Button>
-                  <Button variant="outline" className="w-full">Sign Up</Button>
-                </div>
-              </div>
-            </PopoverContent>
-          </Popover>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="/login">
+              <User className="h-5 w-5" />
+              <span className="sr-only">Account</span>
+            </Link>
+          </Button>
 
           <Popover>
             <PopoverTrigger asChild>

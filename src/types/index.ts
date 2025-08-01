@@ -11,4 +11,5 @@ export type Product = {
 
 export type CartItem = Product & {
   quantity: number;
+  size?: string;
 };

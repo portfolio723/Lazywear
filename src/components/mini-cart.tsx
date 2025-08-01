@@ -21,14 +21,15 @@ export function MiniCart() {
           <ScrollArea className="flex-grow">
             <div className="p-4 space-y-4">
               {cart.slice(0, 3).map((item) => (
-                <div key={item.id} className="flex items-start gap-4">
+                <div key={`${item.id}-${item.size}`} className="flex items-start gap-4">
                   <Image src={item.image} alt={item.name} width={64} height={80} className="rounded-md object-cover" />
                   <div className="flex-grow">
                     <p className="font-medium text-sm">{item.name}</p>
+                    {item.size && <p className="text-muted-foreground text-xs">Size: {item.size}</p>}
                     <p className="text-muted-foreground text-sm">Qty: {item.quantity}</p>
                     <p className="font-semibold text-sm">₹{item.price.toLocaleString("en-IN")}</p>
                   </div>
-                  <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => removeFromCart(item.id)}>
+                  <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => removeFromCart(item.id, item.size)}>
                     <X className="h-4 w-4" />
                   </Button>
                 </div>
@@ -44,7 +45,9 @@ export function MiniCart() {
               <Button className="w-full" asChild>
                   <Link href="/cart">View Cart</Link>
               </Button>
-              <Button variant="outline" className="w-full">Checkout</Button>
+              <Button variant="outline" className="w-full" asChild>
+                <Link href="/checkout">Checkout</Link>
+              </Button>
             </div>
           </div>
         </>

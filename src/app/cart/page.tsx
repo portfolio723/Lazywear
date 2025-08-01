@@ -24,11 +24,12 @@ export default function CartPage() {
               <div className="lg:col-span-2">
                 <div className="space-y-4">
                   {cart.map((item) => (
-                    <div key={item.id} className="flex items-center justify-between p-4 border rounded-lg">
+                    <div key={`${item.id}-${item.size}`} className="flex items-center justify-between p-4 border rounded-lg">
                       <div className="flex items-center gap-4">
                         <Image src={item.image} alt={item.name} width={80} height={100} className="rounded-md object-cover" />
                         <div>
                           <h3 className="font-semibold">{item.name}</h3>
+                          {item.size && <p className="text-muted-foreground text-sm">Size: {item.size}</p>}
                           <p className="text-muted-foreground">₹{item.price.toLocaleString("en-IN")}</p>
                         </div>
                       </div>
@@ -37,11 +38,11 @@ export default function CartPage() {
                           type="number"
                           min="1"
                           value={item.quantity}
-                          onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
+                          onChange={(e) => updateQuantity(item.id, parseInt(e.target.value), item.size)}
                           className="w-16 text-center"
                           aria-label={`Quantity for ${item.name}`}
                         />
-                        <Button variant="ghost" size="icon" onClick={() => removeFromCart(item.id)}>
+                        <Button variant="ghost" size="icon" onClick={() => removeFromCart(item.id, item.size)}>
                           <X className="h-5 w-5" />
                           <span className="sr-only">Remove</span>
                         </Button>
@@ -68,7 +69,9 @@ export default function CartPage() {
                     <span>Total</span>
                     <span>₹{total.toLocaleString("en-IN")}</span>
                   </div>
-                  <Button size="lg" className="w-full mt-6">Proceed to Checkout</Button>
+                  <Button size="lg" className="w-full mt-6" asChild>
+                    <Link href="/checkout">Proceed to Checkout</Link>
+                  </Button>
                 </div>
               </div>
             </div>

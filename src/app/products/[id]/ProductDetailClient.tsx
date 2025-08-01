@@ -30,9 +30,12 @@ const productImages = [
     { src: 'https://placehold.co/600x800', alt: 'Fabric texture detail' },
 ];
 
+const SIZES = ['S', 'M', 'L', 'XL', 'XXL'];
+
 export default function ProductDetailClient({ id }: { id: string }) {
   const [product, setProduct] = useState<Product | null>(null);
   const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
   const { addToCart } = useCart();
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
@@ -64,10 +67,17 @@ export default function ProductDetailClient({ id }: { id: string }) {
   };
 
   const handleAddToCart = () => {
-    addToCart(product, quantity);
+    if (!selectedSize) {
+      toast({
+        title: "Please select a size",
+        variant: "destructive",
+      });
+      return;
+    }
+    addToCart(product, quantity, selectedSize);
     toast({
       title: "Added to cart",
-      description: `${quantity} x ${product.name}`,
+      description: `${quantity} x ${product.name} (Size: ${selectedSize})`,
     });
   };
 
@@ -117,8 +127,17 @@ export default function ProductDetailClient({ id }: { id: string }) {
                     <Button variant="link" className="text-primary p-0 h-auto">Size Guide</Button>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                    {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
-                        <Button key={size} variant="outline" className="w-16 h-12">{size}</Button>
+                    {SIZES.map(size => (
+                        <Button 
+                          key={size} 
+                          variant={selectedSize === size ? "default" : "outline"} 
+                          className={cn("w-16 h-12", {
+                            "bg-primary text-primary-foreground": selectedSize === size,
+                          })}
+                          onClick={() => setSelectedSize(size)}
+                        >
+                          {size}
+                        </Button>
                     ))}
                 </div>
               </div>

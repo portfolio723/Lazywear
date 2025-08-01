@@ -6,9 +6,9 @@ import type { Product, CartItem } from "@/types";
 
 interface CartContextType {
   cart: CartItem[];
-  addToCart: (product: Product, quantity?: number) => void;
-  removeFromCart: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
+  addToCart: (product: Product, quantity?: number, size?: string) => void;
+  removeFromCart: (productId: string, size?: string) => void;
+  updateQuantity: (productId: string, quantity: number, size?: string) => void;
   clearCart: () => void;
   total: number;
 }
@@ -42,30 +42,33 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, [cart]);
 
-  const addToCart = (product: Product, quantity = 1) => {
+  const addToCart = (product: Product, quantity = 1, size?: string) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
+      // An item is unique by its ID and size
+      const existingItem = prevCart.find((item) => item.id === product.id && item.size === size);
       if (existingItem) {
         return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
+          item.id === product.id && item.size === size 
+            ? { ...item, quantity: item.quantity + quantity } 
+            : item
         );
       }
-      return [...prevCart, { ...product, quantity }];
+      return [...prevCart, { ...product, quantity, size }];
     });
   };
 
-  const removeFromCart = (productId: string) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  const removeFromCart = (productId: string, size?: string) => {
+    setCart((prevCart) => prevCart.filter((item) => !(item.id === productId && item.size === size)));
   };
 
-  const updateQuantity = (productId: string, quantity: number) => {
+  const updateQuantity = (productId: string, quantity: number, size?: string) => {
     if (quantity <= 0) {
-      removeFromCart(productId);
+      removeFromCart(productId, size);
       return;
     }
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.id === productId ? { ...item, quantity } : item
+        item.id === productId && item.size === size ? { ...item, quantity } : item
       )
     );
   };
@@ -88,5 +91,3 @@ export const useCart = () => {
   }
   return context;
 };
-
-    

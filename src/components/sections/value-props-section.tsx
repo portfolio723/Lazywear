@@ -30,7 +30,7 @@ export function ValuePropsSection() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {valueProps.map((prop, index) => (
-            <div key={index} className="flex items-center gap-4">
+            <div key={index} className="flex flex-col items-center text-center gap-2">
               <prop.icon className="w-8 h-8 text-primary" />
               <div>
                 <h3 className="font-semibold text-base">{prop.title}</h3>

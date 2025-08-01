@@ -1,5 +1,3 @@
-# Firebase Studio
+# Lazywear
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+Lazywear is an ecommerce wearing brand in India

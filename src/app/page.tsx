@@ -37,7 +37,7 @@ const iconsReinvented = [
 const stepIntoTheSpotlight = [
   {
     title: "Trending Wears",
-    image: "https://cdn0.weddingwire.in/article/9378/original/1280/jpg/128739-gaurav-gupta.jpeg",
+    image: "https://cdn.shopify.com/s/files/1/0266/6276/4597/files/formal_wear_for_men.png?v=1681479862",
     hint: "trending clothes",
   },
   {

@@ -25,7 +25,7 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-[#111]">
       <Header />
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-24 pb-16">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl font-bold font-headline">Contact Us</h1>

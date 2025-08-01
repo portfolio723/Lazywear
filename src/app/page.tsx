@@ -8,6 +8,8 @@ import { CategoryShowcaseSection } from "@/components/sections/category-showcase
 import { ProductCarousel } from "@/components/sections/product-carousel";
 import { allProducts, shirts, pants, shoes, caps } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import { ValuePropsSection } from "@/components/sections/value-props-section";
+import { NewsletterSection } from "@/components/sections/newsletter-section";
 
 const iconsReinvented = [
   {
@@ -79,8 +81,12 @@ export default function Home() {
         </section>
         <CategoryShowcaseSection title="Step Into The Spotlight" subtitle="The new must-haves" items={stepIntoTheSpotlight} />
         <ProductCarousel title="Trending Now" products={allProducts} />
+        <ValuePropsSection />
+        <NewsletterSection />
       </main>
       <Footer />
     </div>
   );
 }
+
+    

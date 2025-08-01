@@ -40,7 +40,7 @@ export default function TrackOrderPage() {
             </div>
 
             <div className="max-w-md mx-auto">
-                <form onSubmit={handleSubmit} className="flex gap-2">
+                <form onSubmit={handleSubmit} className="flex gap-2 items-start">
                     <div className="w-full">
                         <Label htmlFor="orderId" className="sr-only">Order ID</Label>
                         <Input 
@@ -51,7 +51,7 @@ export default function TrackOrderPage() {
                             onChange={(e) => setOrderId(e.target.value)}
                         />
                     </div>
-                    <Button type="submit">Track</Button>
+                    <Button type="submit" className="h-10">Track</Button>
                 </form>
             </div>
             

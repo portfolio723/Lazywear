@@ -19,7 +19,7 @@ const iconsReinvented = [
   },
   {
     title: "Shoes",
-    image: "https://static.nike.com/a/images/f_auto,cs_srgb/w_960,c_limit/5b1a9ccf-1ec8-4e62-958f-5f301b9e851f/what-are-the-best-nike-basketball-shoes.jpg",
+    image: "https://miro.medium.com/v2/resize:fit:382/format:webp/1*uSIj4cooWQFZZV4x-UBXsg.jpeg",
     hint: "comfortable shoes",
   },
   {

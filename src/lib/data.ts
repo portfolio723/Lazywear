@@ -48,15 +48,6 @@ export const shirts: Product[] = [
     details: ["55% Linen, 45% Cotton", "Classic point collar", "Button-front closure", "Machine wash cold, hang dry"]
   },
   {
-    id: "shirt-6",
-    name: "Metro Performance Polo",
-    price: 2499,
-    image: "https://www.legacyoriginals.in/cdn/shop/files/Vertical_2.png?v=1752660115",
-    category: "shirts",
-    description: "The Metro Performance Polo is designed for the active individual who values comfort. Made with moisture-wicking fabric, it keeps you dry and comfortable whether you're on the go or just relaxing. Features a modern, athletic fit.",
-    details: ["92% Polyester, 8% Spandex", "Moisture-wicking technology", "Two-button placket", "UPF 30+ sun protection"]
-  },
-  {
     id: "shirt-7",
     name: "Terra Organic Cotton Tee",
     price: 1799,
@@ -216,16 +207,16 @@ export const shorts: Product[] = [
     id: "shorts-1",
     name: "Breeze Linen Shorts",
     price: 1899,
-    image: "https://placehold.co/600x800",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*I2BLN3XH8ZqUo5wS7OuDcA.png",
     category: "pants",
     description: "Lightweight and breathable, the Breeze Linen Shorts are your go-to for staying cool on hot days. The linen-blend fabric offers a relaxed feel, perfect for beach trips or casual strolls.",
     details: ["55% Linen, 45% Viscose", "Elastic waistband with drawstring", "Two side pockets", "Relaxed fit"]
   },
   {
     id: "shorts-2",
-    name: "Momentum Athletic Shorts",
+    name: "Green Retro",
     price: 2199,
-    image: "https://placehold.co/600x800",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*ffzmkOvt2amLVq6oWjAFgA.png",
     category: "pants",
     description: "Designed for performance, the Momentum Athletic Shorts feature a moisture-wicking fabric to keep you dry and comfortable during workouts. A built-in liner provides extra support.",
     details: ["90% Polyester, 10% Spandex", "Built-in compression liner", "Zippered back pocket", "Reflective details for visibility"]
@@ -234,7 +225,7 @@ export const shorts: Product[] = [
     id: "shorts-3",
     name: "Retreat Knit Shorts",
     price: 1999,
-    image: "https://placehold.co/600x800",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*ZIHcdffwz7j5j8A8G2Ez6Q.png",
     category: "pants",
     description: "The ultimate in casual comfort, the Retreat Knit Shorts are made from a soft, brushed fleece. They're perfect for lounging at home or running quick errands.",
     details: ["60% Cotton, 40% Polyester Fleece", "Adjustable drawstring waist", "Deep side pockets", "Soft brushed interior"]
@@ -243,7 +234,7 @@ export const shorts: Product[] = [
     id: "shorts-4",
     name: "Atlas Hybrid Shorts",
     price: 2499,
-    image: "https://placehold.co/600x800",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*OP4HdY-xY20DYCWz9nN-lA.png",
     category: "pants",
     description: "Versatility at its best, the Atlas Hybrid Shorts are designed to be worn in and out of the water. The quick-drying fabric and classic styling make them perfect for any adventure.",
     details: ["Quick-dry stretch fabric", "Mesh-lined pockets", "Button closure with zip fly", "18-inch outseam"]
@@ -255,7 +246,7 @@ export const combos: Product[] = [
     id: "combo-1",
     name: "The Weekend Warrior Set",
     price: 3999,
-    image: "https://placehold.co/600x800",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*nWHwVH0bb1gVXtP4e1mu6g.png",
     category: "shirts",
     description: "Get ready for anything with the Weekend Warrior Set. This combo includes our ultra-comfortable Zenith Crew-Neck Tee and the versatile Haven Lounge Joggers. The perfect outfit for relaxing or exploring.",
     details: ["Includes one Zenith Crew-Neck Tee", "Includes one pair of Haven Lounge Joggers", "Save 15% when buying together", "Choose your size for each item"]
@@ -264,7 +255,7 @@ export const combos: Product[] = [
     id: "combo-2",
     name: "The Commuter Comfort Kit",
     price: 4999,
-    image: "https://placehold.co/600x800",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*nWHwVH0bb1gVXtP4e1mu6g.png",
     category: "shirts",
     description: "Stay comfortable and stylish on the go. The Commuter Comfort Kit pairs our modern Urban Stretch Chino with the classic Metro Performance Polo. Effortless style for your daily journey.",
     details: ["Includes one Metro Performance Polo", "Includes one pair of Urban Stretch Chinos", "Perfect for smart-casual settings", "Moisture-wicking and flexible fabrics"]

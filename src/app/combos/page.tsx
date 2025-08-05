@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ProductCard } from "@/components/product-card";
 import { FaqSection } from "@/components/sections/faq-section";
-import { allProducts } from "@/lib/data";
+import { combos } from "@/lib/data";
 
 const combosFaqs = [
     {
@@ -25,9 +25,6 @@ const combosFaqs = [
 ];
 
 export default function CombosPage() {
-  // Placeholder logic: show first 4 products as "combos"
-  const combos = allProducts.slice(0, 4);
-
   return (
     <div className="flex flex-col min-h-screen bg-background text-[#111]">
       <Header />

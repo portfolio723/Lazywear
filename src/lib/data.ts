@@ -105,15 +105,6 @@ export const pants: Product[] = [
     details: ["98% Cotton, 2% Spandex Twill", "Relaxed, straight-leg fit", "Six-pocket cargo styling", "Button-fly closure"]
   },
   {
-    id: "pants-4",
-    name: "Tranquil Terry Shorts",
-    price: 2299,
-    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*Jc3kZnEErI8RztD-tZx7Ww.png",
-    category: "pants",
-    description: "Embrace warm-weather comfort with the Tranquil Terry Shorts. Crafted from soft French terry fabric, they feature a comfortable inseam, raw-edge hem, and a simple drawstring for a perfect fit.",
-    details: ["100% Cotton French Terry", "Elastic waistband with drawstring", "7-inch inseam", "Raw-edge hem detail"]
-  },
-  {
     id: "pants-5",
     name: "Urban Stretch Chino",
     price: 3499,
@@ -130,15 +121,6 @@ export const pants: Product[] = [
     category: "pants",
     description: "Breezy and elegant, the Flow Linen Trousers are your perfect companion for sunny days. The wide-leg cut and breathable linen fabric ensure you stay cool and comfortable, while the drawstring waist provides a relaxed fit.",
     details: ["100% Linen", "Wide-leg, relaxed fit", "Drawstring waist", "Two front pockets"]
-  },
-  {
-    id: "pants-7",
-    name: "Apex Performance Shorts",
-    price: 2599,
-    image: "https://palagi.in/wp-content/uploads/2021/07/7-1.jpg",
-    category: "pants",
-    description: "Engineered for movement, the Apex Performance Shorts are perfect for an active lifestyle. The lightweight, quick-dry fabric and athletic cut provide maximum flexibility and comfort during any activity.",
-    details: ["90% Polyester, 10% Spandex", "9-inch inseam", "Zippered back pocket", "Reflective logo for visibility"]
   },
   {
     id: "pants-8",
@@ -229,11 +211,73 @@ export const caps: Product[] = [
   }
 ];
 
-export const allProducts: Product[] = [...shirts, ...pants, ...shoes, ...caps];
+export const shorts: Product[] = [
+  {
+    id: "shorts-1",
+    name: "Breeze Linen Shorts",
+    price: 1899,
+    image: "https://placehold.co/600x800",
+    category: "pants",
+    description: "Lightweight and breathable, the Breeze Linen Shorts are your go-to for staying cool on hot days. The linen-blend fabric offers a relaxed feel, perfect for beach trips or casual strolls.",
+    details: ["55% Linen, 45% Viscose", "Elastic waistband with drawstring", "Two side pockets", "Relaxed fit"]
+  },
+  {
+    id: "shorts-2",
+    name: "Momentum Athletic Shorts",
+    price: 2199,
+    image: "https://placehold.co/600x800",
+    category: "pants",
+    description: "Designed for performance, the Momentum Athletic Shorts feature a moisture-wicking fabric to keep you dry and comfortable during workouts. A built-in liner provides extra support.",
+    details: ["90% Polyester, 10% Spandex", "Built-in compression liner", "Zippered back pocket", "Reflective details for visibility"]
+  },
+  {
+    id: "shorts-3",
+    name: "Retreat Knit Shorts",
+    price: 1999,
+    image: "https://placehold.co/600x800",
+    category: "pants",
+    description: "The ultimate in casual comfort, the Retreat Knit Shorts are made from a soft, brushed fleece. They're perfect for lounging at home or running quick errands.",
+    details: ["60% Cotton, 40% Polyester Fleece", "Adjustable drawstring waist", "Deep side pockets", "Soft brushed interior"]
+  },
+  {
+    id: "shorts-4",
+    name: "Atlas Hybrid Shorts",
+    price: 2499,
+    image: "https://placehold.co/600x800",
+    category: "pants",
+    description: "Versatility at its best, the Atlas Hybrid Shorts are designed to be worn in and out of the water. The quick-drying fabric and classic styling make them perfect for any adventure.",
+    details: ["Quick-dry stretch fabric", "Mesh-lined pockets", "Button closure with zip fly", "18-inch outseam"]
+  }
+];
+
+export const combos: Product[] = [
+  {
+    id: "combo-1",
+    name: "The Weekend Warrior Set",
+    price: 3999,
+    image: "https://placehold.co/600x800",
+    category: "shirts",
+    description: "Get ready for anything with the Weekend Warrior Set. This combo includes our ultra-comfortable Zenith Crew-Neck Tee and the versatile Haven Lounge Joggers. The perfect outfit for relaxing or exploring.",
+    details: ["Includes one Zenith Crew-Neck Tee", "Includes one pair of Haven Lounge Joggers", "Save 15% when buying together", "Choose your size for each item"]
+  },
+  {
+    id: "combo-2",
+    name: "The Commuter Comfort Kit",
+    price: 4999,
+    image: "https://placehold.co/600x800",
+    category: "shirts",
+    description: "Stay comfortable and stylish on the go. The Commuter Comfort Kit pairs our modern Urban Stretch Chino with the classic Metro Performance Polo. Effortless style for your daily journey.",
+    details: ["Includes one Metro Performance Polo", "Includes one pair of Urban Stretch Chinos", "Perfect for smart-casual settings", "Moisture-wicking and flexible fabrics"]
+  }
+];
+
+export const allProducts: Product[] = [...shirts, ...pants, ...shoes, ...caps, ...shorts, ...combos];
 
 export const productsByCategory = {
   shirts,
   pants,
   shoes,
   caps,
+  shorts,
+  combos
 };

@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ProductCard } from "@/components/product-card";
 import { FaqSection } from "@/components/sections/faq-section";
-import { pants } from "@/lib/data"; // Using pants data as placeholder
+import { shorts } from "@/lib/data";
 
 const shortsFaqs = [
     {
@@ -25,18 +25,24 @@ const shortsFaqs = [
 ];
 
 export default function ShortsPage() {
-  const shorts = pants.filter(p => p.name.toLowerCase().includes('short'));
   return (
     <div className="flex flex-col min-h-screen bg-background text-[#111]">
       <Header />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-6">
           <h1 className="text-3xl font-bold font-headline mb-8">Shorts</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {shorts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          {shorts.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+              {shorts.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-20">
+                <h2 className="text-2xl font-semibold mb-2">No shorts available right now.</h2>
+                <p className="text-muted-foreground">Check back soon for our curated collections!</p>
+            </div>
+          )}
         </div>
         <FaqSection title="Frequently Asked Questions" faqs={shortsFaqs} />
       </main>

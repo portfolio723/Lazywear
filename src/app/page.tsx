@@ -29,7 +29,7 @@ const iconsReinvented = [
   },
   {
     title: "Caps",
-    image: "https://www.shutterstock.com/image-photo/confident-young-african-american-female-600nw-2258698735.jpg",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*wEpmpNsFkAwwTvbwhAGH3A.png",
     hint: "stylish caps",
   },
 ];

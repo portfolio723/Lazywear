@@ -14,7 +14,7 @@ import { NewsletterSection } from "@/components/sections/newsletter-section";
 const iconsReinvented = [
   {
     title: "Shirts",
-    image: "https://image.hm.com/assets/hm/01/8f/018f03c889a87ec106527cc5bc77ff5154e14aa0.jpg",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*PScdSEJqvu1bpqXqJuMhfg.png",
     hint: "comfortable shirt",
   },
   {

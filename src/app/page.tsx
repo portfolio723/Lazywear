@@ -24,7 +24,7 @@ const iconsReinvented = [
   },
   {
     title: "Pants",
-    image: "https://freakins.com/cdn/shop/files/Freakins15NOV0080.jpg?v=1750057158",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*jZ5uqcKsS_byCQnChpWWHw.png",
     hint: "comfortable pants",
   },
   {

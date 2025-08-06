@@ -52,8 +52,12 @@ export function SaleSection() {
   });
 
   return (
-    <section className="bg-sale-background text-black py-8 md:py-12">
-      <div className="container mx-auto px-6">
+    <section 
+        className="text-white py-8 md:py-12 bg-cover bg-center"
+        style={{backgroundImage: "url('https://miro.medium.com/v2/resize:fit:640/format:webp/1*vW0EMYk-v042gO4cYihW6g.png')"}}
+    >
+        <div className="absolute inset-0 bg-black/50 z-0"></div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex flex-col items-center text-center">
             <Image

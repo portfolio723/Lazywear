@@ -2,7 +2,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -36,8 +35,7 @@ export function SaleSection() {
   const timerComponents: JSX.Element[] = [];
 
   Object.keys(timeLeft).forEach((interval) => {
-    // A comment to make sure this file is different from the previous one.
-    if (!timeLeft[interval as keyof typeof timeLeft]) {
+    if (!timeLeft[interval as keyof typeof timeLeft] && timeLeft[interval as keyof typeof timeLeft] !== 0) {
       return;
     }
 
@@ -53,31 +51,23 @@ export function SaleSection() {
 
   return (
     <section 
-        className="text-white py-8 md:py-12 bg-cover bg-center relative"
+        className="text-white py-12 md:py-20 bg-cover bg-center relative"
         style={{backgroundImage: "url('https://miro.medium.com/v2/resize:fit:640/format:webp/1*w_VJnXAnk82yWmwEbDQDlQ.png')"}}
     >
         <div className="absolute inset-0 bg-black/50 z-0"></div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex flex-col items-center text-center">
-            <Image
-              src="https://media.istockphoto.com/id/504004818/photo/sale-sign.webp?a=1&b=1&s=612x612&w=0&k=20&c=0Ojuuuvae0Muk1EYuDal6aLyH0SxMrjVbGnG5KLqsrY="
-              alt="End of Season Sale"
-              width={250}
-              height={300}
-              className="rounded-lg object-cover"
-              data-ai-hint="sale ticket"
-            />
-            <div className="mt-4 bg-black/50 text-white p-4 rounded-lg">
-                <p className="text-lg md:text-xl font-bold tracking-widest">SWIPE IT. BAG IT. FLEX IT.</p>
-                <p className="font-semibold text-sm md:text-base">ENDS 31ST JULY</p>
+            <div className="bg-black/50 text-white p-6 rounded-lg">
+                <p className="text-xl md:text-2xl font-bold tracking-widest">SWIPE IT. BAG IT. FLEX IT.</p>
+                <p className="font-semibold text-base md:text-lg mt-1">ENDS 31ST JULY</p>
             </div>
           </div>
           <div className="text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline">
+            <h2 className="text-4xl md:text-5xl font-bold font-headline">
               FLAT 40% + EXTRA 10% OFF
             </h2>
-            <p className="mt-2 text-base md:text-lg">Discount auto-applied at checkout</p>
+            <p className="mt-2 text-lg md:text-xl">Discount auto-applied at checkout</p>
             {timerComponents.length > 0 && (
                 <div className="flex justify-center md:justify-start gap-4 md:gap-8 mt-6 md:mt-8">
                     {timerComponents}

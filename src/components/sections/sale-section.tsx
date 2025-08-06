@@ -54,7 +54,7 @@ export function SaleSection() {
   return (
     <section 
         className="text-white py-8 md:py-12 bg-cover bg-center"
-        style={{backgroundImage: "url('https://miro.medium.com/v2/resize:fit:640/format:webp/1*vW0EMYk-v042gO4cYihW6g.png')"}}
+        style={{backgroundImage: "url('https://miro.medium.com/v2/resize:fit:640/format:webp/1*w_VJnXAnk82yWmwEbDQDlQ.png')"}}
     >
         <div className="absolute inset-0 bg-black/50 z-0"></div>
       <div className="container mx-auto px-6 relative z-10">

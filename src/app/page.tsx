@@ -71,7 +71,7 @@ export default function Home() {
                 <div className="relative group overflow-hidden rounded-lg">
                 <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*Eh6xbeRZ6W8jZwl9BTyW_A.png" alt="The Ultimate Comfort Zone" className="w-full h-auto md:h-full object-cover" data-ai-hint="shopping woman"/>
                 <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 flex flex-col items-start justify-center p-8 md:p-12 text-white">
+                <div className="absolute inset-0 flex flex-col items-end text-right justify-center p-8 md:p-12 text-white">
                     <h3 className="text-xl md:text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>
                     <p className="text-base md:text-lg">The Softest Loungewear Ever</p>
                     <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors rounded-md">Shop Now</Button>

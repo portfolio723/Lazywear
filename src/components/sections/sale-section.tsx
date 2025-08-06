@@ -57,12 +57,7 @@ export function SaleSection() {
         <div className="absolute inset-0 bg-black/50 z-0"></div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="flex flex-col items-center text-center">
-            <div className="bg-black/50 text-white p-6 rounded-lg">
-                <p className="text-xl md:text-2xl font-bold tracking-widest">SWIPE IT. BAG IT. FLEX IT.</p>
-                <p className="font-semibold text-base md:text-lg mt-1">ENDS 31ST JULY</p>
-            </div>
-          </div>
+          <div></div>
           <div className="text-center md:text-left">
             <h2 className="text-4xl md:text-5xl font-bold font-headline">
               FLAT 40% + EXTRA 10% OFF

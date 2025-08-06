@@ -13,16 +13,20 @@ import {
 
 interface ProductCarouselProps {
   title: string;
+  subtitle?: string;
   products: Product[];
 }
 
-export function ProductCarousel({ title, products }: ProductCarouselProps) {
+export function ProductCarousel({ title, subtitle, products }: ProductCarouselProps) {
   return (
     <section className="py-8 md:py-[60px] bg-background">
       <div className="container mx-auto px-6">
-         <h2 className="text-2xl md:text-3xl font-bold font-headline text-black text-center mb-8">
-          {title}
-        </h2>
+         <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold font-headline text-black">
+            {title}
+          </h2>
+          {subtitle && <p className="text-muted-foreground">{subtitle}</p>}
+        </div>
         <Carousel
           opts={{
             align: "start",

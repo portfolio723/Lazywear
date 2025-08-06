@@ -80,7 +80,7 @@ export default function Home() {
             </div>
         </section>
         <CategoryShowcaseSection title="Step Into The Spotlight" subtitle="The new must-haves" items={stepIntoTheSpotlight} />
-        <ProductCarousel title="Trending Now" products={allProducts} />
+        <ProductCarousel title="Trending Now" subtitle="Discover what's popular" products={allProducts} />
         <ValuePropsSection />
         <NewsletterSection />
       </main>

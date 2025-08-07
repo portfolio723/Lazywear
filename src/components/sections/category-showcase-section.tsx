@@ -18,7 +18,7 @@ export function CategoryShowcaseSection({
   items,
 }: CategoryShowcaseSectionProps) {
   return (
-    <section className="py-8 md:py-[60px] bg-background">
+    <section className="bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold font-headline text-black">

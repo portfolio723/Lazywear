@@ -184,7 +184,7 @@ export const combos: Product[] = [
     name: "The Weekend Warrior Set",
     price: 3999,
     image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*nWHwVH0bb1gVXtP4e1mu6g.png",
-    category: "shirts",
+    category: "combos",
     description: "Get ready for anything with the Weekend Warrior Set. This combo includes our ultra-comfortable Zenith Crew-Neck Tee and the versatile Haven Lounge Joggers. The perfect outfit for relaxing or exploring.",
     details: ["Includes one Zenith Crew-Neck Tee", "Includes one pair of Haven Lounge Joggers", "Save 15% when buying together", "Choose your size for each item"]
   },
@@ -193,7 +193,7 @@ export const combos: Product[] = [
     name: "The Commuter Comfort Kit",
     price: 4999,
     image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*nWHwVH0bb1gVXtP4e1mu6g.png",
-    category: "shirts",
+    category: "combos",
     description: "Stay comfortable and stylish on the go. The Commuter Comfort Kit pairs our modern Urban Stretch Chino with the classic Metro Performance Polo. Effortless style for your daily journey.",
     details: ["Includes one Metro Performance Polo", "Includes one pair of Urban Stretch Chinos", "Perfect for smart-casual settings", "Moisture-wicking and flexible fabrics"]
   }
@@ -209,3 +209,5 @@ export const productsByCategory = {
   shorts,
   combos
 };
+
+    

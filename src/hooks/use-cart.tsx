@@ -44,7 +44,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   const addToCart = (product: Product, quantity = 1, size?: string) => {
     setCart((prevCart) => {
-      // An item is unique by its ID and size
       const existingItem = prevCart.find((item) => item.id === product.id && item.size === size);
       if (existingItem) {
         return prevCart.map((item) =>

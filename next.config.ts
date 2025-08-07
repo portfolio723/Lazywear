@@ -9,10 +9,10 @@ const nextConfig: NextConfig = {
   basePath: isProd ? '/Lazywear' : '',
   assetPrefix: isProd ? '/Lazywear/' : '',
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   images: {
     unoptimized: true,
@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  trailingSlash: true,
 };
 
 export default nextConfig;

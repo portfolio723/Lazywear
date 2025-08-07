@@ -69,11 +69,11 @@ export default function Home() {
         <section className="py-8 md:py-[60px]">
             <div className="container mx-auto px-6">
                 <div className="relative group overflow-hidden rounded-lg">
-                <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*2_16WIYr-3I0rKoBshS9HA.png" alt="The Ultimate Comfort Zone" className="w-full h-auto md:h-full object-cover" data-ai-hint="shopping woman"/>
+                <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*2_16WIYr-3I0rKoBshS9HA.png" alt="The Ultimate Comfort Zone" className="w-full h-[400px] md:h-full object-cover" data-ai-hint="comfortable pants"/>
                 <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 flex flex-col items-end text-right justify-center p-8 md:p-12 text-white">
-                    <h3 className="text-xl md:text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>
-                    <p className="text-base md:text-lg">The Softest Loungewear Ever</p>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 md:items-end md:text-right md:p-12 text-white">
+                    <h3 className="text-2xl md:text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>
+                    <p className="mt-2 text-base md:text-lg">The Softest Loungewear Ever</p>
                     <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors rounded-md">Shop Now</Button>
                 </div>
                 </div>
@@ -88,5 +88,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

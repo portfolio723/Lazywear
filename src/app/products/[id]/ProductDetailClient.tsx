@@ -2,7 +2,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { notFound } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -33,27 +32,13 @@ const productImages = [
 
 const SIZES = ['S', 'M', 'L', 'XL', 'XXL'];
 
-export default function ProductDetailClient({ id }: { id: string }) {
-  const [product, setProduct] = useState<Product | null>(null);
+export default function ProductDetailClient({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
   const { addToCart } = useCart();
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
   const { toast } = useToast();
-
-  useEffect(() => {
-    const foundProduct = allProducts.find((p) => p.id === id);
-    if (foundProduct) {
-        setProduct(foundProduct);
-    } else {
-        notFound();
-    }
-  }, [id]);
-
-  if (!product) {
-    return <div>Loading...</div>;
-  }
 
   const isFavorited = wishlist.some((item) => item.id === product.id);
 

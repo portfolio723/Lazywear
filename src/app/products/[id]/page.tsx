@@ -1,6 +1,8 @@
 
 import ProductDetailClient from './ProductDetailClient'
 import { allProducts } from '@/lib/data'
+import { notFound } from 'next/navigation';
+import { type Product } from '@/types';
 
 export async function generateStaticParams() {
   return allProducts.map((product) => ({
@@ -9,16 +11,20 @@ export async function generateStaticParams() {
 }
 
 type ProductDetailPageProps = {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 };
 
 // This is the Server Component that can safely access params
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
-  // The `id` is now directly available from params
-  const { id } = params;
+  // In Next.js 15, params is a promise. We need to await it.
+  const { id } = await params;
 
-  // Render the Client Component with a simple string prop
-  return <ProductDetailClient id={id} />;
+  const product = allProducts.find((p) => p.id === id);
+
+  if (!product) {
+    notFound();
+  }
+
+  // Pass the full product object to the Client Component
+  return <ProductDetailClient product={product} />;
 }

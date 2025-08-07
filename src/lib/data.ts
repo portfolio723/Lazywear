@@ -145,7 +145,7 @@ export const shorts: Product[] = [
     name: "Breeze Linen Shorts",
     price: 1899,
     image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*I2BLN3XH8ZqUo5wS7OuDcA.png",
-    category: "pants",
+    category: "shorts",
     description: "Lightweight and breathable, the Breeze Linen Shorts are your go-to for staying cool on hot days. The linen-blend fabric offers a relaxed feel, perfect for beach trips or casual strolls.",
     details: ["55% Linen, 45% Viscose", "Elastic waistband with drawstring", "Two side pockets", "Relaxed fit"]
   },
@@ -154,7 +154,7 @@ export const shorts: Product[] = [
     name: "Green Retro",
     price: 2199,
     image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*ffzmkOvt2amLVq6oWjAFgA.png",
-    category: "pants",
+    category: "shorts",
     description: "Designed for performance, the Momentum Athletic Shorts feature a moisture-wicking fabric to keep you dry and comfortable during workouts. A built-in liner provides extra support.",
     details: ["90% Polyester, 10% Spandex", "Built-in compression liner", "Zippered back pocket", "Reflective details for visibility"]
   },
@@ -163,7 +163,7 @@ export const shorts: Product[] = [
     name: "Retreat Knit Shorts",
     price: 1999,
     image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*ZIHcdffwz7j5j8A8G2Ez6Q.png",
-    category: "pants",
+    category: "shorts",
     description: "The ultimate in casual comfort, the Retreat Knit Shorts are made from a soft, brushed fleece. They're perfect for lounging at home or running quick errands.",
     details: ["60% Cotton, 40% Polyester Fleece", "Adjustable drawstring waist", "Deep side pockets", "Soft brushed interior"]
   },
@@ -172,7 +172,7 @@ export const shorts: Product[] = [
     name: "Atlas Hybrid Shorts",
     price: 2499,
     image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*OP4HdY-xY20DYCWz9nN-lA.png",
-    category: "pants",
+    category: "shorts",
     description: "Versatility at its best, the Atlas Hybrid Shorts are designed to be worn in and out of the water. The quick-drying fabric and classic styling make them perfect for any adventure.",
     details: ["Quick-dry stretch fabric", "Mesh-lined pockets", "Button closure with zip fly", "18-inch outseam"]
   }

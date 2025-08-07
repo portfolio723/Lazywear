@@ -8,8 +8,14 @@ export async function generateStaticParams() {
   }))
 }
 
+type ProductDetailPageProps = {
+  params: {
+    id: string;
+  };
+};
+
 // This is the Server Component that can safely access params
-export default async function ProductDetailPage({ params }: { params: { id: string } }) {
+export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
   // The `id` is now directly available from params
   const { id } = params;
 

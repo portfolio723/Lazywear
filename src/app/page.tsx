@@ -66,10 +66,10 @@ export default function Home() {
         <div className="pt-8 md:pt-[60px]">
             <CategoryShowcaseSection title="Lazy Categories" subtitle="New styles, classic feel." items={iconsReinvented} />
         </div>
-        <div className="py-8 md:py-0">
+        <div className="py-8 md:py-[60px]">
             <div className="container mx-auto px-6">
                 <div className="relative group overflow-hidden rounded-lg">
-                <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*2_16WIYr-3I0rKoBshS9HA.png" alt="The Ultimate Comfort Zone" className="w-full h-auto object-cover md:object-contain" data-ai-hint="shopping woman"/>
+                <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*2_16WIYr-3I0rKoBshS9HA.png" alt="The Ultimate Comfort Zone" className="w-full h-auto object-cover" data-ai-hint="shopping woman"/>
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex flex-col items-center md:items-end md:text-right justify-center text-center p-4 md:p-12 text-white">
                     <h3 className="text-xl md:text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>

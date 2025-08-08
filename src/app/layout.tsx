@@ -5,7 +5,7 @@ import { AppProviders } from "@/components/app-providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lazywear Lookbook",
+  title: "Lazywear",
   description: "A sleek, minimalist shopping experience for premium apparel.",
 };
 

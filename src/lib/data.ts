@@ -201,7 +201,7 @@ export const combos: Product[] = [
     id: "combo-3",
     name: "Summer Vibe Set",
     price: 2999,
-    image: "https://placehold.co/600x800.png",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*eew4cTW04WiQjFRBAkmnOw.png",
     category: "combos",
     description: "Embrace the summer with this perfect combo of our Breeze Linen Shorts and the stylish Unwind Dad Cap. Stay cool and look great whether you're at the beach or in the city.",
     details: ["Includes one pair of Breeze Linen Shorts", "Includes one Unwind Dad Cap", "Ideal for warm weather", "Save 10% on this bundle"]
@@ -210,7 +210,7 @@ export const combos: Product[] = [
     id: "combo-4",
     name: "Cozy Night In Kit",
     price: 3499,
-    image: "https://placehold.co/600x800.png",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*uZJlyjv2ihgUTBF2GPvDwg.png",
     category: "combos",
     description: "Everything you need for a cozy night in. This kit includes our soft Retreat Knit Shorts and a pair of the plush Retreat Plush Slippers. Ultimate comfort for relaxing at home.",
     details: ["Includes one pair of Retreat Knit Shorts", "Includes one pair of Retreat Plush Slippers", "The softest combo ever", "Perfect for movie nights"]
@@ -219,7 +219,7 @@ export const combos: Product[] = [
     id: "combo-5",
     name: "Active Chill Bundle",
     price: 4299,
-    image: "https://placehold.co/600x800.png",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*ANrFGoKotcRpQDJC97faFw.png",
     category: "combos",
     description: "For those active days when you still want to be comfortable. This bundle features our Momentum Athletic Shorts and the breathable Aura V-Neck tee.",
     details: ["Includes one Aura V-Neck", "Includes one pair of Momentum Athletic Shorts", "Moisture-wicking fabrics", "Great for workouts or walks"]

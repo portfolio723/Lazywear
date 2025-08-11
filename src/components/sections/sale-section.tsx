@@ -66,11 +66,9 @@ export function SaleSection() {
                     {timerComponents}
                 </div>
             )}
-            <div className="mt-6 flex justify-center md:justify-end gap-2 md:gap-4 flex-wrap">
-              <Button asChild variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors rounded-md">
-                <Link href="/sale">Shop Sale</Link>
-              </Button>
-            </div>
+            <Button asChild variant="outline" className="mt-8 bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors rounded-md">
+              <Link href="/sale">Shop Sale</Link>
+            </Button>
         </div>
       </div>
     </section>

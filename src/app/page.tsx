@@ -82,7 +82,9 @@ export default function Home() {
             </div>
         </div>
         <CategoryShowcaseSection title="Step Into The Spotlight" subtitle="The new must-haves" items={stepIntoTheSpotlight} />
-        <ProductCarousel title="Trending Now" subtitle="Discover what's popular" products={allProducts} />
+        <div className="py-8 md:py-[60px]">
+            <ProductCarousel title="Trending Now" subtitle="Discover what's popular" products={allProducts} />
+        </div>
         <ValuePropsSection />
         <NewsletterSection />
       </main>

@@ -65,6 +65,9 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <SaleSection />
         </div>
+        <div className="pt-8 md:pt-[60px]">
+            <CategoryShowcaseSection title="Lazy Categories" subtitle="New styles, classic feel." items={iconsReinvented} />
+        </div>
         <div className="py-8 md:py-[60px]">
             <div className="container mx-auto px-6">
                 <div className="relative group overflow-hidden rounded-lg">
@@ -77,9 +80,6 @@ export default function Home() {
                 </div>
                 </div>
             </div>
-        </div>
-        <div className="pt-8 md:pt-[60px]">
-            <CategoryShowcaseSection title="Lazy Categories" subtitle="New styles, classic feel." items={iconsReinvented} />
         </div>
         <CategoryShowcaseSection title="Step Into The Spotlight" subtitle="The new must-haves" items={stepIntoTheSpotlight} />
         <ProductCarousel title="Trending Now" subtitle="Discover what's popular" products={allProducts} />

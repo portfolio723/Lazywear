@@ -62,7 +62,7 @@ export default function Home() {
       <Header />
       <main className="flex-grow pt-16">
         <HeroSection />
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 pb-8 md:pb-[60px]">
           <SaleSection />
         </div>
         <div className="py-8 md:py-[60px]">

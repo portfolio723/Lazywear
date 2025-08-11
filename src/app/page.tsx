@@ -76,7 +76,7 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col items-center md:items-end md:text-right justify-center text-center p-4 md:p-12 text-white">
                     <h3 className="text-xl md:text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>
                     <p className="mt-2 text-base md:text-lg">The Softest Loungewear Ever</p>
-                    <Button variant="outline" className="mt-4 bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors rounded-md">Shop Now</Button>
+                    <Button variant="outline" className="mt-8 bg-transparent border-white text-white hover:bg-white hover:text-black transition-colors rounded-md">Shop Now</Button>
                 </div>
                 </div>
             </div>

@@ -196,6 +196,33 @@ export const combos: Product[] = [
     category: "combos",
     description: "Stay comfortable and stylish on the go. The Commuter Comfort Kit pairs our modern Urban Stretch Chino with the classic Metro Performance Polo. Effortless style for your daily journey.",
     details: ["Includes one Metro Performance Polo", "Includes one pair of Urban Stretch Chinos", "Perfect for smart-casual settings", "Moisture-wicking and flexible fabrics"]
+  },
+  {
+    id: "combo-3",
+    name: "Summer Vibe Set",
+    price: 2999,
+    image: "https://placehold.co/600x800.png",
+    category: "combos",
+    description: "Embrace the summer with this perfect combo of our Breeze Linen Shorts and the stylish Unwind Dad Cap. Stay cool and look great whether you're at the beach or in the city.",
+    details: ["Includes one pair of Breeze Linen Shorts", "Includes one Unwind Dad Cap", "Ideal for warm weather", "Save 10% on this bundle"]
+  },
+  {
+    id: "combo-4",
+    name: "Cozy Night In Kit",
+    price: 3499,
+    image: "https://placehold.co/600x800.png",
+    category: "combos",
+    description: "Everything you need for a cozy night in. This kit includes our soft Retreat Knit Shorts and a pair of the plush Retreat Plush Slippers. Ultimate comfort for relaxing at home.",
+    details: ["Includes one pair of Retreat Knit Shorts", "Includes one pair of Retreat Plush Slippers", "The softest combo ever", "Perfect for movie nights"]
+  },
+  {
+    id: "combo-5",
+    name: "Active Chill Bundle",
+    price: 4299,
+    image: "https://placehold.co/600x800.png",
+    category: "combos",
+    description: "For those active days when you still want to be comfortable. This bundle features our Momentum Athletic Shorts and the breathable Aura V-Neck tee.",
+    details: ["Includes one Aura V-Neck", "Includes one pair of Momentum Athletic Shorts", "Moisture-wicking fabrics", "Great for workouts or walks"]
   }
 ];
 

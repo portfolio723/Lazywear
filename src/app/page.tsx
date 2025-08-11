@@ -65,7 +65,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <SaleSection />
         </div>
-        <div className="pt-8 md:pt-[60px]">
+        <div className="py-8 md:py-[60px]">
             <CategoryShowcaseSection title="Lazy Categories" subtitle="New styles, classic feel." items={iconsReinvented} />
         </div>
         <div className="py-8 md:py-[60px]">

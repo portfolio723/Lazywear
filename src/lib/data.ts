@@ -37,15 +37,6 @@ export const shirts: Product[] = [
     category: "shirts",
     description: "Function meets comfort in the Serene Pocket Tee. This versatile shirt features a clean design with a simple chest pocket, made from a modal blend that feels silky smooth against the skin.",
     details: ["48% Modal, 48% Cotton, 4% Spandex", "Chest Pocket Detail", "Modern, straight hem", "Resists pilling and fading"]
-  },
-  {
-    id: "shirt-5",
-    name: "Luna Linen Blend Shirt",
-    price: 2199,
-    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*PScdSEJqvu1bpqXqJuMhfg.png",
-    category: "shirts",
-    description: "Stay cool and sophisticated in the Luna Linen Blend Shirt. The breathable linen-cotton mix is perfect for warm weather, offering a crisp look that's effortlessly casual. A versatile button-down for any relaxed occasion.",
-    details: ["55% Linen, 45% Cotton", "Classic point collar", "Button-front closure", "Machine wash cold, hang dry"]
   }
 ];
 
@@ -85,15 +76,6 @@ export const pants: Product[] = [
     category: "pants",
     description: "The Urban Stretch Chino offers a polished look without sacrificing comfort. The flexible stretch-cotton fabric moves with you, while the slim-fit design provides a modern silhouette suitable for casual Fridays or weekend outings.",
     details: ["97% Cotton, 3% Elastane", "Slim-fit design", "Four-pocket styling", "Zip fly with button closure"]
-  },
-  {
-    id: "pants-6",
-    name: "Flow Linen Trousers",
-    price: 3799,
-    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*2os-ONnxgsvqHaAXNFlK6Q.png",
-    category: "pants",
-    description: "Breezy and elegant, the Flow Linen Trousers are your perfect companion for sunny days. The wide-leg cut and breathable linen fabric ensure you stay cool and comfortable, while the drawstring waist provides a relaxed fit.",
-    details: ["100% Linen", "Wide-leg, relaxed fit", "Drawstring waist", "Two front pockets"]
   }
 ];
 
@@ -214,15 +196,6 @@ export const combos: Product[] = [
     category: "combos",
     description: "Everything you need for a cozy night in. This kit includes our soft Retreat Knit Shorts and a pair of the plush Retreat Plush Slippers. Ultimate comfort for relaxing at home.",
     details: ["Includes one pair of Retreat Knit Shorts", "Includes one pair of Retreat Plush Slippers", "The softest combo ever", "Perfect for movie nights"]
-  },
-  {
-    id: "combo-5",
-    name: "Active Chill Bundle",
-    price: 4299,
-    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*ANrFGoKotcRpQDJC97faFw.png",
-    category: "combos",
-    description: "For those active days when you still want to be comfortable. This bundle features our Momentum Athletic Shorts and the breathable Aura V-Neck tee.",
-    details: ["Includes one Aura V-Neck", "Includes one pair of Momentum Athletic Shorts", "Moisture-wicking fabrics", "Great for workouts or walks"]
   }
 ];
 

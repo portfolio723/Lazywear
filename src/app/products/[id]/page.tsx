@@ -23,14 +23,14 @@ export async function generateMetadata({ params }: ProductDetailPageProps) {
   }
 
   return {
-    title: ${product.name} | Lazywear,
-    description: Shop the ${product.name} - ${product.description.substring(0, 150)}...,
+    title: `${product.name} | Lazywear`,
+    description: `Shop the ${product.name} - ${product.description.substring(0, 150)}...`,
   };
 }
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
   const { id } = await params;  // <-- Await params
-  const product = getProduct(id);
+  const product = getT(id);
 
   if (!product) {
     notFound();

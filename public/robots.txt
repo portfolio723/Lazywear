@@ -1,10 +1,10 @@
+# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file.
 User-agent: *
 Allow: /
+
+# Disallow user-specific pages
 Disallow: /cart/
 Disallow: /checkout/
-Disallow: /login/
 Disallow: /favorites/
+Disallow: /login/
 Disallow: /track-order/
-Disallow: /returns/
-
-Sitemap: https://lazywear.store/sitemap.xml

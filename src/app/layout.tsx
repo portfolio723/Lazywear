@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://lazywear.store"),
   title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
   description: "Shop the best lazy wear, oversized cotton t-shirts & affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",
+  keywords: ['lazy wear', 'loungewear India', 'comfortable clothing', 'casual wear online', 'oversized t-shirts'],
+  authors: [{ name: 'Lazywear' }],
   alternates: {
     canonical: '/',
   },
@@ -22,9 +24,30 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
+        alt: 'Lazywear - Comfortable Loungewear India'
       },
     ],
     type: "website",
+    locale: 'en_IN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lazywear: Shop Comfortable & Affordable Loungewear Online in India',
+    description: 'Shop the best lazy wear, oversized cotton t-shirts, and affordable loungewear in India.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: '19k4CJm7-_l9_LklzaXDyylIn8Gi3k_lmidtRPfD_Fk',
   }
 };
 
@@ -36,7 +59,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="19k4CJm7-_l9_LklzaXDyylIn8Gi3k_lmidtRPfD_Fk" />
         <link rel="icon" href="/Asset 9.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -1,5 +1,6 @@
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Toaster } from "@/components/ui/toaster";
 import { AppProviders } from "@/components/app-providers";
 import "./globals.css";
@@ -36,6 +37,16 @@ export default function RootLayout({
             ]
           }) }}
         />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1RKSBRP2M"></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-Q1RKSBRP2M');
+          `}
+        </Script>
       </head>
       <body className="font-body antialiased">
         <AppProviders>

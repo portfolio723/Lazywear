@@ -2,18 +2,17 @@ import { notFound } from 'next/navigation';
 import { allProducts } from '@/lib/data';
 import ProductDetailClient from './ProductDetailClient';
 import type { Product } from '@/types';
-import type { Metadata } from 'next';
 
 type ProductDetailPageProps = {
-  params: { id: string }; 
+  params: Promise<{ id: string }>;  // <-- Use Promise here
 };
 
 function getProduct(id: string): Product | undefined {
   return allProducts.find((p) => p.id === id);
 }
 
-export async function generateMetadata({ params }: ProductDetailPageProps): Promise<Metadata> {
-  const { id } = params;
+export async function generateMetadata({ params }: ProductDetailPageProps) {
+  const { id } = await params;  // <-- Await params
   const product = getProduct(id);
 
   if (!product) {
@@ -24,28 +23,13 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
   }
 
   return {
-    title: `${product.name} | Lazywear`,
-    description: `Shop the ${product.name} - ${product.description.substring(0, 150)}...`,
-    alternates: {
-      canonical: `/products/${id}`,
-    },
-    openGraph: {
-      title: `${product.name} | Lazywear`,
-      description: product.description.substring(0, 150),
-      images: [
-        {
-          url: product.image,
-          width: 800,
-          height: 600,
-          alt: product.name,
-        },
-      ],
-    },
+    title: ${product.name} | Lazywear,
+    description: Shop the ${product.name} - ${product.description.substring(0, 150)}...,
   };
 }
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const { id } = params;
+  const { id } = await params;  // <-- Await params
   const product = getProduct(id);
 
   if (!product) {
@@ -58,5 +42,5 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 export async function generateStaticParams() {
   return allProducts.map((product) => ({
     id: product.id,
-  }));
+  }));
 }

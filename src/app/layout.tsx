@@ -6,8 +6,12 @@ import { AppProviders } from "@/components/app-providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lazywear.store"),
   title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
   description: "Shop the best lazy wear, oversized cotton t-shirts, and affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
     description: "Shop the best lazy wear, oversized cotton t-shirts, and affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",
@@ -15,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Lazywear",
     images: [
       {
-        url: "https://lazywear.store/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
       },

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /login/
+Disallow: /favorites/
+Disallow: /track-order/
+Disallow: /returns/
+
+Sitemap: https://lazywear.store/sitemap.xml

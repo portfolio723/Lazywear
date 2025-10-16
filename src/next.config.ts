@@ -24,6 +24,19 @@ const nextConfig: NextConfig = {
     ],
   },
   trailingSlash: true,
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+        ],
+      },
+    ];
+  },
   allowedDevOrigins: [
       "https://*.cloudworkstations.dev",
       "https://*.firebase.studio"

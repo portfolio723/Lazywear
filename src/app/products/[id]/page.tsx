@@ -42,5 +42,5 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 export async function generateStaticParams() {
   return allProducts.map((product) => ({
     id: product.id,
-  }));
+}));
 }

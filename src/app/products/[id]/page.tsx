@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: ProductDetailPageProps) {
   }
 
   return {
-    title: ${product.name} | Lazywear,
-    description: Shop the ${product.name} - ${product.description.substring(0, 150)}...,
+    title: `${product.name} | Lazywear`,
+    description: `Shop the ${product.name} - ${product.description.substring(0, 150)}...`,
   };
 }
 

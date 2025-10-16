@@ -12,7 +12,7 @@ export function HeroSection() {
           alt="Models wearing comfortable and affordable lazy wear from Lazywear India - an online comfortable clothing store" 
           width={590}
           height={332}
-          className="w-auto h-auto mt-4"
+          className="mt-4 max-w-full h-auto"
           priority
         />
       </div>

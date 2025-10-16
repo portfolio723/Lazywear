@@ -26,11 +26,6 @@ export function Footer() {
               <li><Link href="/caps" className="text-gray-400 hover:text-white transition-colors">Caps</Link></li>
             </ul>
           </div>
-           <div>
-            <h3 className="font-headline text-base font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-sm">
-            </ul>
-          </div>
           <div className="col-span-1">
             <h3 className="font-headline text-base font-semibold mb-4">Stay up to date</h3>
             <div className="flex space-x-4">

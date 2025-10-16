@@ -69,7 +69,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "Lazy Wear",
+            "name": "Lazywear",
             "url": "https://lazywear.store",
             "logo": "https://lazywear.store/logo.png",
             "sameAs": [

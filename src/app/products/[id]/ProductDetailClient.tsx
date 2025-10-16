@@ -186,11 +186,6 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                         <ShieldCheck className="w-5 h-5 text-primary"/>
                         <span>100% Secure Payments</span>
                     </div>
-                    <div className="flex items-center justify-center gap-4 pt-2 border-t mt-3">
-                      <RazorpayIcon />
-                      <UpiIcon />
-                      <PaytmIcon />
-                    </div>
                 </div>
 
 

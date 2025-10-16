@@ -72,7 +72,7 @@ export default function Home() {
         <div className="pt-8 md:pt-[60px]">
             <div className="container mx-auto px-6">
                 <div className="relative group overflow-hidden rounded-lg">
-                <Image src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*2_16WIYr-3I0rKoBshS9HA.png" alt="Woman shopping for comfortable and affordable loungewear from Lazywear India's online store" width={1240} height={500} className="w-full h-auto md:h-[500px] object-cover" data-ai-hint="shopping woman"/>
+                <Image src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*2_16WIYr-3I0rKoBshS9HA.png" alt="Woman shopping for comfortable and affordable loungewear from Lazywear India's online store" width={640} height={360} className="w-full h-auto md:h-[500px] object-cover" data-ai-hint="shopping woman"/>
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex flex-col items-center md:items-end md:text-right justify-center text-center p-4 md:p-12 text-white">
                     <h3 className="text-xl md:text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>

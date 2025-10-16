@@ -40,9 +40,6 @@ export default function PantsPage() {
                 <p>
                 Our collection features a range of styles to suit any mood. The <a href="/products/haven-lounge-joggers" className="text-primary hover:underline">Haven Lounge Joggers</a>, with their tapered fit and fleece-back knit, are a modern essential for any comfort-seeker. For those who love a more free-flowing silhouette, the <a href="/products/drift-wide-leg-pants" className="text-primary hover:underline">Drift Wide-Leg Pants</a> offer unparalleled freedom and an elegant drape. And for a touch of utility, the <a href="/products/nomad-cargo-pant" className="text-primary hover:underline">Nomad Cargo Pants</a> blend functional design with a relaxed feel.
                 </p>
-                <p>
-                Each pair is crafted from premium materials, from soft cotton blends to durable stretch twills, ensuring they feel as good as they look. Details like adjustable drawstrings, deep pockets, and tailored cuts elevate these pants beyond typical loungewear. Pair them with one of our comfortable tees for a complete Lazywear look.
-                </p>
             </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {pants.map((product) => (
@@ -56,5 +53,3 @@ export default function PantsPage() {
     </div>
   );
 }
-
-    

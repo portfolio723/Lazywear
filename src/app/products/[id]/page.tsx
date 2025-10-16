@@ -23,14 +23,14 @@ export async function generateMetadata({ params }: ProductDetailPageProps) {
   }
 
   return {
-    title: `${product.name} | Lazywear`,
-    description: `Shop the ${product.name} - ${product.description.substring(0, 150)}...`,
+    title: ${product.name} | Lazywear,
+    description: Shop the ${product.name} - ${product.description.substring(0, 150)}...,
   };
 }
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
   const { id } = await params;  // <-- Await params
-  const product = getT(id);
+  const product = getProduct(id);
 
   if (!product) {
     notFound();
@@ -42,5 +42,5 @@ export default async function ProductDetailPage({ params }: ProductDetailPagePro
 export async function generateStaticParams() {
   return allProducts.map((product) => ({
     id: product.id,
-}));
+  }));
 }

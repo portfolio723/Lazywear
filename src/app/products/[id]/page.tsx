@@ -46,6 +46,11 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
       itemCondition: 'https://schema.org/NewCondition',
       availability: 'https://schema.org/InStock',
     },
+    aggregateRating: {
+      '@type': "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "27"
+    }
   };
 
   return {

@@ -7,7 +7,21 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
-  description: "Your comfortable clothing store for casual wear online. Buy the best lazy wear, oversized cotton t-shirts, and affordable loungewear for work from home, with home delivery in India.",
+  description: "Shop the best lazy wear, oversized cotton t-shirts, and affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",
+  openGraph: {
+    title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
+    description: "Shop the best lazy wear, oversized cotton t-shirts, and affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",
+    url: "https://lazywear.store",
+    siteName: "Lazywear",
+    images: [
+      {
+        url: "https://lazywear.store/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  }
 };
 
 export default function RootLayout({

@@ -67,7 +67,7 @@ export default function LoginPage() {
                 <div className="w-full max-w-sm mx-auto p-6 md:p-8 text-center">
                     
                     <Link href="/">
-                        <Image src="https://miro.medium.com/v2/resize:fit:246/format:webp/1*pHF5KzQmHRkpZQ7-ntgZ8w.png" alt="Lazywear Logo - comfortable clothing store" width={120} height={48} className="object-contain mx-auto mb-4" />
+                        <Image src="https://miro.medium.com/v2/resize:fit:246/format:webp/1*pHF5KzQmHRkpZQ7-ntgZ8w.png" alt="Lazywear Logo - a comfortable clothing store in India for casual and affordable loungewear" width={120} height={48} className="object-contain mx-auto mb-4" />
                     </Link>
 
                     {step === 'phone' && (

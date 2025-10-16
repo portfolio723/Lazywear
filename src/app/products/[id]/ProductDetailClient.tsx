@@ -1,7 +1,8 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -79,18 +80,23 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             {/* Image Gallery */}
             <div className="grid grid-cols-2 gap-4">
               <div className="col-span-2 bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
-                  <img
+                  <Image
                     src={product.image}
                     alt={`${product.name} - comfortable ${product.category} for lazy wear`}
+                    width={600}
+                    height={800}
                     className="w-full h-full object-cover"
                     data-ai-hint={`${product.category} lifestyle`}
+                    priority
                   />
               </div>
               {productImages.slice(0,4).map((image, index) => (
                 <div key={index} className="bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
-                  <img
+                  <Image
                     src={image.src}
                     alt={`${product.name} alternate view ${index + 1} - high quality lazy wear`}
+                    width={600}
+                    height={800}
                     className="w-full h-full object-cover"
                     data-ai-hint={`${product.category} lifestyle`}
                   />

@@ -26,7 +26,6 @@ export function Header() {
     { href: "/caps", label: "Caps" },
     { href: "/shorts", label: "Shorts" },
     { href: "/combos", label: "Combos" },
-    { href: "/blog", label: "Blog" },
   ];
 
   return (

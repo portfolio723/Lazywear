@@ -5,8 +5,8 @@ import { AppProviders } from "@/components/app-providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lazywear",
-  description: "A sleek, minimalist shopping experience for premium apparel.",
+  title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
+  description: "Your comfortable clothing store for casual wear online. Buy the best lazy wear, oversized cotton t-shirts, and affordable loungewear for work from home, with home delivery in India.",
 };
 
 export default function RootLayout({

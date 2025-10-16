@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
@@ -31,7 +32,7 @@ export function CategoryShowcaseSection({
             <div key={item.title} className="relative group overflow-hidden rounded-lg">
               <Image
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title} - ${subtitle}`}
                 width={600}
                 height={600}
                 className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"

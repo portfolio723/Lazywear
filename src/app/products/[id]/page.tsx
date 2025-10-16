@@ -1,13 +1,10 @@
-
 import { notFound } from 'next/navigation';
 import { allProducts } from '@/lib/data';
 import ProductDetailClient from './ProductDetailClient';
 import type { Product } from '@/types';
 
 type ProductDetailPageProps = {
-  params: {
-    id: string;
-  };
+  params: { id: string; };
 };
 
 function getProduct(id: string): Product | undefined {
@@ -15,7 +12,8 @@ function getProduct(id: string): Product | undefined {
 }
 
 export async function generateMetadata({ params }: ProductDetailPageProps) {
-  const product = getProduct(params.id);
+  const { id } = params;
+  const product = getProduct(id);
 
   if (!product) {
     return {
@@ -31,7 +29,8 @@ export async function generateMetadata({ params }: ProductDetailPageProps) {
 }
 
 export default function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const product = getProduct(params.id);
+  const { id } = params;
+  const product = getProduct(id);
 
   if (!product) {
     notFound();

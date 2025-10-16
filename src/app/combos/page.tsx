@@ -30,7 +30,20 @@ export default function CombosPage() {
       <Header />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-6">
-          <h1 className="text-3xl font-bold font-headline mb-8">Combos</h1>
+            <div className="text-center mb-12">
+                <h1 className="text-3xl font-bold font-headline mb-2">Effortless Outfits, Simplified</h1>
+                <p className="text-muted-foreground max-w-3xl mx-auto">
+                    Take the guesswork out of getting dressed with Lazywear Combos. We’ve curated our most-loved pieces into perfect pairings that give you a complete, comfortable outfit in one click. Our combos are designed to offer maximum comfort, effortless style, and unbeatable value. It’s the smartest way to build your lazy wear wardrobe.
+                </p>
+            </div>
+             <div className="mb-12 text-left max-w-4xl mx-auto space-y-4 text-muted-foreground">
+                <p>
+                Each combo is a thoughtfully assembled look for a specific mood or occasion. <a href="/products/the-weekend-warrior-set" className="text-primary hover:underline">The Weekend Warrior Set</a>, for example, pairs our classic Zenith Tee with the cozy Haven Joggers for the ultimate relaxation uniform. For a look that’s ready for a smart-casual setting, <a href="/products/the-commuter-comfort-kit" className="text-primary hover:underline">The Commuter Comfort Kit</a> combines polished pieces that don’t sacrifice comfort. And when summer arrives, the <a href="/products/summer-vibe-set" className="text-primary hover-underline">Summer Vibe Set</a> has you covered.
+                </p>
+                <p>
+                By choosing a combo, you not only get a perfectly styled outfit but also enjoy significant savings compared to buying each item separately. It’s the easiest way to experience the best of Lazywear.
+                </p>
+            </div>
            {combos.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                 {combos.map((product) => (
@@ -50,3 +63,5 @@ export default function CombosPage() {
     </div>
   );
 }
+
+    

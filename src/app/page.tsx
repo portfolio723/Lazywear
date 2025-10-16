@@ -1,11 +1,12 @@
 
+import Image from "next/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { HeroSection } from "@/components/sections/hero-section";
 import { SaleSection } from "@/components/sections/sale-section";
 import { CategoryShowcaseSection } from "@/components/sections/category-showcase-section";
 import { ProductCarousel } from "@/components/sections/product-carousel";
-import { allProducts, shirts, pants, shoes, caps } from "@/lib/data";
+import { allProducts } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { ValuePropsSection } from "@/components/sections/value-props-section";
 import { NewsletterSection } from "@/components/sections/newsletter-section";
@@ -62,7 +63,7 @@ export default function Home() {
       <Header />
       <main className="flex-grow pt-16">
         <HeroSection />
-        <div className="container mx-auto px-6 pb-8 md:pb-[60px]">
+        <div className="pb-8 md:pb-[60px]">
           <SaleSection />
         </div>
         <div className="py-8 md:py-[60px]">
@@ -71,7 +72,7 @@ export default function Home() {
         <div className="pt-8 md:pt-[60px]">
             <div className="container mx-auto px-6">
                 <div className="relative group overflow-hidden rounded-lg">
-                <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*2_16WIYr-3I0rKoBshS9HA.png" alt="The Ultimate Comfort Zone" className="w-full h-[500px] md:h-auto object-cover" data-ai-hint="shopping woman"/>
+                <Image src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*2_16WIYr-3I0rKoBshS9HA.png" alt="Woman shopping for comfortable and affordable loungewear from Lazywear India's online store" width={1240} height={500} className="w-full h-auto md:h-[500px] object-cover" data-ai-hint="shopping woman"/>
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex flex-col items-center md:items-end md:text-right justify-center text-center p-4 md:p-12 text-white">
                     <h3 className="text-xl md:text-3xl font-bold font-headline">The Ultimate Comfort Zone</h3>

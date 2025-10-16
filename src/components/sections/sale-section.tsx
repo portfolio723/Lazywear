@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function SaleSection() {
   const calculateTimeLeft = () => {
@@ -54,7 +55,7 @@ export function SaleSection() {
         className="text-white relative bg-cover bg-center"
     >
       <div className="relative group overflow-hidden rounded-lg">
-        <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*w_VJnXAnk82yWmwEbDQDlQ.png" alt="Sale background" className="w-full h-[500px] md:h-auto object-cover" />
+        <Image src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*w_VJnXAnk82yWmwEbDQDlQ.png" alt="Flash sale on affordable loungewear and casual wear from Lazywear India" fill className="w-full h-auto md:h-[500px] object-cover" />
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="absolute inset-0 flex flex-col items-center md:items-end justify-center text-center md:text-right p-4 md:p-12 text-white">
             <h2 className="text-xl md:text-3xl font-bold font-headline">

@@ -26,7 +26,7 @@ export default function CartPage() {
                   {cart.map((item) => (
                     <div key={`${item.id}-${item.size}`} className="flex items-center justify-between p-4 border rounded-lg">
                       <div className="flex items-center gap-4">
-                        <Image src={item.image} alt={item.name} width={80} height={100} className="rounded-md object-cover" />
+                        <Image src={item.image} alt={`${item.name} - comfortable lazy wear`} width={80} height={100} className="rounded-md object-cover" />
                         <div>
                           <h3 className="font-semibold">{item.name}</h3>
                           {item.size && <p className="text-muted-foreground text-sm">Size: {item.size}</p>}

@@ -22,7 +22,7 @@ export function MiniCart() {
             <div className="p-4 space-y-4">
               {cart.slice(0, 3).map((item) => (
                 <div key={`${item.id}-${item.size}`} className="flex items-start gap-4">
-                  <Image src={item.image} alt={item.name} width={64} height={80} className="rounded-md object-cover" />
+                  <Image src={item.image} alt={`${item.name} - affordable lazy wear`} width={64} height={80} className="rounded-md object-cover" />
                   <div className="flex-grow">
                     <p className="font-medium text-sm">{item.name}</p>
                     {item.size && <p className="text-muted-foreground text-xs">Size: {item.size}</p>}

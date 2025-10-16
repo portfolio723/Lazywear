@@ -11,11 +11,7 @@ export async function generateStaticParams() {
   }))
 }
 
-type ProductDetailPageProps = {
-  params: { id: string };
-};
-
-export async function generateMetadata({ params }: ProductDetailPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const { id } = params;
   const product = allProducts.find((p) => p.id === id);
 
@@ -80,7 +76,7 @@ export async function generateMetadata({ params }: ProductDetailPageProps): Prom
 
 
 // This is the Server Component that can safely access params
-export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
+export default async function ProductDetailPage({ params }: { params: { id: string } }) {
   // In Next.js 15, params can be accessed directly.
   const { id } = params;
 

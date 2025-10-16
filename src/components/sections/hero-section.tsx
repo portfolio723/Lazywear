@@ -7,7 +7,7 @@ export function HeroSection() {
         <p className="mt-2 text-muted-foreground">Buy comfortable loungewear online in India, delivered right to your door.</p>
         <img 
           src="https://miro.medium.com/v2/resize:fit:590/format:webp/1*pDWC9ikqqFBkxvMV8RlfDA.png" 
-          alt="Hero banner for Lazywear - comfortable clothing store" 
+          alt="Models wearing comfortable lazy wear from Lazywear India - an online comfortable clothing store" 
           className="w-auto h-auto mt-4"
         />
       </div>

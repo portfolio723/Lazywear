@@ -81,7 +81,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               <div className="col-span-2 bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
                   <img
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} - comfortable ${product.category} for lazy wear`}
                     className="w-full h-full object-cover"
                     data-ai-hint={`${product.category} lifestyle`}
                   />
@@ -90,7 +90,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 <div key={index} className="bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
                   <img
                     src={image.src}
-                    alt={image.alt}
+                    alt={`${product.name} alternate view ${index + 1} - high quality lazy wear`}
                     className="w-full h-full object-cover"
                     data-ai-hint={`${product.category} lifestyle`}
                   />

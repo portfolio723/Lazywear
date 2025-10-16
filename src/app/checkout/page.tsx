@@ -154,7 +154,7 @@ export default function CheckoutPage() {
                 <div className="space-y-4 max-h-64 overflow-y-auto pr-2">
                   {cart.map(item => (
                     <div key={`${item.id}-${item.size}`} className="flex items-start gap-4">
-                      <Image src={item.image} alt={item.name} width={64} height={80} className="rounded-md object-cover" />
+                      <Image src={item.image} alt={`${item.name} - lazy wear product`} width={64} height={80} className="rounded-md object-cover" />
                       <div className="flex-grow">
                         <p className="font-medium text-sm">{item.name}</p>
                         {item.size && <p className="text-muted-foreground text-xs">Size: {item.size}</p>}

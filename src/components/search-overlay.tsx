@@ -73,7 +73,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {results.map((product) => (
                    <Link key={product.id} href="#" className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100" onClick={onClose}>
-                      <Image src={product.image} alt={product.name} width={60} height={60} className="rounded-md object-cover" />
+                      <Image src={product.image} alt={`${product.name} - comfortable casual wear`} width={60} height={60} className="rounded-md object-cover" />
                       <div>
                         <p className="font-semibold">{product.name}</p>
                         <p className="text-sm text-muted-foreground">₹{product.price.toLocaleString("en-IN")}</p>

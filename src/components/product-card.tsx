@@ -44,7 +44,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <Link href={`/products/${product.id}`}>
             <img
               src={product.image}
-              alt={product.name}
+              alt={`${product.name} - A comfortable ${product.category} from our lazy wear collection`}
               className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
               data-ai-hint={`${product.category} product`}
             />

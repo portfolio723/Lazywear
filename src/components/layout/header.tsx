@@ -34,7 +34,7 @@ export function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between h-16 px-6 bg-white text-black shadow-md">
         <div className="flex items-center flex-1">
           <Link href="/" className="flex items-center">
-            <Image src="https://miro.medium.com/v2/resize:fit:246/format:webp/1*pHF5KzQmHRkpZQ7-ntgZ8w.png" alt="Lazywear Logo" width={100} height={40} className="object-contain" />
+            <Image src="https://miro.medium.com/v2/resize:fit:246/format:webp/1*pHF5KzQmHRkpZQ7-ntgZ8w.png" alt="Lazywear India - Comfortable Clothing Store Logo" width={100} height={40} className="object-contain" />
           </Link>
         </div>
 
@@ -101,7 +101,7 @@ export function Header() {
               <SheetContent side="right" className="w-full bg-white p-0" showClose={false}>
                 <SheetHeader className="flex flex-row justify-between items-center p-4 border-b">
                    <Link href="/" className="flex items-center" onClick={() => setMenuOpen(false)}>
-                      <Image src="https://miro.medium.com/v2/resize:fit:246/format:webp/1*pHF5KzQmHRkpZQ7-ntgZ8w.png" alt="Lazywear Logo" width={100} height={40} className="object-contain" />
+                      <Image src="https://miro.medium.com/v2/resize:fit:246/format:webp/1*pHF5KzQmHRkpZQ7-ntgZ8w.png" alt="Lazywear India Logo" width={100} height={40} className="object-contain" />
                   </Link>
                   <SheetTitle className="sr-only">Menu</SheetTitle>
                   <SheetClose asChild>

@@ -30,7 +30,20 @@ export default function ShortsPage() {
       <Header />
       <main className="flex-grow pt-24">
         <div className="container mx-auto px-6">
-          <h1 className="text-3xl font-bold font-headline mb-8">Shorts</h1>
+          <div className="text-center mb-12">
+            <h1 className="text-3xl font-bold font-headline mb-2">Shorts for Sun and Serenity</h1>
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+                When the temperature rises, comfort is key. The Lazywear shorts collection is here to help you stay cool and relaxed, no matter how hot it gets. We’ve designed our shorts to be lightweight, breathable, and incredibly comfortable, making them the perfect choice for summer days, workouts, or just lounging around the house. Say goodbye to restrictive shorts and hello to total freedom.
+            </p>
+          </div>
+          <div className="mb-12 text-left max-w-4xl mx-auto space-y-4 text-muted-foreground">
+            <p>
+            Our collection offers a style for every occasion. For a classic summer look, the <a href="/products/breeze-linen-shorts" className="text-primary hover:underline">Breeze Linen Shorts</a> are an essential. Their linen-blend fabric is light and airy, keeping you cool all day long. If you’re looking for something for your workout, the <a href="/products/green-retro" className="text-primary hover:underline">Green Retro</a> shorts offer moisture-wicking fabric and a supportive liner. And for pure, unadulterated comfort, the <a href="/products/retreat-knit-shorts" className="text-primary hover:underline">Retreat Knit Shorts</a> with their brushed fleece interior are second to none.
+            </p>
+            <p>
+            Features like adjustable drawstrings, deep pockets, and 4-way stretch fabric make our shorts as functional as they are comfortable. Pair them with a simple tee or a tank top for an easy, go-to summer outfit.
+            </p>
+          </div>
           {shorts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
               {shorts.map((product) => (
@@ -50,3 +63,5 @@ export default function ShortsPage() {
     </div>
   );
 }
+
+    

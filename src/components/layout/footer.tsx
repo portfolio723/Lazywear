@@ -21,7 +21,7 @@ export function Footer() {
             <h3 className="font-headline text-base font-semibold mb-4">Products</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/shirts" className="text-gray-400 hover:text-white transition-colors">Shirts</Link></li>
-              <li><Link href="/pants" className="text-gray-400 hover:text-white transition-colors">Pants</Link></li>
+              <li><Link href="/pants" className="text_gray-400 hover:text-white transition-colors">Pants</Link></li>
               <li><Link href="/shoes" className="text-gray-400 hover:text-white transition-colors">Shoes</Link></li>
               <li><Link href="/caps" className="text-gray-400 hover:text-white transition-colors">Caps</Link></li>
             </ul>
@@ -50,14 +50,12 @@ export function Footer() {
           </div>
           <div className="flex flex-col md:flex-row items-center gap-4 mt-4 md:mt-0">
              <span>INDIA</span>
-             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+             <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-    
-
     

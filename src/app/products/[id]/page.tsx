@@ -1,94 +1,52 @@
 
-import ProductDetailClient from './ProductDetailClient'
-import { allProducts } from '@/lib/data'
 import { notFound } from 'next/navigation';
-import { type Product } from '@/types';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
+import { allProducts } from '@/lib/data';
+import ProductDetailClient from './ProductDetailClient';
 
-type PageProps = {
+type ProductPageProps = {
   params: { id: string };
 };
 
-export async function generateStaticParams() {
-  return allProducts.map((product) => ({
-    id: product.id,
-  }))
+// Fetch product data from local data
+async function getProduct(id: string) {
+  const product = allProducts.find((p) => p.id === id);
+  return product;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+// Main component
+export default async function ProductPage({ params }: ProductPageProps) {
   const { id } = params;
-  const product = allProducts.find((p) => p.id === id);
-
-  if (!product) {
-    return {
-      title: "Product not found"
-    }
-  }
-
-  const productSchema = {
-    '@context': 'https://schema.org/',
-    '@type': 'Product',
-    name: product.name,
-    image: [
-        `https://lazywear.store${product.image}`
-    ],
-    description: product.description,
-    sku: product.id,
-    brand: {
-      '@type': 'Brand',
-      name: 'Lazywear',
-    },
-    offers: {
-      '@type': 'Offer',
-      url: `https://lazywear.store/products/${product.id}`,
-      priceCurrency: 'INR',
-      price: product.price.toString(),
-      itemCondition: 'https://schema.org/NewCondition',
-      availability: 'https://schema.org/InStock',
-    },
-    aggregateRating: {
-      '@type': "AggregateRating",
-      "ratingValue": "4.5",
-      "reviewCount": "27"
-    }
-  };
-
-  return {
-    title: `${product.name} - Lazywear`,
-    description: product.description,
-    openGraph: {
-      title: `${product.name} - Lazywear`,
-      description: product.description,
-      images: [
-        {
-          url: product.image,
-          width: 800,
-          height: 600,
-          alt: product.name,
-        },
-      ],
-      type: 'website',
-    },
-    alternates: {
-      canonical: `/products/${product.id}`,
-    },
-    other: {
-      'script[type="application/ld+json"]': JSON.stringify(productSchema),
-    },
-  };
-}
-
-
-// This is the Server Component that can safely access params
-export default async function ProductDetailPage({ params }: PageProps) {
-  const { id } = params;
-
-  const product = allProducts.find((p) => p.id === id);
-
+  const product = await getProduct(id);
+  
   if (!product) {
     notFound();
   }
 
-  // Pass the full product object to the Client Component
   return <ProductDetailClient product={product} />;
+}
+
+// Required for static builds
+export async function generateStaticParams() {
+  return allProducts.map((product) => ({
+    id: product.id,
+  }));
+}
+
+// Optional: Generate metadata
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+  const { id } = params;
+  const product = await getProduct(id);
+  
+  if (!product) {
+    return {
+      title: 'Product Not Found',
+      description: 'The requested product could not be found.',
+    };
+  }
+
+  return {
+    title: `${product.name} | Lazywear`,
+    description: product.description,
+  };
 }

@@ -21,6 +21,19 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Lazy Wear",
+            "url": "https://lazywear.store",
+            "logo": "https://lazywear.store/logo.png",
+            "sameAs": [
+              "https://www.instagram.com/lazywear",
+              "https://www.facebook.com/lazywear"
+            ]
+          }`}
+        </script>
       </head>
       <body className="font-body antialiased">
         <AppProviders>

@@ -7,7 +7,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
-  description: "Shop the best lazy wear, oversized cotton t-shirts, and affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",
+  description: "Shop the best lazy wear, oversized cotton t-shirts & affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",
   openGraph: {
     title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
     description: "Shop the best lazy wear, oversized cotton t-shirts, and affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",

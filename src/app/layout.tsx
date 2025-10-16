@@ -7,33 +7,34 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lazywear.store"),
-  title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
-  description: "Shop the best lazy wear, oversized cotton t-shirts & affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",
+  title: 'Lazywear: Shop Comfortable & Affordable Loungewear Online in India',
+  description: 'Your comfortable clothing store for casual wear online. Buy the best lazy wear, oversized cotton t-shirts, and affordable loungewear for work from home, with home delivery in India.',
   keywords: ['lazy wear', 'loungewear India', 'comfortable clothing', 'casual wear online', 'oversized t-shirts'],
   authors: [{ name: 'Lazywear' }],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Lazywear: Shop Comfortable & Affordable Loungewear Online in India",
-    description: "Shop the best lazy wear, oversized cotton t-shirts, and affordable loungewear in India. Your online store for comfortable casual wear, perfect for work from home.",
-    url: "https://lazywear.store",
-    siteName: "Lazywear",
+    title: 'Lazywear: Shop Comfortable & Affordable Loungewear Online in India',
+    description: 'Your comfortable clothing store for casual wear online.',
+    url: 'https://lazywear.store',
+    siteName: 'Lazywear',
+    type: 'website',
+    locale: 'en_IN',
     images: [
       {
-        url: "/og-image.png",
+        url: 'https://lazywear.store/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Lazywear - Comfortable Loungewear India'
-      },
-    ],
-    type: "website",
-    locale: 'en_IN',
+        alt: 'Lazywear Loungewear'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lazywear: Shop Comfortable & Affordable Loungewear Online in India',
-    description: 'Shop the best lazy wear, oversized cotton t-shirts, and affordable loungewear in India.',
+    title: 'Lazywear: Shop Comfortable & Affordable Loungewear',
+    description: 'Your comfortable clothing store for casual wear online.',
+    images: ['https://lazywear.store/twitter-image.jpg'],
   },
   robots: {
     index: true,

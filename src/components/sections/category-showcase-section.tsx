@@ -1,10 +1,12 @@
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface CategoryItem {
   title: string;
   image: string;
   hint: string;
+  href: string;
 }
 interface CategoryShowcaseSectionProps {
   title: string;
@@ -28,7 +30,7 @@ export function CategoryShowcaseSection({
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {items.map((item) => (
-            <div key={item.title} className="relative group overflow-hidden rounded-lg">
+            <Link key={item.title} href={item.href} className="relative group overflow-hidden rounded-lg">
               <Image
                 src={item.image}
                 alt={`${item.title} - ${subtitle} from our comfortable clothing store`}
@@ -43,7 +45,7 @@ export function CategoryShowcaseSection({
                   {item.title}
                 </h3>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

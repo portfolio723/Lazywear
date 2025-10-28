@@ -16,21 +16,25 @@ const iconsReinvented = [
     title: "Shirts",
     image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*PScdSEJqvu1bpqXqJuMhfg.png",
     hint: "comfortable shirt",
+    href: "/shirts",
   },
   {
     title: "Shoes",
     image: "https://miro.medium.com/v2/resize:fit:382/format:webp/1*uSIj4cooWQFZZV4x-UBXsg.jpeg",
     hint: "comfortable shoes",
+    href: "/shoes",
   },
   {
     title: "Pants",
     image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*jZ5uqcKsS_byCQnChpWWHw.png",
     hint: "comfortable pants",
+    href: "/pants",
   },
   {
     title: "Caps",
     image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*wEpmpNsFkAwwTvbwhAGH3A.png",
     hint: "stylish caps",
+    href: "/caps",
   },
 ];
 
@@ -39,21 +43,25 @@ const stepIntoTheSpotlight = [
     title: "Trending Wears",
     image: "/15.png",
     hint: "trending clothes",
+    href: "/sale",
   },
   {
     title: "Best Buys",
     image: "/12.png",
     hint: "best selling items",
+    href: "/combos",
   },
   {
     title: "Lazywear x Home",
     image: "/13.png",
     hint: "person relaxing home",
+    href: "/pants",
   },
   {
     title: "Weekend Collection",
     image: "/11 2.png",
     hint: "person reading book",
+    href: "/shirts",
   },
 ]
 

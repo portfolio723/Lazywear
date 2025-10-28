@@ -52,7 +52,7 @@ const stepIntoTheSpotlight = [
   },
   {
     title: "Weekend Collection",
-    image: "https://i5.walmartimages.com/asr/ec11bbd0-4193-4630-8311-f2726edf2be1.c4c3876897f22e10ad642f1b47f3619d.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+    image: "/11 2.png",
     hint: "person reading book",
   },
 ]

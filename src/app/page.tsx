@@ -47,7 +47,7 @@ const stepIntoTheSpotlight = [
   },
   {
     title: "Lazywear x Home",
-    image: "https://assets.ajio.com/medias/sys_master/root/20240817/wGly/66bffb1a6f60443f3110f1a5/-473Wx593H-700296168-beige-MODEL3.jpg",
+    image: "/13.png",
     hint: "person relaxing home",
   },
   {

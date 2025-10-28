@@ -37,7 +37,7 @@ const iconsReinvented = [
 const stepIntoTheSpotlight = [
   {
     title: "Trending Wears",
-    image: "https://cdn.shopify.com/s/files/1/0266/6276/4597/files/formal_wear_for_men.png?v=1681479862",
+    image: "/15.png",
     hint: "trending clothes",
   },
   {

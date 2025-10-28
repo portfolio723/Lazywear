@@ -42,7 +42,7 @@ const stepIntoTheSpotlight = [
   },
   {
     title: "Best Buys",
-    image: "https://cdn17.nnnow.com/web-images/large/styles/WIX8LA3BFTY/1731493281791/1.jpg",
+    image: "/12.png",
     hint: "best selling items",
   },
   {

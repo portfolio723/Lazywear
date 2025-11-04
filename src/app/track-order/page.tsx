@@ -9,24 +9,45 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import { Separator } from "@/components/ui/separator";
-import { CheckCircle, Truck, Package } from "lucide-react";
+import { CheckCircle, Truck, Package, Loader2 } from "lucide-react";
+import { trackOrder, type TrackingData } from "@/app/actions/shiprocket";
 
 export default function TrackOrderPage() {
   const { toast } = useToast();
   const [orderId, setOrderId] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [trackingData, setTrackingData] = useState<TrackingData | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError(null);
+    setTrackingData(null);
     if (!orderId) {
         toast({ title: "Please enter an Order ID", variant: "destructive"});
         return;
     }
-    toast({
-      title: "Searching for your order...",
-    });
-    // Simulate API call
-    setTimeout(() => setIsSubmitted(true), 1000);
+    setIsLoading(true);
+    
+    const result = await trackOrder({ orderId });
+    
+    setIsLoading(false);
+    if (result.success && result.data) {
+      setTrackingData(result.data);
+    } else {
+      setError(result.error);
+      toast({ title: "Error", description: result.error, variant: "destructive" });
+    }
+  };
+
+  const getStatusIcon = (status: string) => {
+    const isCompleted = trackingData?.activity.some(act => act.status.toLowerCase() === status.toLowerCase());
+    const isCurrent = trackingData?.status.toLowerCase() === status.toLowerCase();
+
+    if (isCompleted || isCurrent) {
+        return <div className="bg-primary text-white rounded-full p-2 ring-4 ring-background"><CheckCircle /></div>;
+    }
+    return <div className="bg-gray-300 text-gray-600 rounded-full p-2 ring-4 ring-background"><Package /></div>;
   };
 
   return (
@@ -46,40 +67,49 @@ export default function TrackOrderPage() {
                         <Input 
                             id="orderId" 
                             type="text" 
-                            placeholder="Enter your Order ID (e.g., #12345)" 
+                            placeholder="Enter your Order ID (e.g., #LW12345)" 
                             value={orderId}
                             onChange={(e) => setOrderId(e.target.value)}
+                            disabled={isLoading}
                         />
                     </div>
-                    <Button type="submit" className="h-10">Track</Button>
+                    <Button type="submit" className="h-10" disabled={isLoading}>
+                        {isLoading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Track"}
+                    </Button>
                 </form>
             </div>
             
-            {isSubmitted && (
+            {error && (
+                 <div className="max-w-2xl mx-auto mt-12 text-center text-red-500">
+                    <p>{error}</p>
+                 </div>
+            )}
+
+            {trackingData && (
                 <div className="max-w-2xl mx-auto mt-12">
-                    <h2 className="text-xl font-bold text-center mb-6">Order Status for #{orderId}</h2>
-                    <div className="relative">
-                        <Separator orientation="vertical" className="absolute left-1/2 top-0 h-full -translate-x-1/2" />
-                        <div className="flex justify-between items-center mb-16">
-                            <div className="flex flex-col items-center text-center z-10">
-                                <div className="bg-green-500 text-white rounded-full p-2 ring-4 ring-background"><CheckCircle /></div>
-                                <h3 className="font-semibold mt-2">Order Confirmed</h3>
-                                <p className="text-sm text-muted-foreground">July 29, 2024</p>
-                            </div>
-                            <div className="flex flex-col items-center text-center z-10">
-                                <div className="bg-primary text-white rounded-full p-2 ring-4 ring-background"><Package /></div>
-                                <h3 className="font-semibold mt-2">Shipped</h3>
-                                <p className="text-sm text-muted-foreground">July 30, 2024</p>
-                            </div>
-                            <div className="flex flex-col items-center text-center z-10">
-                                <div className="bg-gray-300 text-gray-600 rounded-full p-2 ring-4 ring-background"><Truck /></div>
-                                <h3 className="font-semibold text-gray-500 mt-2">Out for Delivery</h3>
-                                <p className="text-sm text-muted-foreground">Pending</p>
-                            </div>
-                        </div>
+                    <h2 className="text-xl font-bold text-center mb-2">Order Status for #{orderId}</h2>
+                    <p className="text-center text-muted-foreground mb-6">Current Status: <span className="font-semibold text-primary">{trackingData.status}</span></p>
+
+                    <div className="space-y-6">
+                        {trackingData.activity.map((activity, index) => (
+                           <div key={index} className="flex gap-4">
+                                <div className="flex flex-col items-center">
+                                    <div className="bg-primary rounded-full p-2">
+                                        <CheckCircle className="text-white h-4 w-4"/>
+                                    </div>
+                                    {index < trackingData.activity.length - 1 && <div className="w-px h-full bg-border mt-2"></div>}
+                                </div>
+                                <div>
+                                    <p className="font-semibold">{activity.status}</p>
+                                    <p className="text-sm text-muted-foreground">{activity.location}</p>
+                                    <p className="text-xs text-muted-foreground">{activity.date}</p>
+                                </div>
+                           </div>
+                        ))}
                     </div>
+
                     <div className="text-center text-muted-foreground mt-8">
-                        <p>Estimated Delivery: August 2, 2024</p>
+                        <p>Estimated Delivery: {trackingData.estimatedDelivery}</p>
                         <p>Questions? <a href="/contact" className="text-primary hover:underline">Contact us</a>.</p>
                     </div>
                 </div>

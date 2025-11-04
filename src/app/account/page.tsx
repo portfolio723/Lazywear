@@ -18,10 +18,16 @@ import {
   PhoneMultiFactorGenerator,
   multiFactor,
   updateProfile,
-  reauthenticateWithCredential,
-  EmailAuthProvider,
+  signOut,
   type ConfirmationResult,
 } from "firebase/auth";
+import { Separator } from '@/components/ui/separator';
+
+const mockOrders = [
+  { id: 'LW78910', date: 'August 1, 2024', total: '₹2,498.00', status: 'Delivered' },
+  { id: 'LW45678', date: 'July 25, 2024', total: '₹1,599.00', status: 'Delivered' },
+  { id: 'LW12345', date: 'July 15, 2024', total: '₹3,999.00', status: 'Delivered' },
+];
 
 export default function AccountPage() {
   const { user, isLoading } = useUser();
@@ -115,7 +121,6 @@ export default function AccountPage() {
       const multiFactorAssertion = PhoneMultiFactorGenerator.assertion(credential);
 
       try {
-        const multiFactorSession = await multiFactor(user).getSession();
         await multiFactor(user).enroll(multiFactorAssertion, "My Phone Number");
         toast({ title: "Success!", description: "Multi-factor authentication has been enabled." });
         setVerificationId(null);
@@ -126,6 +131,17 @@ export default function AccountPage() {
       } finally {
         setIsSubmitting(false);
       }
+  };
+
+  const handleLogout = async () => {
+    if (!auth) return;
+    try {
+      await signOut(auth);
+      toast({ title: "Logged out successfully" });
+      router.push('/');
+    } catch (error: any) {
+      toast({ variant: 'destructive', title: 'Logout Failed', description: error.message });
+    }
   };
 
 
@@ -159,7 +175,7 @@ export default function AccountPage() {
                 <form onSubmit={handleProfileUpdate} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" value={user.email || ''} disabled />
+                    <Input id="email" type="email" value={user.email || 'No email provided'} disabled />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="displayName">Full Name</Label>
@@ -169,6 +185,7 @@ export default function AccountPage() {
                       value={displayName}
                       onChange={(e) => setDisplayName(e.target.value)}
                       disabled={!isEditing || isSubmitting}
+                      placeholder="Your name"
                     />
                   </div>
                   {isEditing ? (
@@ -180,6 +197,33 @@ export default function AccountPage() {
                     <Button onClick={() => setIsEditing(true)}>Edit Profile</Button>
                   )}
                 </form>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Order History</CardTitle>
+                <CardDescription>View your past orders.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {mockOrders.length > 0 ? (
+                  <div className="space-y-4">
+                    {mockOrders.map((order) => (
+                      <div key={order.id} className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 border rounded-lg">
+                        <div>
+                          <p className="font-semibold">Order ID: {order.id}</p>
+                          <p className="text-sm text-muted-foreground">Date: {order.date}</p>
+                        </div>
+                        <div className='mt-2 sm:mt-0'>
+                          <p><span className='font-semibold'>Total:</span> {order.total}</p>
+                          <p><span className='font-semibold'>Status:</span> <span className='text-green-600'>{order.status}</span></p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-muted-foreground">You have not placed any orders yet.</p>
+                )}
               </CardContent>
             </Card>
 
@@ -233,6 +277,10 @@ export default function AccountPage() {
                 )}
               </CardContent>
             </Card>
+            <Separator />
+            <div className='text-center'>
+              <Button variant="destructive" onClick={handleLogout}>Log Out</Button>
+            </div>
           </div>
         </div>
       </main>
@@ -241,5 +289,3 @@ export default function AccountPage() {
     </div>
   );
 }
-
-    

@@ -1,51 +1,332 @@
 {
-  "hosting": {
-    "headers": []
-  },
   "entities": {
-    "user": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
       "title": "User",
-      "description": "A user of the application.",
       "type": "object",
+      "description": "Represents a user of the Lazywear e-commerce platform.",
       "properties": {
-        "uid": {
+        "id": {
           "type": "string",
-          "description": "The user's unique ID."
+          "description": "Unique identifier for the user entity."
         },
         "email": {
           "type": "string",
-          "format": "email",
-          "description": "The user's email address."
+          "description": "Email address of the user.",
+          "format": "email"
         },
-        "displayName": {
+        "firstName": {
           "type": "string",
-          "description": "The user's display name."
+          "description": "First name of the user."
         },
-        "photoURL": {
+        "lastName": {
           "type": "string",
-          "format": "uri",
-          "description": "The URL of the user's profile picture."
+          "description": "Last name of the user."
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number of the user."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the user account was created.",
+          "format": "date-time"
         }
       },
       "required": [
-        "uid"
+        "id",
+        "email",
+        "firstName",
+        "lastName"
+      ]
+    },
+    "Product": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Product",
+      "type": "object",
+      "description": "Represents a product available for sale on the Lazywear platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the product entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the product."
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the product."
+        },
+        "price": {
+          "type": "number",
+          "description": "Price of the product in INR."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the product's main image.",
+          "format": "uri"
+        },
+        "categoryIds": {
+          "type": "array",
+          "description": "References to Categories. (Relationship: Category N:N Product)",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "price",
+        "imageUrl"
+      ]
+    },
+    "Category": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Category",
+      "type": "object",
+      "description": "Represents a category of products on the Lazywear platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the category entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the category (e.g., Shirts, Pants, Shoes)."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the product category."
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "Order": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Order",
+      "type": "object",
+      "description": "Represents an order placed by a user on the Lazywear platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the order entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Order)"
+        },
+        "orderDate": {
+          "type": "string",
+          "description": "Date when the order was placed.",
+          "format": "date-time"
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Total amount of the order."
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the order (e.g., pending, processing, shipped, delivered)."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "orderDate",
+        "totalAmount",
+        "status"
+      ]
+    },
+    "OrderItem": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "OrderItem",
+      "type": "object",
+      "description": "Represents an item within an order.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the order item entity."
+        },
+        "orderId": {
+          "type": "string",
+          "description": "Reference to Order. (Relationship: Order 1:N OrderItem)"
+        },
+        "productId": {
+          "type": "string",
+          "description": "Reference to Product. (Relationship: Product 1:N OrderItem)"
+        },
+        "quantity": {
+          "type": "number",
+          "description": "Quantity of the product in the order item."
+        },
+        "price": {
+          "type": "number",
+          "description": "Price of the product at the time of order."
+        }
+      },
+      "required": [
+        "id",
+        "orderId",
+        "productId",
+        "quantity",
+        "price"
+      ]
+    },
+    "Wishlist": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Wishlist",
+      "type": "object",
+      "description": "Represents a user's wishlist of products.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the wishlist entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Wishlist)"
+        },
+        "productIds": {
+          "type": "array",
+          "description": "References to Product. (Relationship: Wishlist 1:N Product)",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "userId"
       ]
     }
   },
   "auth": {
     "providers": [
-      "google.com",
       "password",
-      "phone"
+      "anonymous"
     ]
   },
   "firestore": {
-    "rules": "rules/firestore.rules",
-    "/users/{userId}": {
-      "schema": {
-        "$ref": "#/entities/user"
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profiles. Path-based ownership ensures only the authenticated user can access their own data.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            }
+          ]
+        }
       },
-      "description": "User profile information."
-    }
+      {
+        "path": "/products/{productId}",
+        "definition": {
+          "entityName": "Product",
+          "schema": {
+            "$ref": "#/backend/entities/Product"
+          },
+          "description": "Stores product information. This collection is globally accessible for read operations (with appropriate read rules).",
+          "params": [
+            {
+              "name": "productId",
+              "description": "The unique identifier of the product."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/categories/{categoryId}",
+        "definition": {
+          "entityName": "Category",
+          "schema": {
+            "$ref": "#/backend/entities/Category"
+          },
+          "description": "Stores product categories.  This collection is globally accessible for read operations (with appropriate read rules).",
+          "params": [
+            {
+              "name": "categoryId",
+              "description": "The unique identifier of the category."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/orders/{orderId}",
+        "definition": {
+          "entityName": "Order",
+          "schema": {
+            "$ref": "#/backend/entities/Order"
+          },
+          "description": "Stores orders placed by users. Path-based ownership ensures only the authenticated user can access their own orders.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "orderId",
+              "description": "The unique identifier of the order."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/orders/{orderId}/orderItems/{orderItemId}",
+        "definition": {
+          "entityName": "OrderItem",
+          "schema": {
+            "$ref": "#/backend/entities/OrderItem"
+          },
+          "description": "Stores order items for a specific order.  Inherits path-based ownership from the parent order.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "orderId",
+              "description": "The unique identifier of the order."
+            },
+            {
+              "name": "orderItemId",
+              "description": "The unique identifier of the order item."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/wishlists/{wishlistId}",
+        "definition": {
+          "entityName": "Wishlist",
+          "schema": {
+            "$ref": "#/backend/entities/Wishlist"
+          },
+          "description": "Stores wishlists of users. Path-based ownership ensures only the authenticated user can access their own wishlist.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "wishlistId",
+              "description": "The unique identifier of the wishlist."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to support the Lazywear e-commerce platform, focusing on product catalog, user management, orders, and wishlists. The design emphasizes authorization independence via denormalization, making security rules simple and efficient. It uses hierarchical paths for user-owned data and membership maps for collaborative access where applicable.  \n\nAuthorization Independence is achieved primarily by avoiding `get()` calls in security rules. For instance, user-specific data like orders and wishlists are stored under `/users/{userId}`, so rules can authorize based on `request.auth.uid == userId` without needing to fetch user data. The `Order` collection includes the `userId` to associate it with a specific user. This structure avoids hierarchical authorization dependencies, ensuring atomic operations.\n\nQAPs (Rules are not Filters) are supported through structural segregation. User-specific data is stored under `/users/{userId}`, while global data like products and categories are stored in top-level collections. This separation allows for secure `list` operations. For example, listing products does not require filtering based on user roles because all products are accessible, according to product read rules. Private user data like wishlists can only be accessed by the authenticated user, ensuring data privacy.\n\nGlobal roles aren't explicitly required in this design, but could be added using an existence-based approach with a `/roles_admin/{uid}` collection. For collaborative data models, a membership map could be employed to control write access to collaborative entities, which aren't present in this design."
   }
 }

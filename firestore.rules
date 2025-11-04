@@ -1,0 +1,161 @@
+/**
+ * @fileoverview Firestore Security Rules for the Lazywear e-commerce platform.
+ *
+ * Core Philosophy:
+ * This ruleset enforces a strict user-ownership model for user-specific data
+ * (profiles, orders, wishlists) and allows public read access to product and
+ * category information. It prioritizes authorization independence, avoiding
+ * `get()` calls by relying on path-based ownership and denormalized data.
+ *
+ * Data Structure:
+ * - /users/{userId}: Stores user profiles. Only the authenticated user can
+ *   access their own profile.
+ * - /products/{productId}: Stores product information. Publicly readable.
+ * - /categories/{categoryId}: Stores product categories. Publicly readable.
+ * - /users/{userId}/orders/{orderId}: Stores orders placed by a user. Only the
+ *   authenticated user can access their own orders.
+ * - /users/{userId}/orders/{orderId}/orderItems/{orderItemId}: Stores order items
+ *   for a specific order. Inherits ownership from the parent order.
+ * - /users/{userId}/wishlists/{wishlistId}: Stores user wishlists. Only the
+ *   authenticated user can access their own wishlists.
+ *
+ * Key Security Decisions:
+ * - Users can only access their own data (profiles, orders, wishlists).
+ * - Products and categories are publicly readable.
+ * - User listing is explicitly disallowed.
+ * - No global roles are implemented in this version.
+ *
+ * Denormalization for Authorization:
+ * - User-specific data is stored under /users/{userId} to avoid `get()` calls.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Controls access to user profiles.
+     * @path /users/{userId}
+     * @allow (create) - An authenticated user can create their own profile if the userId matches their auth UID.
+     * @allow (get, list, update, delete) - An authenticated user can access/modify their own profile.
+     * @deny (create) - A user cannot create a profile with a userId that does not match their auth UID.
+     * @principle Enforces document ownership for all operations.
+     */
+    match /users/{userId} {
+      function isOwner(userId) {
+        return request.auth.uid == userId;
+      }
+      function isSignedIn() {
+        return request.auth != null;
+      }
+      allow get: if isOwner(userId);
+      allow list: if false; // Listing users is not permitted.
+      allow create: if isSignedIn() && isOwner(userId) && request.resource.data.id == userId;
+      allow update: if isSignedIn() && isOwner(userId) && resource.data.id == userId; //Enforce immutability on update
+      allow delete: if isSignedIn() && isOwner(userId) && resource.data.id == userId;
+    }
+
+    /**
+     * @description Controls access to product information.
+     * @path /products/{productId}
+     * @allow (get, list) - Any user can read product information.
+     * @deny (create, update, delete) - No user can create, update, or delete product information.
+     * @principle Allows public read access while restricting write access.
+     */
+    match /products/{productId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if false; // TODO: Add owner validation once the schema is updated with an ownership field.
+      allow update: if false; // TODO: Add owner validation once the schema is updated with an ownership field.
+      allow delete: if false; // TODO: Add owner validation once the schema is updated with an ownership field.
+    }
+
+    /**
+     * @description Controls access to category information.
+     * @path /categories/{categoryId}
+     * @allow (get, list) - Any user can read category information.
+     * @deny (create, update, delete) - No user can create, update, or delete category information.
+     * @principle Allows public read access while restricting write access.
+     */
+    match /categories/{categoryId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if false; // TODO: Add owner validation once the schema is updated with an ownership field.
+      allow update: if false; // TODO: Add owner validation once the schema is updated with an ownership field.
+      allow delete: if false; // TODO: Add owner validation once the schema is updated with an ownership field.
+    }
+
+    /**
+     * @description Controls access to orders placed by a user.
+     * @path /users/{userId}/orders/{orderId}
+     * @allow (create) - An authenticated user can create an order under their own userId.
+     * @allow (get, list, update, delete) - Only the user who owns the order can access/modify it.
+     * @deny (create) - A user cannot create an order under another user's ID.
+     * @principle Enforces document ownership for all operations.
+     */
+    match /users/{userId}/orders/{orderId} {
+      function isOwner(userId) {
+        return request.auth.uid == userId;
+      }
+       function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+      }
+      function isSignedIn() {
+        return request.auth != null;
+      }
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isSignedIn() && isOwner(userId) && request.resource.data.userId == userId;
+      allow update: if isExistingOwner(userId);
+      allow delete: if isExistingOwner(userId);
+    }
+
+    /**
+     * @description Controls access to order items for a specific order.
+     * @path /users/{userId}/orders/{orderId}/orderItems/{orderItemId}
+     * @allow (create, get, list, update, delete) - Only the user who owns the parent order can access/modify order items.
+     * @deny (create) - A user cannot create an order item under another user's order.
+     * @principle Inherits document ownership from the parent order.
+     */
+    match /users/{userId}/orders/{orderId}/orderItems/{orderItemId} {
+      function isOwner(userId) {
+        return request.auth.uid == userId;
+      }
+      function isSignedIn() {
+        return request.auth != null;
+      }
+      function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+      }
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isSignedIn() && isOwner(userId);
+      allow update: if isExistingOwner(userId);
+      allow delete: if isExistingOwner(userId);
+    }
+
+    /**
+     * @description Controls access to wishlists of users.
+     * @path /users/{userId}/wishlists/{wishlistId}
+     * @allow (create) - An authenticated user can create a wishlist under their own userId.
+     * @allow (get, list, update, delete) - Only the user who owns the wishlist can access/modify it.
+     * @deny (create) - A user cannot create a wishlist under another user's ID.
+     * @principle Enforces document ownership for all operations.
+     */
+    match /users/{userId}/wishlists/{wishlistId} {
+      function isOwner(userId) {
+        return request.auth.uid == userId;
+      }
+      function isSignedIn() {
+        return request.auth != null;
+      }
+       function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+      }
+      allow get: if isOwner(userId);
+      allow list: if isOwner(userId);
+      allow create: if isSignedIn() && isOwner(userId) && request.resource.data.userId == userId;
+      allow update: if isExistingOwner(userId);
+      allow delete: if isExistingOwner(userId);
+    }
+  }
+}

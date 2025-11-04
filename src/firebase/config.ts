@@ -1,18 +1,8 @@
-
-import { FirebaseOptions, initializeApp } from 'firebase/app';
-
-const firebaseConfig: FirebaseOptions = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+export const firebaseConfig = {
+  "projectId": "studio-11686014-237c1",
+  "appId": "1:453480929221:web:df7f95eefdb88ae2129dac",
+  "apiKey": "AIzaSyAFEvqm3EUhLgpqKZcCqcViKArv3vntxVQ",
+  "authDomain": "studio-11686014-237c1.firebaseapp.com",
+  "measurementId": "",
+  "messagingSenderId": "453480929221"
 };
-
-export function getFirebaseConfig() {
-    if (!firebaseConfig.apiKey) {
-        throw new Error('Missing Firebase config: NEXT_PUBLIC_FIREBASE_API_KEY');
-    }
-    return firebaseConfig;
-}

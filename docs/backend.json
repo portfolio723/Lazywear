@@ -12,7 +12,7 @@
         },
         "email": {
           "type": "string",
-          "description": "Email address of the user.",
+          "description": "Email address of the user. Optional for phone auth.",
           "format": "email"
         },
         "firstName": {
@@ -34,10 +34,7 @@
         }
       },
       "required": [
-        "id",
-        "email",
-        "firstName",
-        "lastName"
+        "id"
       ]
     },
     "Product": {
@@ -209,7 +206,8 @@
   "auth": {
     "providers": [
       "password",
-      "anonymous"
+      "phone",
+      "google.com"
     ]
   },
   "firestore": {
@@ -330,3 +328,4 @@
     "reasoning": "The Firestore structure is designed to support the Lazywear e-commerce platform, focusing on product catalog, user management, orders, and wishlists. The design emphasizes authorization independence via denormalization, making security rules simple and efficient. It uses hierarchical paths for user-owned data and membership maps for collaborative access where applicable.  \n\nAuthorization Independence is achieved primarily by avoiding `get()` calls in security rules. For instance, user-specific data like orders and wishlists are stored under `/users/{userId}`, so rules can authorize based on `request.auth.uid == userId` without needing to fetch user data. The `Order` collection includes the `userId` to associate it with a specific user. This structure avoids hierarchical authorization dependencies, ensuring atomic operations.\n\nQAPs (Rules are not Filters) are supported through structural segregation. User-specific data is stored under `/users/{userId}`, while global data like products and categories are stored in top-level collections. This separation allows for secure `list` operations. For example, listing products does not require filtering based on user roles because all products are accessible, according to product read rules. Private user data like wishlists can only be accessed by the authenticated user, ensuring data privacy.\n\nGlobal roles aren't explicitly required in this design, but could be added using an existence-based approach with a `/roles_admin/{uid}` collection. For collaborative data models, a membership map could be employed to control write access to collaborative entities, which aren't present in this design."
   }
 }
+    

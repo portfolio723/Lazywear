@@ -47,9 +47,13 @@ service cloud.firestore {
       function isSignedIn() {
         return request.auth != null;
       }
+       function isPasswordProvider() {
+        return request.auth.token.firebase.sign_in_provider == 'password';
+      }
       allow get: if isOwner(userId);
       allow list: if false; // Listing users is not permitted.
-      allow create: if isSignedIn() && isOwner(userId) && request.resource.data.id == userId;
+      allow create: if isSignedIn() && isOwner(userId) && request.resource.data.id == userId
+                  && (isPasswordProvider() ? 'email' in request.resource.data : true);
       allow update: if isSignedIn() && isOwner(userId) && resource.data.id == userId; //Enforce immutability on update
       allow delete: if isSignedIn() && isOwner(userId) && resource.data.id == userId;
     }
@@ -159,3 +163,4 @@ service cloud.firestore {
     }
   }
 }
+    

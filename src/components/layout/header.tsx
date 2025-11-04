@@ -87,11 +87,8 @@ export function Header() {
           {!isLoading && user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                  <Avatar className="h-8 w-8">
-                    <AvatarImage src={user.photoURL ?? ''} alt={user.displayName ?? 'User'} />
-                    <AvatarFallback>{user.displayName?.charAt(0) ?? user.email?.charAt(0)}</AvatarFallback>
-                  </Avatar>
+                <Button variant="ghost" size="icon" className="hover:bg-transparent">
+                  <Image src="https://i.imgur.com/gC5PS6y.png" alt="Account" width={24} height={24} />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="end" forceMount>
@@ -179,5 +176,3 @@ export function Header() {
     </>
   );
 }
-
-    

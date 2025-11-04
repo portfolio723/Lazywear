@@ -23,10 +23,6 @@ const nextConfig: NextConfig = {
     ],
   },
   trailingSlash: true,
-  allowedDevOrigins: [
-      "https://*.cloudworkstations.dev",
-      "https://*.firebase.studio"
-  ],
   webpack: (config, { isServer }) => {
     config.plugins.push(
       new (require('webpack').DefinePlugin)({
@@ -40,6 +36,10 @@ const nextConfig: NextConfig = {
     );
     return config;
   },
+  allowedDevOrigins: [
+      "https://*.cloudworkstations.dev",
+      "https://*.firebase.studio"
+  ]
 };
 
 export default nextConfig;

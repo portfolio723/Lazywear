@@ -140,19 +140,23 @@ export default function LoginPage() {
             });
     };
 
-    const handleOtpSubmit = async (e: React.FormEvent) => {
+    const handleOtpSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!confirmationResult) return;
         setIsLoading(true);
-        try {
-            await confirmationResult.confirm(otp);
-            toast({ title: 'Sign in successful!' });
-            router.push('/');
-        } catch (error: any) {
-            toast({ variant: 'destructive', title: 'OTP Verification Failed', description: error.message });
-        } finally {
-            setIsLoading(false);
-        }
+        
+        confirmationResult.confirm(otp)
+            .then((result) => {
+              // User signed in successfully.
+              const user = result.user;
+              toast({ title: 'Sign in successful!' });
+              router.push('/');
+            }).catch((error) => {
+              // User couldn't sign in (bad verification code?)
+              toast({ variant: 'destructive', title: 'OTP Verification Failed', description: error.message });
+            }).finally(() => {
+                setIsLoading(false);
+            });
     };
 
     return (
@@ -277,3 +281,5 @@ export default function LoginPage() {
         </div>
     );
 }
+
+    

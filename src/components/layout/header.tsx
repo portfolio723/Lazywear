@@ -87,8 +87,9 @@ export function Header() {
           {!isLoading && user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="hover:bg-transparent">
-                  <Image src="https://i.imgur.com/gC5PS6y.png" alt="Account" width={24} height={24} />
+                <Button variant="ghost" size="icon">
+                  <User className="h-5 w-5" />
+                  <span className="sr-only">Account</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="end" forceMount>

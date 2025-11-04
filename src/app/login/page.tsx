@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
@@ -51,27 +52,21 @@ export default function LoginPage() {
     const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
     
     const recaptchaVerifierRef = useRef<RecaptchaVerifier | null>(null);
+    const recaptchaContainerRef = useRef<HTMLDivElement>(null);
     
     useEffect(() => {
-        if (!auth) return;
+        if (!auth || !recaptchaContainerRef.current) return;
         if (recaptchaVerifierRef.current) return;
 
         // Initialize RecaptchaVerifier
-        recaptchaVerifierRef.current = new RecaptchaVerifier(getAuth(), 'recaptcha-container', {
+        const verifier = new RecaptchaVerifier(getAuth(), recaptchaContainerRef.current, {
             'size': 'invisible',
             'callback': () => {
                 // reCAPTCHA solved, allow signInWithPhoneNumber.
             }
         });
 
-        recaptchaVerifierRef.current.render().catch(error => {
-            console.error("Recaptcha render error", error);
-            toast({
-                variant: 'destructive',
-                title: 'Could not initialize reCAPTCHA',
-                description: 'Please refresh the page and try again.',
-            });
-        });
+        recaptchaVerifierRef.current = verifier;
         
     }, [auth, toast]);
 
@@ -274,7 +269,7 @@ export default function LoginPage() {
                         By continuing, you agree to our <Link href="/terms-of-service" className="underline">Terms</Link> & <Link href="/privacy-policy" className="underline">Privacy Policy</Link>.
                     </p>
                 </div>
-                 <div id="recaptcha-container"></div>
+                 <div id="recaptcha-container" ref={recaptchaContainerRef}></div>
             </main>
             <Footer />
         </div>

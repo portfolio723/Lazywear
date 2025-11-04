@@ -68,7 +68,7 @@ export default function LoginPage() {
 
         recaptchaVerifierRef.current = verifier;
         
-    }, [auth, toast]);
+    }, [auth]);
 
 
     const handleGoogleSignIn = async () => {
@@ -112,9 +112,10 @@ export default function LoginPage() {
         }
     };
     
-    const handlePhoneSignIn = async (e: React.FormEvent) => {
+    const handlePhoneSignIn = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!auth || !recaptchaVerifierRef.current) {
+        const appVerifier = recaptchaVerifierRef.current;
+        if (!auth || !appVerifier) {
             toast({ variant: 'destructive', title: 'Authentication service not ready.' });
             return;
         };
@@ -125,17 +126,18 @@ export default function LoginPage() {
         }
 
         setIsLoading(true);
-        try {
-            const formattedPhoneNumber = `+91${phone}`;
-            const confirmation = await signInWithPhoneNumber(auth, formattedPhoneNumber, recaptchaVerifierRef.current);
-            setConfirmationResult(confirmation);
-            toast({ title: 'OTP Sent', description: 'Check your phone for the verification code.' });
-        } catch (error: any) {
-            console.error("Phone sign in error", error);
-            toast({ variant: 'destructive', title: 'Failed to send OTP', description: error.message });
-        } finally {
-            setIsLoading(false);
-        }
+        const formattedPhoneNumber = `+91${phone}`;
+
+        signInWithPhoneNumber(auth, formattedPhoneNumber, appVerifier)
+            .then((confirmation) => {
+                setConfirmationResult(confirmation);
+                toast({ title: 'OTP Sent', description: 'Check your phone for the verification code.' });
+            }).catch((error: any) => {
+                console.error("Phone sign in error", error);
+                toast({ variant: 'destructive', title: 'Failed to send OTP', description: error.message });
+            }).finally(() => {
+                setIsLoading(false);
+            });
     };
 
     const handleOtpSubmit = async (e: React.FormEvent) => {

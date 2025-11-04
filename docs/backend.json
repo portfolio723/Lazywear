@@ -1,0 +1,51 @@
+{
+  "hosting": {
+    "headers": []
+  },
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "A user of the application.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The user's unique ID."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The user's email address."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The user's display name."
+        },
+        "photoURL": {
+          "type": "string",
+          "format": "uri",
+          "description": "The URL of the user's profile picture."
+        }
+      },
+      "required": [
+        "uid"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "google.com",
+      "password",
+      "phone"
+    ]
+  },
+  "firestore": {
+    "rules": "rules/firestore.rules",
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/user"
+      },
+      "description": "User profile information."
+    }
+  }
+}

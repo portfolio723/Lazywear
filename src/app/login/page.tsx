@@ -1,14 +1,27 @@
-
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from '@/components/ui/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useAuth } from '@/firebase';
+import { 
+  getAuth,
+  RecaptchaVerifier, 
+  signInWithPhoneNumber, 
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signInWithPopup, 
+  GoogleAuthProvider,
+  ConfirmationResult
+} from "firebase/auth";
+import { useToast } from '@/hooks/use-toast';
 
 const GoogleIcon = () => (
     <svg className="h-5 w-5" viewBox="0 0 24 24">
@@ -20,141 +33,248 @@ const GoogleIcon = () => (
     </svg>
 );
 
-const FacebookIcon = () => (
-    <svg className="h-5 w-5" viewBox="0 0 24 24">
-        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-.83 0-1.5.67-1.5 1.5V12h3l-.5 3h-2.5v7.8c4.56-.93 8-4.96 8-9.8z" fill="#1877F2" />
-    </svg>
-);
-
-
 export default function LoginPage() {
-    const [step, setStep] = useState<'phone' | 'otp'>('phone');
+    const auth = useAuth();
+    const router = useRouter();
+    const { toast } = useToast();
+    
+    // Common state
+    const [isLoading, setIsLoading] = useState(false);
+    
+    // Email/Password state
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    // Phone/OTP state
     const [phone, setPhone] = useState('');
-    const [otp, setOtp] = useState(new Array(6).fill(""));
+    const [otp, setOtp] = useState('');
+    const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
+    
+    const recaptchaVerifierRef = useRef<RecaptchaVerifier | null>(null);
+    
+    useEffect(() => {
+        if (!auth) return;
+        if (recaptchaVerifierRef.current) return;
 
-    const handlePhoneSubmit = (e: React.FormEvent) => {
+        // Initialize RecaptchaVerifier
+        recaptchaVerifierRef.current = new RecaptchaVerifier(getAuth(), 'recaptcha-container', {
+            'size': 'invisible',
+            'callback': () => {
+                // reCAPTCHA solved, allow signInWithPhoneNumber.
+            }
+        });
+
+        recaptchaVerifierRef.current.render().catch(error => {
+            console.error("Recaptcha render error", error);
+            toast({
+                variant: 'destructive',
+                title: 'Could not initialize reCAPTCHA',
+                description: 'Please refresh the page and try again.',
+            });
+        });
+        
+    }, [auth, toast]);
+
+
+    const handleGoogleSignIn = async () => {
+      if (!auth) return;
+      setIsLoading(true);
+      try {
+        const provider = new GoogleAuthProvider();
+        await signInWithPopup(auth, provider);
+        toast({ title: 'Successfully signed in with Google!' });
+        router.push('/');
+      } catch (error: any) {
+        toast({ variant: 'destructive', title: 'Google Sign-In Failed', description: error.message });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    const handleEmailSignIn = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Basic validation
-        if (phone.length === 10 && !isNaN(Number(phone))) {
-            setStep('otp');
-        } else {
-            alert("Please enter a valid 10-digit mobile number.");
+        if (!auth) return;
+        setIsLoading(true);
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            toast({ title: 'Sign in successful!' });
+            router.push('/');
+        } catch (error: any) {
+            // If user not found, try to create an account
+            if (error.code === 'auth/user-not-found') {
+                try {
+                    await createUserWithEmailAndPassword(auth, email, password);
+                    toast({ title: 'Account created successfully!' });
+                    router.push('/');
+                } catch (createError: any) {
+                     toast({ variant: 'destructive', title: 'Sign Up Failed', description: createError.message });
+                }
+            } else {
+                 toast({ variant: 'destructive', title: 'Sign In Failed', description: error.message });
+            }
+        } finally {
+            setIsLoading(false);
+        }
+    };
+    
+    const handlePhoneSignIn = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!auth || !recaptchaVerifierRef.current) {
+            toast({ variant: 'destructive', title: 'Authentication service not ready.' });
+            return;
+        };
+
+        if (phone.length !== 10) {
+            toast({ variant: 'destructive', title: 'Invalid phone number', description: 'Please enter a 10-digit number.' });
+            return;
+        }
+
+        setIsLoading(true);
+        try {
+            const formattedPhoneNumber = `+91${phone}`;
+            const confirmation = await signInWithPhoneNumber(auth, formattedPhoneNumber, recaptchaVerifierRef.current);
+            setConfirmationResult(confirmation);
+            toast({ title: 'OTP Sent', description: 'Check your phone for the verification code.' });
+        } catch (error: any) {
+            console.error("Phone sign in error", error);
+            toast({ variant: 'destructive', title: 'Failed to send OTP', description: error.message });
+        } finally {
+            setIsLoading(false);
         }
     };
 
-    const handleOtpChange = (element: HTMLInputElement, index: number) => {
-        if (isNaN(Number(element.value))) return false;
-    
-        setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
-    
-        // Focus on next input
-        if (element.nextSibling && element.value) {
-          (element.nextSibling as HTMLInputElement).focus();
-        }
-    };
-
-    const handleOtpSubmit = (e: React.FormEvent) => {
+    const handleOtpSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would typically verify the OTP
-        console.log("Verifying OTP:", otp.join(""));
-        alert("Login successful!"); // Placeholder for actual success
+        if (!confirmationResult) return;
+        setIsLoading(true);
+        try {
+            await confirmationResult.confirm(otp);
+            toast({ title: 'Sign in successful!' });
+            router.push('/');
+        } catch (error: any) {
+            toast({ variant: 'destructive', title: 'OTP Verification Failed', description: error.message });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
         <div className="flex flex-col min-h-screen bg-background text-[#111]">
             <Header />
             <main className="flex-grow flex items-center justify-center pt-24 pb-16">
-                <div className="w-full max-w-sm mx-auto p-6 md:p-8 text-center">
+                <div className="w-full max-w-sm mx-auto p-6 md:p-8">
                     
                     <Link href="/">
-                        <Image src="https://miro.medium.com/v2/resize:fit:246/format:webp/1*pHF5KzQmHRkpZQ7-ntgZ8w.png" alt="Lazywear Logo - a comfortable clothing store in India for casual and affordable loungewear" width={120} height={48} className="object-contain mx-auto mb-4" />
+                        <Image src="https://miro.medium.com/v2/resize:fit:246/format:webp/1*pHF5KzQmHRkpZQ7-ntgZ8w.png" alt="Lazywear Logo - a comfortable clothing store in India for casual and affordable loungewear" width={120} height={48} className="object-contain mx-auto mb-6" />
                     </Link>
 
-                    {step === 'phone' && (
-                        <div className="animate-in fade-in-0 duration-500">
-                            <h1 className="text-2xl font-bold font-headline">Welcome to LazyWear</h1>
-                            <p className="text-muted-foreground mt-1">Effortless style, delivered.</p>
-                            
-                            <form onSubmit={handlePhoneSubmit} className="mt-8 space-y-6">
-                                <div className="space-y-2">
-                                    <label htmlFor="phone" className="text-sm font-medium">Enter your mobile number to get started</label>
-                                    <div className="flex items-center">
-                                        <span className="border border-r-0 border-input rounded-l-md px-3 py-2 bg-muted text-muted-foreground">+91</span>
-                                        <Input 
-                                            id="phone" 
-                                            type="tel" 
-                                            maxLength={10} 
-                                            placeholder="Your 10-digit number" 
-                                            className="rounded-l-none"
-                                            value={phone}
-                                            onChange={(e) => setPhone(e.target.value)}
+                    <h1 className="text-2xl font-bold font-headline text-center">Welcome to LazyWear</h1>
+                    <p className="text-muted-foreground mt-1 text-center">Effortless style, delivered.</p>
+                    
+                    <Tabs defaultValue="phone" className="mt-8">
+                        <TabsList className="grid w-full grid-cols-2">
+                            <TabsTrigger value="phone">Phone</TabsTrigger>
+                            <TabsTrigger value="email">Email</TabsTrigger>
+                        </TabsList>
+
+                        {/* Phone/OTP Tab */}
+                        <TabsContent value="phone">
+                            {!confirmationResult ? (
+                                <form onSubmit={handlePhoneSignIn} className="mt-6 space-y-6 animate-in fade-in-0 duration-500">
+                                    <div className="space-y-2">
+                                        <label htmlFor="phone" className="text-sm font-medium">Enter your mobile number</label>
+                                        <div className="flex items-center">
+                                            <span className="border border-r-0 border-input rounded-l-md px-3 py-2 bg-muted text-muted-foreground">+91</span>
+                                            <Input 
+                                                id="phone" 
+                                                type="tel" 
+                                                maxLength={10} 
+                                                placeholder="10-digit number" 
+                                                className="rounded-l-none"
+                                                value={phone}
+                                                onChange={(e) => setPhone(e.target.value)}
+                                                disabled={isLoading}
+                                            />
+                                        </div>
+                                    </div>
+                                    <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
+                                        {isLoading ? 'Sending...' : 'Send OTP'}
+                                    </Button>
+                                </form>
+                            ) : (
+                                <form onSubmit={handleOtpSubmit} className="mt-6 space-y-6 animate-in fade-in-0 duration-500">
+                                    <div className="space-y-2">
+                                        <label htmlFor="otp" className="text-sm font-medium">Enter the 6-digit code sent to +91 {phone}</label>
+                                        <Input
+                                            id="otp"
+                                            type="text"
+                                            maxLength={6}
+                                            placeholder="******"
+                                            value={otp}
+                                            onChange={e => setOtp(e.target.value)}
+                                            disabled={isLoading}
+                                            className="text-center tracking-[0.5em]"
                                         />
                                     </div>
-                                </div>
-                                <Button type="submit" className="w-full" size="lg">Send OTP</Button>
-                            </form>
-                            
-                            <div className="relative my-6">
-                                <Separator />
-                                <span className="absolute left-1/2 -translate-x-1/2 -top-2.5 bg-background px-2 text-sm text-muted-foreground">OR</span>
-                            </div>
+                                    <Button type="submit" className="w-full" size="lg" disabled={isLoading || otp.length < 6}>
+                                        {isLoading ? 'Verifying...' : 'Verify & Continue'}
+                                    </Button>
+                                    <Button variant="link" size="sm" className="p-0 h-auto" onClick={() => setConfirmationResult(null)}>
+                                      Entered wrong number? Change
+                                    </Button>
+                                </form>
+                            )}
+                        </TabsContent>
 
-                            <div className="flex items-center justify-center gap-4">
-                                <Button variant="outline" className="w-full">
-                                    <GoogleIcon />
-                                    <span>Sign in with Google</span>
+                        {/* Email/Password Tab */}
+                        <TabsContent value="email">
+                           <form onSubmit={handleEmailSignIn} className="mt-6 space-y-4 animate-in fade-in-0 duration-500">
+                                <div className="space-y-2">
+                                    <label htmlFor="email" className="text-sm font-medium">Email Address</label>
+                                    <Input 
+                                        id="email" 
+                                        type="email" 
+                                        placeholder="you@example.com"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        disabled={isLoading}
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="password-login" className="text-sm font-medium">Password</label>
+                                    <Input 
+                                        id="password-login"
+                                        type="password" 
+                                        placeholder="Your password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        disabled={isLoading}
+                                    />
+                                </div>
+                                <Button type="submit" className="w-full !mt-6" size="lg" disabled={isLoading}>
+                                    {isLoading ? 'Signing in...' : 'Sign In / Sign Up'}
                                 </Button>
-                                <Button variant="outline" className="w-full">
-                                    <FacebookIcon />
-                                    <span>Sign in with Facebook</span>
-                                </Button>
-                            </div>
-                            
-                            <p className="text-xs text-muted-foreground mt-6">
-                                By continuing, you agree to our <Link href="#" className="underline">Terms</Link> & <Link href="#" className="underline">Privacy Policy</Link>.
-                            </p>
-                            <p className="text-sm text-muted-foreground mt-4">
-                                New to LazyWear? <span className="font-medium text-foreground">You'll create your account after verifying.</span>
-                            </p>
-                        </div>
-                    )}
+                            </form>
+                        </TabsContent>
+                    </Tabs>
                     
-                    {step === 'otp' && (
-                        <div className="animate-in fade-in-0 duration-500">
-                            <h1 className="text-2xl font-bold font-headline">Verify Your Number</h1>
-                            <p className="text-muted-foreground mt-1">We’ve sent a 6-digit code to +91 {phone}</p>
-                            
-                            <form onSubmit={handleOtpSubmit} className="mt-8 space-y-6">
-                                <div className="flex justify-center gap-2">
-                                    {otp.map((data, index) => {
-                                        return (
-                                            <Input
-                                                key={index}
-                                                type="text"
-                                                maxLength={1}
-                                                className="w-12 h-14 text-center text-2xl font-bold"
-                                                value={data}
-                                                onChange={e => handleOtpChange(e.target, index)}
-                                                onFocus={e => e.target.select()}
-                                            />
-                                        );
-                                    })}
-                                </div>
-                                <p className="text-sm text-muted-foreground">Resend OTP in 30s</p>
+                    <div className="relative my-6">
+                        <Separator />
+                        <span className="absolute left-1/2 -translate-x-1/2 -top-2.5 bg-background px-2 text-sm text-muted-foreground">OR</span>
+                    </div>
 
-                                <Button type="submit" className="w-full" size="lg">Verify & Continue</Button>
-                            </form>
-                            
-                            <div className="text-sm mt-6 space-x-2">
-                                <span className="text-muted-foreground">Didn’t receive the code?</span>
-                                <Button variant="link" className="p-0 h-auto">Resend Now</Button>
-                            </div>
-                            <Button variant="link" className="p-0 h-auto text-sm" onClick={() => setStep('phone')}>
-                                Entered wrong number? Change
-                            </Button>
-                        </div>
-                    )}
+                    <div className="flex items-center justify-center">
+                        <Button variant="outline" className="w-full" onClick={handleGoogleSignIn} disabled={isLoading}>
+                            <GoogleIcon />
+                            <span className="ml-2">Sign in with Google</span>
+                        </Button>
+                    </div>
+                    
+                    <p className="text-xs text-muted-foreground mt-6 text-center">
+                        By continuing, you agree to our <Link href="/terms-of-service" className="underline">Terms</Link> & <Link href="/privacy-policy" className="underline">Privacy Policy</Link>.
+                    </p>
                 </div>
+                 <div id="recaptcha-container"></div>
             </main>
             <Footer />
         </div>

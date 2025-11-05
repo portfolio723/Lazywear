@@ -11,10 +11,12 @@ import { Button } from "@/components/ui/button";
 import { ValuePropsSection } from "@/components/sections/value-props-section";
 import { NewsletterSection } from "@/components/sections/newsletter-section";
 
+export const dynamic = 'force-dynamic';
+
 const iconsReinvented = [
   {
     title: "Shirts",
-    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*PScdSEJqvu1bpqXqJuMhfg.png",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*s6fOQaKm1h81oekdsM-Xfw.png",
     hint: "comfortable shirt",
     href: "/shirts",
   },

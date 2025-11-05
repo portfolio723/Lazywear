@@ -2,7 +2,6 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
 const isProtectedRoute = createRouteMatcher([
-  '/account(.*)',
   '/favorites(.*)',
 ]);
 
@@ -10,6 +9,9 @@ export default clerkMiddleware((auth, req) => {
   if (isProtectedRoute(req)) {
     auth().protect();
   }
+}, {
+  publishableKey: 'pk_test_b3B0aW1hbC1hZGRlci0yOS5jbGVyay5hY2NvdW50cy5kZXYk',
+  secretKey: 'sk_test_LZqaVKcyp6Kl5z9lMDL9KdWMaKj4AFDem8BfX3Pecc'
 });
 
 export const config = {

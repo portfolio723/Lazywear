@@ -59,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+    <ClerkProvider publishableKey="pk_test_b3B0aW1hbC1hZGRlci0yOS5jbGVyay5hY2NvdW50cy5kZXYk">
       <html lang="en">
         <head>
           <link rel="icon" href="/Asset 9.png" />

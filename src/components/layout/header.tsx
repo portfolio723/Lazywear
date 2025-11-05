@@ -6,28 +6,19 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { Search, Heart, User, ShoppingCart, Menu, X, LogOut } from "lucide-react";
+import { Search, Heart, ShoppingCart, Menu, X } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { MiniCart } from "@/components/mini-cart";
 import { useWishlist } from "@/hooks/use-wishlist";
 import { useCart } from "@/hooks/use-cart";
 import { SearchOverlay } from "@/components/search-overlay";
-import { useUser, useAuth } from "@/firebase";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export function Header() {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
   const { wishlist } = useWishlist();
   const { cart } = useCart();
-  const { user, isLoading } = useUser();
-  const auth = useAuth();
-
-  const handleSignOut = async () => {
-    if (auth) {
-      await auth.signOut();
-    }
-  };
-
 
   const navLinks = [
     { href: "/shirts", label: "Shirts" },
@@ -75,21 +66,14 @@ export function Header() {
             </Link>
           </Button>
           
-          {!isLoading && user ? (
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="/account">
-                <User className="h-5 w-5" />
-                <span className="sr-only">Account</span>
-              </Link>
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
+             <Button variant="ghost" asChild>
+                <Link href="/sign-in">Sign In</Link>
             </Button>
-          ) : (
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="/login">
-                <User className="h-5 w-5" />
-                <span className="sr-only">Account</span>
-              </Link>
-            </Button>
-          )}
+          </SignedOut>
 
           <Popover>
             <PopoverTrigger asChild>

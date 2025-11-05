@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import Script from "next/script";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
 import { AppProviders } from "@/components/app-providers";
 import "./globals.css";
@@ -58,43 +59,45 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/Asset 9.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Lazywear",
-            "url": "https://lazywear.store",
-            "logo": "https://lazywear.store/logo.png",
-            "sameAs": [
-              "https://www.instagram.com/lazywear",
-              "https://www.facebook.com/lazywear"
-            ]
-          }) }}
-        />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1RKSBRP2M"></Script>
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+    <ClerkProvider>
+      <html lang="en">
+        <head>
+          <link rel="icon" href="/Asset 9.png" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Lazywear",
+              "url": "https://lazywear.store",
+              "logo": "https://lazywear.store/logo.png",
+              "sameAs": [
+                "https://www.instagram.com/lazywear",
+                "https://www.facebook.com/lazywear"
+              ]
+            }) }}
+          />
+          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-Q1RKSBRP2M"></Script>
+          <Script id="google-analytics">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
 
-            gtag('config', 'G-Q1RKSBRP2M');
-          `}
-        </Script>
-      </head>
-      <body className="font-body antialiased">
-        <AppProviders>
-          {children}
-          <Toaster />
-        </AppProviders>
-      </body>
-    </html>
+              gtag('config', 'G-Q1RKSBRP2M');
+            `}
+          </Script>
+        </head>
+        <body className="font-body antialiased">
+          <AppProviders>
+            {children}
+            <Toaster />
+          </AppProviders>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

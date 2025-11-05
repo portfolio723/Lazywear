@@ -1,28 +1,29 @@
 
 "use client";
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ProductCard } from "@/components/product-card";
 import { useWishlist } from "@/hooks/use-wishlist";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useUser } from "@/firebase";
 
 export default function FavoritesPage() {
   const { wishlist } = useWishlist();
-  const { user, isLoading } = useUser();
+  const { user, isLoaded } = useUser();
   const router = useRouter();
 
   useEffect(() => {
-    if (!isLoading && !user) {
-      router.push('/login');
+    // Middleware should handle this, but as a fallback:
+    if (isLoaded && !user) {
+      router.push('/sign-in');
     }
-  }, [user, isLoading, router]);
+  }, [isLoaded, user, router]);
 
-  if (isLoading || !user) {
+  if (!isLoaded) {
     return (
       <div className="flex flex-col min-h-screen bg-background text-[#111] items-center justify-center">
         <p>Loading...</p>
